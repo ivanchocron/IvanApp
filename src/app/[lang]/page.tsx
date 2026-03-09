@@ -188,31 +188,41 @@ export default async function HomePage({
       </div>
 
       {/* ─── METHODOLOGY ─── */}
-      <section className="bg-black text-white py-24 px-6">
-        <div className="max-w-[600px] mx-auto">
-          <p className="uppercase tracking-[0.3em] text-white/50 text-sm mb-4 font-medium text-center">A Three Part</p>
-          <h2 className="text-5xl md:text-7xl font-extrabold mb-16 text-center text-[#fffaf4]">Methodology</h2>
-          <div className="space-y-0">
-            {[
-              { title: "EDUCATION", desc: "Through YouTube, podcasts, speaking engagements, and retreats, I educate people about what real healing encompasses \u2014 creating those incredible ah-ha moments of insight and breakthroughs that help people understand themselves at a deeper level." },
-              { title: "EMOTIONAL PROCESSING", desc: "Using my knowledge of psychology and a decade of experience working in healing retreats, I help people process and heal their trauma while releasing stuck emotions in a safe, supported environment." },
-              { title: "RETREATS", desc: "My private retreats fuse philosophies and lessons from leading 500+ healing events. Thousands of people have freed themselves from physical and psychological challenges through these transformative experiences hosted worldwide." },
-            ].map((item, i) => (
-              <details key={item.title} className={`border-t border-white/20 group ${i === 2 ? "border-b border-white/20" : ""}`}>
-                <summary className="py-6 cursor-pointer flex items-center justify-between list-none">
-                  <h3 className="text-base font-semibold tracking-[0.15em]">{item.title}</h3>
-                  <span className="text-2xl text-white/40 group-open:rotate-45 transition-transform">+</span>
-                </summary>
-                <p className="pb-6 text-white/60 leading-relaxed text-sm">{item.desc}</p>
-              </details>
-            ))}
+      <section className="relative text-white overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src={img("/images/methodology-bg.jpg")}
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/60" />
+        </div>
+        <div className="relative z-10 py-24 px-6">
+          <div className="max-w-[1200px] mx-auto">
+            <p className="uppercase tracking-[0.3em] text-white/50 text-sm mb-4 font-medium text-center">A Three Part</p>
+            <h2 className="text-5xl md:text-7xl font-extrabold mb-16 text-center text-[#fffaf4]">Methodology</h2>
+            <div className="max-w-[600px] space-y-0">
+              {[
+                { title: "EDUCATION", desc: "Through YouTube, podcasts, speaking engagements, and retreats, I educate people about what real healing encompasses \u2014 creating those incredible ah-ha moments of insight and breakthroughs that help people understand themselves at a deeper level." },
+                { title: "EMOTIONAL PROCESSING", desc: "Using my knowledge of psychology and a decade of experience working in healing retreats, I help people process and heal their trauma while releasing stuck emotions in a safe, supported environment." },
+                { title: "RETREATS", desc: "My private retreats fuse philosophies and lessons from leading 500+ healing events. Thousands of people have freed themselves from physical and psychological challenges through these transformative experiences hosted worldwide." },
+              ].map((item, i) => (
+                <details key={item.title} className={`border-t border-white/20 group ${i === 2 ? "border-b border-white/20" : ""}`}>
+                  <summary className="py-6 cursor-pointer flex items-center justify-between list-none">
+                    <h3 className="text-base font-semibold tracking-[0.15em]">{item.title}</h3>
+                    <span className="text-2xl text-white/40 group-open:rotate-45 transition-transform">+</span>
+                  </summary>
+                  <p className="pb-6 text-white/60 leading-relaxed text-sm">{item.desc}</p>
+                </details>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ─── DIAGONAL DIVIDER: black → warm white ─── */}
+      {/* ─── DIAGONAL DIVIDER: methodology → warm white ─── */}
       <div className="relative h-24 bg-[#fffaf4]">
-        <div className="absolute inset-0 bg-black" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 0%)" }} />
+        <div className="absolute inset-0 bg-[#1a1a1a]" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 0%)" }} />
       </div>
 
       {/* ─── PHILOSOPHY ─── */}
@@ -240,7 +250,7 @@ export default async function HomePage({
           <div className="text-center mt-14">
             <a
               href={`/${lang}/about`}
-              className="inline-block px-10 py-4 bg-[#9c8a78] hover:bg-[#8a7968] text-white font-medium transition-colors text-sm tracking-wider"
+              className="inline-block px-10 py-4 bg-[#8a9a9a] hover:bg-[#7a8a8a] text-white font-medium transition-colors text-sm tracking-wider"
             >
               Explore my Philosophy
             </a>
@@ -256,15 +266,8 @@ export default async function HomePage({
       {/* ─── SERVICES ─── */}
       <section className="py-24 px-6 bg-[#d9cfc5]">
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-          <div className="relative aspect-[3/4] overflow-hidden">
-            <img
-              src={img("/images/services-retreat.jpg")}
-              alt="Iván Chocrón retreat"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-          </div>
           <div>
-            <p className="uppercase tracking-[0.2em] text-[#4b4746]/60 text-sm mb-3 font-medium">Services</p>
+            <h2 className="text-3xl font-bold text-[#4b4746] mb-6">Services</h2>
             <div className="space-y-0">
               {[
                 { title: "PUBLIC SPEAKING", desc: "Experience inspirational and educational talks on topics including the healing process, human emotions, science and spirituality, psychology, self-love, plant-medicine, and neo-shamanism." },
@@ -292,6 +295,13 @@ export default async function HomePage({
                 GET IN TOUCH
               </a>
             </div>
+          </div>
+          <div className="relative aspect-[3/4] overflow-hidden">
+            <img
+              src={img("/images/services-retreat.jpg")}
+              alt="Iván Chocrón retreat"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
           </div>
         </div>
       </section>
@@ -338,28 +348,31 @@ export default async function HomePage({
 
       {/* ─── YOUTUBE CTA ─── */}
       <section className="py-20 px-6 bg-[#fffaf4]">
-        <div className="max-w-[900px] mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-black mb-2">
-            Now on <a href="https://youtube.com/@IvanChocron" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:text-red-700">YouTube</a>
-          </h2>
-          <h3 className="text-lg font-semibold text-[#4b4746] mb-6">Youtube: @IvanChocron</h3>
-          <p className="text-base font-semibold text-[#4b4746] leading-relaxed mb-6">
-            Previously exclusively available only through limited private sessions, Iván&apos;s philosophy, methods, and guidance are now available to you online for free.
-          </p>
-          <blockquote className="mb-8">
-            <p className="text-[#4b4746]/70 italic leading-relaxed">
-              &ldquo;After a decade of private events, I&apos;ve decided it&apos;s time to share all I&apos;ve learned with the world. My hope is that by freely passing on the knowledge I hold, millions of people will either begin or move further in their healing journey&rdquo;.
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold text-black mb-2">
+              Now on <a href="https://youtube.com/@IvanChocron" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:text-red-700">YouTube</a>
+            </h2>
+            <h3 className="text-lg font-semibold text-[#4b4746] mb-6">Youtube: @IvanChocron</h3>
+            <p className="text-base font-semibold text-[#4b4746] leading-relaxed mb-6">
+              Previously exclusively available only through limited private sessions, Iván&apos;s philosophy, methods, and guidance are now available to you online for free.
             </p>
-            <p className="text-[#4b4746]/50 mt-3 italic">Iván</p>
-          </blockquote>
-          <a
-            href="https://youtube.com/@IvanChocron"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-10 py-4 bg-[#9c8a78] hover:bg-[#8a7968] text-white font-medium transition-colors text-sm tracking-wider"
-          >
-            Subscribe
-          </a>
+            <blockquote className="mb-8">
+              <p className="text-[#4b4746]/70 italic leading-relaxed">
+                &ldquo;After a decade of private events, I&apos;ve decided it&apos;s time to share all I&apos;ve learned with the world. My hope is that by freely passing on the knowledge I hold, millions of people will either begin or move further in their healing journey&rdquo;.
+              </p>
+              <p className="text-[#4b4746]/50 mt-3 italic">Iván</p>
+            </blockquote>
+          </div>
+          <div className="relative aspect-video bg-black rounded-lg overflow-hidden">
+            <iframe
+              className="absolute inset-0 w-full h-full"
+              src="https://www.youtube.com/embed?listType=user_uploads&list=IvanChocron"
+              title="Iván Chocrón YouTube"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
         </div>
       </section>
 
