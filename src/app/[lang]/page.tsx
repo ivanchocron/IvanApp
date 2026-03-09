@@ -50,8 +50,8 @@ export default async function HomePage({
   return (
     <div style={{ fontFamily: "var(--font-poppins), Poppins, sans-serif" }}>
       {/* ─── NAVIGATION ─── */}
-      <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[#9c8a78]/80">
-        <div className="max-w-[1500px] mx-auto px-[4vw] flex items-center justify-between py-4">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#9c8a78]">
+        <div className="max-w-[1200px] mx-auto px-[4vw] flex items-center justify-between py-4">
           <div className="flex items-center gap-3">
             <a href={`/${lang}`}>
               <img src={img("/images/logo-icon.png")} alt="Iván Chocrón" className="h-[50px] w-auto" />
@@ -65,8 +65,7 @@ export default async function HomePage({
               { label: "Home", href: `/${lang}` },
               { label: "About", href: `/${lang}/about` },
               { label: "Services", href: `/${lang}/services` },
-              { label: "Recent Features", href: "#appearances" },
-              { label: "Press & Media", href: "mailto:hello@ivanchocron.com" },
+              { label: "Explore", href: "#philosophy" },
               { label: "Contact", href: INQUIRY_URL },
             ].map((link) => (
               <a
@@ -83,9 +82,9 @@ export default async function HomePage({
       </header>
 
       {/* ─── HERO ─── */}
-      <section className="relative min-h-[90vh] flex items-end overflow-hidden bg-[#c4b5a5] pt-20">
-        <div className="max-w-[1500px] mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-end">
-          <div className="relative h-[60vh] md:h-[85vh] bg-[#f0ece6]">
+      <section className="relative min-h-[90vh] flex items-end overflow-hidden bg-[#d9cfc5]">
+        <div className="max-w-[1200px] mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-end">
+          <div className="relative h-[60vh] md:h-[85vh]">
             <img
               src={img("/images/hero-ivan.png")}
               alt="Iván Chocrón"
@@ -96,9 +95,9 @@ export default async function HomePage({
             <img
               src={img("/images/logo-horizontal.png")}
               alt="Iván Chocrón Logo"
-              className="mb-6 w-[280px] md:w-[500px] h-auto"
+              className="mb-6 w-[280px] md:w-[420px] h-auto"
             />
-            <h1 className="text-2xl md:text-[2.5rem] font-light text-[#4b4746] mb-4 leading-snug">
+            <h1 className="text-2xl md:text-[2rem] font-light text-[#4b4746] mb-4 leading-snug">
               Speaker &amp; Healing Coach
             </h1>
             <p className="text-base md:text-lg text-[#4b4746]/80 leading-relaxed max-w-lg">
@@ -110,11 +109,11 @@ export default async function HomePage({
 
       {/* ─── INTRO ─── */}
       <section className="py-20 px-6 bg-[#9c8a78]">
-        <div className="max-w-[1200px] mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-semibold text-[#fffaf4] mb-6 leading-snug">
-            Enough is enough. It is time to heal, shift into consciousness<br className="hidden md:block" /> from unawareness and discover our unique gifts.
+        <div className="max-w-[1000px] mx-auto">
+          <h2 className="text-2xl md:text-[2rem] font-medium text-black leading-snug mb-6">
+            Enough is enough. It is time to heal, shift into consciousness from unawareness and discover our unique gifts.
           </h2>
-          <p className="text-lg text-[#fffaf4]/80 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-[#4b4746] max-w-3xl leading-relaxed">
             It is my vision to make grounded relatable healing accessible to individuals from every walk of life, belief system and background.
           </p>
         </div>
@@ -124,10 +123,38 @@ export default async function HomePage({
       <section className="py-20 px-6 bg-[#9c8a78]">
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <div className="text-[#4b4746]">
-            <h2 className="text-3xl font-semibold mb-6">Hi! My name is Iván.</h2>
+            <h2 className="text-2xl font-semibold mb-6">Hi! My name is Iván.</h2>
             <p className="text-base leading-relaxed mb-5">
               I&apos;ve been helping people change their lives for over a decade. Whether you need to overcome depression, are curious about what your next steps are in life are or want to heal PTSD or deep trauma from sexual or physical abuse, I am here to support you. I&apos;ve assisted over 10,000+ people in their process of transformation, it&apos;s my goal to guide people from being discontent to being excited to wake up every day.
             </p>
+          </div>
+          <div className="relative aspect-[4/3] overflow-hidden">
+            <img
+              src={img("/images/coaching-session.jpg")}
+              alt="Iván coaching session"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ─── QUOTE + APPROACH ─── */}
+      <section className="bg-[#9c8a78]">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2">
+          <div className="relative min-h-[500px]">
+            <img
+              src={img("/images/ivan-meditating.jpg")}
+              alt="Iván meditating"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            {/* Quote overlay on the photo */}
+            <div className="absolute top-0 right-0 w-full md:w-auto bg-[#b8d8d0] p-10 md:p-12" style={{ maxWidth: "420px" }}>
+              <p className="text-xl md:text-2xl font-bold text-[#4b4746] leading-snug">
+                &ldquo;Healing work is the most important thing anyone can do for themselves and the world around them.&rdquo;
+              </p>
+            </div>
+          </div>
+          <div className="px-8 md:px-12 py-12 text-[#4b4746]">
             <p className="text-base leading-relaxed mb-5">
               My approach is <strong>grounded</strong>. I have created my own system of healing, working with proven methods based on science and psychology to help people overcome their blocks.
             </p>
@@ -147,98 +174,54 @@ export default async function HomePage({
               href={INQUIRY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-10 py-4 bg-[#9c8a78] hover:bg-[#8a7968] text-white font-medium transition-colors text-sm tracking-wider rounded-md"
+              className="inline-block px-10 py-4 bg-[#4b4746] hover:bg-[#3a3635] text-white font-medium transition-colors text-sm tracking-wider"
             >
               Get In Touch
             </a>
           </div>
-          <div className="relative aspect-[3/4] rounded-lg overflow-hidden">
-            <img
-              src={img("/images/coaching-session.jpg")}
-              alt="Iván coaching session"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-          </div>
         </div>
       </section>
 
-      {/* ─── QUOTE — Ivan meditating left, quote on mint right ─── */}
-      <section className="bg-[#9c8a78]">
-        <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2">
-          <div className="relative aspect-square md:aspect-auto">
-            <img
-              src={img("/images/ivan-meditating.jpg")}
-              alt="Iván meditating"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-          </div>
-          <div className="bg-[#b8d8d0] flex items-center justify-center p-12 md:p-16">
-            <div className="text-center">
-              <p className="text-2xl md:text-3xl font-bold text-[#4b4746] leading-snug">
-                &ldquo;Healing work is the most important thing anyone can do for themselves and the world around them.&rdquo;
-              </p>
-              <img
-                src={img("/images/logo-large.png")}
-                alt="Iván Chocrón"
-                className="w-24 h-24 mx-auto mt-8 opacity-40"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── DIAGONAL DIVIDER ─── */}
-      <div className="relative h-24 bg-[#1a1a1a]">
+      {/* ─── DIAGONAL DIVIDER: tan → black ─── */}
+      <div className="relative h-24 bg-black">
         <div className="absolute inset-0 bg-[#9c8a78]" style={{ clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 100%)" }} />
       </div>
 
       {/* ─── METHODOLOGY ─── */}
-      <section className="relative text-white overflow-hidden">
-        <div className="relative min-h-[500px]">
-          <div className="absolute inset-0 z-0">
-            <img
-              src={img("/images/methodology-bg.jpg")}
-              alt="Methodology"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-black/60" />
-          </div>
-          <div className="relative z-10 py-24 px-6">
-            <div className="max-w-[1200px] mx-auto">
-              <p className="uppercase tracking-[0.2em] text-white/60 text-sm mb-3 font-medium">A Three Part</p>
-              <h2 className="text-4xl md:text-5xl font-bold mb-16">Methodology</h2>
-              <div className="space-y-0">
-                {[
-                  { title: "EDUCATION", desc: "Through YouTube, podcasts, speaking engagements, and retreats, I educate people about what real healing encompasses \u2014 creating those incredible ah-ha moments of insight and breakthroughs that help people understand themselves at a deeper level." },
-                  { title: "EMOTIONAL PROCESSING", desc: "Using my knowledge of psychology and a decade of experience working in healing retreats, I help people process and heal their trauma while releasing stuck emotions in a safe, supported environment." },
-                  { title: "RETREATS", desc: "My private retreats fuse philosophies and lessons from leading 500+ healing events. Thousands of people have freed themselves from physical and psychological challenges through these transformative experiences hosted worldwide." },
-                ].map((item, i) => (
-                  <details key={item.title} className={`border-t border-white/20 group ${i === 2 ? "border-b" : ""}`}>
-                    <summary className="py-6 cursor-pointer flex items-center justify-between list-none">
-                      <h3 className="text-xl font-semibold tracking-wider">{item.title}</h3>
-                      <span className="text-2xl text-white/60 group-open:rotate-45 transition-transform">+</span>
-                    </summary>
-                    <p className="pb-6 text-white/70 leading-relaxed max-w-2xl">{item.desc}</p>
-                  </details>
-                ))}
-              </div>
-            </div>
+      <section className="bg-black text-white py-24 px-6">
+        <div className="max-w-[600px] mx-auto">
+          <p className="uppercase tracking-[0.3em] text-white/50 text-sm mb-4 font-medium text-center">A Three Part</p>
+          <h2 className="text-5xl md:text-7xl font-extrabold mb-16 text-center text-[#fffaf4]">Methodology</h2>
+          <div className="space-y-0">
+            {[
+              { title: "EDUCATION", desc: "Through YouTube, podcasts, speaking engagements, and retreats, I educate people about what real healing encompasses \u2014 creating those incredible ah-ha moments of insight and breakthroughs that help people understand themselves at a deeper level." },
+              { title: "EMOTIONAL PROCESSING", desc: "Using my knowledge of psychology and a decade of experience working in healing retreats, I help people process and heal their trauma while releasing stuck emotions in a safe, supported environment." },
+              { title: "RETREATS", desc: "My private retreats fuse philosophies and lessons from leading 500+ healing events. Thousands of people have freed themselves from physical and psychological challenges through these transformative experiences hosted worldwide." },
+            ].map((item, i) => (
+              <details key={item.title} className={`border-t border-white/20 group ${i === 2 ? "border-b border-white/20" : ""}`}>
+                <summary className="py-6 cursor-pointer flex items-center justify-between list-none">
+                  <h3 className="text-base font-semibold tracking-[0.15em]">{item.title}</h3>
+                  <span className="text-2xl text-white/40 group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <p className="pb-6 text-white/60 leading-relaxed text-sm">{item.desc}</p>
+              </details>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ─── DIAGONAL DIVIDER ─── */}
+      {/* ─── DIAGONAL DIVIDER: black → warm white ─── */}
       <div className="relative h-24 bg-[#fffaf4]">
-        <div className="absolute inset-0 bg-[#1a1a1a]" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 0%)" }} />
+        <div className="absolute inset-0 bg-black" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 0%)" }} />
       </div>
 
       {/* ─── PHILOSOPHY ─── */}
-      <section className="py-24 px-6 bg-[#fffaf4]">
-        <div className="max-w-[1200px] mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-[#333] mb-16">
+      <section id="philosophy" className="py-24 px-6 bg-[#fffaf4]">
+        <div className="max-w-[1000px] mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-black mb-16">
             Pillars of My Philosophy
           </h2>
-          <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-12 grid-cols-1 sm:grid-cols-2">
             {[
               { title: "Science & Spirit", icon: "/images/icon-science-spirit.png", desc: "Science and spirit may seem to be incompatible worldviews, but that is not the case. Connecting these two worlds in a relatable way is essential for a balanced healing process." },
               { title: "Real Healing is Real", icon: "/images/icon-real-healing.png", desc: "This might sound obvious, but is it? If we truly knew that we could heal, why would we decide to numb our pain? True healing is possible and there are accessible ways to get there." },
@@ -246,18 +229,18 @@ export default async function HomePage({
               { title: "Inner Gift", icon: "/images/icon-inner-gift.png", desc: "Every person has unique gifts, but few are aware of them until they heal their wounds. As people walk the path of healing they begin discovering and embodying their gifts, which brings a great sense of purpose and enthusiasm for life." },
             ].map((item) => (
               <div key={item.title} className="text-center">
-                <div className="w-24 h-24 mx-auto mb-5">
+                <div className="w-20 h-20 mx-auto mb-5">
                   <img src={img(item.icon)} alt={item.title} className="w-full h-full object-contain" />
                 </div>
-                <h3 className="text-lg font-bold text-[#333] mb-3">{item.title}</h3>
+                <h3 className="text-xl font-bold text-black mb-3">{item.title}</h3>
                 <p className="text-sm text-[#4b4746]/80 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
-          <div className="text-center mt-12">
+          <div className="text-center mt-14">
             <a
               href={`/${lang}/about`}
-              className="inline-block px-10 py-4 bg-[#9c8a78] hover:bg-[#8a7968] text-white font-medium transition-colors text-sm tracking-wider rounded-md"
+              className="inline-block px-10 py-4 bg-[#9c8a78] hover:bg-[#8a7968] text-white font-medium transition-colors text-sm tracking-wider"
             >
               Explore my Philosophy
             </a>
@@ -265,15 +248,15 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ─── DIAGONAL DIVIDER ─── */}
-      <div className="relative h-24 bg-[#ece5de]">
+      {/* ─── DIAGONAL DIVIDER: warm white → beige ─── */}
+      <div className="relative h-24 bg-[#d9cfc5]">
         <div className="absolute inset-0 bg-[#fffaf4]" style={{ clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 100%)" }} />
       </div>
 
       {/* ─── SERVICES ─── */}
-      <section className="py-24 px-6 bg-[#ece5de]">
+      <section className="py-24 px-6 bg-[#d9cfc5]">
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-          <div className="relative aspect-[3/4] rounded-lg overflow-hidden">
+          <div className="relative aspect-[3/4] overflow-hidden">
             <img
               src={img("/images/services-retreat.jpg")}
               alt="Iván Chocrón retreat"
@@ -289,7 +272,7 @@ export default async function HomePage({
                 { title: "INTEGRATION SUPPORT", desc: "One-on-one support making sense of healing experiences. Grounded and relatable emotional processing techniques to bring your process to a more peaceful completion." },
                 { title: "RETREATS", desc: "Private retreats fusing unique methods of emotional processing. Hosted worldwide in luxury settings with organic vegan cuisine and thoughtful amenities." },
               ].map((svc, i) => (
-                <details key={svc.title} className={`border-t border-[#4b4746]/20 group ${i === 3 ? "border-b" : ""}`}>
+                <details key={svc.title} className={`border-t border-[#4b4746]/20 group ${i === 3 ? "border-b border-[#4b4746]/20" : ""}`}>
                   <summary className="py-5 cursor-pointer flex items-center justify-between list-none">
                     <h3 className="text-base font-semibold text-[#4b4746] tracking-wider">{svc.title}</h3>
                     <span className="text-xl text-[#4b4746]/40 group-open:rotate-45 transition-transform">+</span>
@@ -304,62 +287,63 @@ export default async function HomePage({
                 href={INQUIRY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-10 py-4 bg-[#9c8a78] hover:bg-[#8a7968] text-white font-medium transition-colors text-sm tracking-wider rounded-md"
+                className="inline-block px-10 py-4 bg-[#4b4746] hover:bg-[#3a3635] text-white font-medium transition-colors text-sm tracking-wider"
               >
-                Get In Touch
+                GET IN TOUCH
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ─── DIAGONAL DIVIDER ─── */}
+      {/* ─── DIAGONAL DIVIDER: beige → tan ─── */}
       <div className="relative h-24 bg-[#9c8a78]">
-        <div className="absolute inset-0 bg-[#ece5de]" style={{ clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 100%)" }} />
+        <div className="absolute inset-0 bg-[#d9cfc5]" style={{ clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 100%)" }} />
       </div>
 
-      {/* ─── TESTIMONIALS ─── */}
+      {/* ─── TESTIMONIALS (carousel-style, one at a time) ─── */}
       <section className="py-24 px-6 bg-[#9c8a78]">
-        <div className="max-w-[1200px] mx-auto">
+        <div className="max-w-[1000px] mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-[#fffaf4] mb-16">
             Testimonials
           </h2>
-          <div className="space-y-8">
-            {TESTIMONIALS.map((t) => (
-              <div key={t.name} className="bg-[#fffaf4]/10 backdrop-blur-sm rounded-xl p-8 border border-[#fffaf4]/10">
-                <div className="flex gap-6 items-start">
-                  <img
-                    src={img(t.photo)}
-                    alt={t.name}
-                    className="w-16 h-16 rounded-full object-cover flex-shrink-0"
-                  />
-                  <div>
-                    <p className="text-[#fffaf4]/90 leading-relaxed mb-5 text-sm italic">
+          {/* Show testimonials as scrollable cards */}
+          <div className="relative">
+            <div className="overflow-x-auto snap-x snap-mandatory flex gap-6 pb-6 scrollbar-hide" style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
+              {TESTIMONIALS.map((t) => (
+                <div key={t.name} className="snap-center flex-shrink-0 w-full max-w-[900px] mx-auto">
+                  <div className="text-center px-4">
+                    <img
+                      src={img(t.photo)}
+                      alt={t.name}
+                      className="w-20 h-20 rounded-full object-cover mx-auto mb-8"
+                    />
+                    <p className="text-[#fffaf4]/90 leading-relaxed mb-8 text-base">
                       &ldquo;{t.quote}&rdquo;
                     </p>
                     <p className="font-semibold text-[#fffaf4] text-sm">{t.name}</p>
                     <p className="text-[#fffaf4]/50 text-xs mt-1">{t.role}</p>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ─── DIAGONAL DIVIDER ─── */}
-      <div className="relative h-24 bg-[#ece5de]">
+      {/* ─── DIAGONAL DIVIDER: tan → warm white ─── */}
+      <div className="relative h-24 bg-[#fffaf4]">
         <div className="absolute inset-0 bg-[#9c8a78]" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 0%)" }} />
       </div>
 
       {/* ─── YOUTUBE CTA ─── */}
-      <section className="py-20 px-6 bg-[#ece5de]">
+      <section className="py-20 px-6 bg-[#fffaf4]">
         <div className="max-w-[900px] mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#333] mb-2">
+          <h2 className="text-3xl md:text-4xl font-bold text-black mb-2">
             Now on <a href="https://youtube.com/@IvanChocron" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:text-red-700">YouTube</a>
           </h2>
-          <h3 className="text-2xl font-bold text-[#333] mb-6">Youtube: @IvanChocron</h3>
-          <p className="text-lg font-semibold text-[#4b4746] leading-relaxed mb-6">
+          <h3 className="text-lg font-semibold text-[#4b4746] mb-6">Youtube: @IvanChocron</h3>
+          <p className="text-base font-semibold text-[#4b4746] leading-relaxed mb-6">
             Previously exclusively available only through limited private sessions, Iván&apos;s philosophy, methods, and guidance are now available to you online for free.
           </p>
           <blockquote className="mb-8">
@@ -372,7 +356,7 @@ export default async function HomePage({
             href="https://youtube.com/@IvanChocron"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-10 py-4 bg-[#9c8a78] hover:bg-[#8a7968] text-white font-medium transition-colors text-sm tracking-wider rounded-md"
+            className="inline-block px-10 py-4 bg-[#9c8a78] hover:bg-[#8a7968] text-white font-medium transition-colors text-sm tracking-wider"
           >
             Subscribe
           </a>
@@ -380,23 +364,23 @@ export default async function HomePage({
       </section>
 
       {/* ─── RECENT APPEARANCES ─── */}
-      <section id="appearances" className="py-24 px-6 bg-[#ece5de]">
+      <section id="appearances" className="py-24 px-6 bg-[#d9cfc5]">
         <div className="max-w-[1200px] mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#333] mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
             Recent Appearances
           </h2>
-          <h3 className="text-xl text-[#4b4746]/70 mb-12">
+          <h3 className="text-lg text-[#4b4746]/70 mb-12">
             The Science of Psychedelics &amp; Spiritual Medicine Conference
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
-            <img src={img("/images/appearances-psychedelics.png")} alt="Science of Psychedelics conference" className="w-full rounded-lg" />
-            <img src={img("/images/appearances-screen1.png")} alt="Recent appearance" className="w-full rounded-lg" />
-            <img src={img("/images/appearances-screen2.png")} alt="Recent appearance" className="w-full rounded-lg" />
+            <img src={img("/images/appearances-psychedelics.png")} alt="Science of Psychedelics conference" className="w-full" />
+            <img src={img("/images/appearances-screen1.png")} alt="Recent appearance" className="w-full" />
+            <img src={img("/images/appearances-screen2.png")} alt="Recent appearance" className="w-full" />
           </div>
           <div className="text-center">
             <a
               href={`/${lang}/about`}
-              className="inline-block px-10 py-4 bg-[#4b4746] hover:bg-[#3a3635] text-white font-semibold transition-colors tracking-wider uppercase rounded-md"
+              className="inline-block px-10 py-4 bg-[#4b4746] hover:bg-[#3a3635] text-white font-semibold transition-colors tracking-wider uppercase"
             >
               See More Features
             </a>
