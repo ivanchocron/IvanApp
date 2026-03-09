@@ -1,7 +1,9 @@
 import { getDictionary } from "@/i18n/get-dictionary";
 import type { Locale } from "@/i18n/config";
-import Image from "next/image";
 import versionData from "../../../version.json";
+
+const BASE = "/IvanApp";
+const img = (path: string) => `${BASE}${path}`;
 
 const INQUIRY_URL = "https://forms.gle/MLqbYfbZhWQvkNpXA";
 
@@ -96,7 +98,7 @@ export default async function HomePage({
         <div className="max-w-[1500px] mx-auto px-[4vw] flex items-center justify-between py-4">
           <div className="flex items-center gap-3">
             <a href={`/${lang}`}>
-              <Image src="/images/logo-icon.png" alt="Iv\u00e1n Chocr\u00f3n" width={50} height={50} className="h-[50px] w-auto" />
+              <img src={img("/images/logo-icon.png")} alt="Iv&aacute;n Chocr&oacute;n" className="h-[50px] w-auto" />
             </a>
             <span className="text-[10px] text-[#4b4746]/40 font-mono hidden md:inline">
               {versionData.version}
@@ -127,21 +129,17 @@ export default async function HomePage({
         <div className="max-w-[1500px] mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-end">
           {/* Photo — light background so Ivan pops */}
           <div className="relative h-[60vh] md:h-[85vh] bg-[#f0ece6]">
-            <Image
-              src="/images/hero-ivan.png"
-              alt="Iv\u00e1n Chocr\u00f3n"
-              fill
-              className="object-contain object-bottom"
-              priority
+            <img
+              src={img("/images/hero-ivan.png")}
+              alt="Iván Chocrón"
+              className="absolute inset-0 w-full h-full object-contain object-bottom"
             />
           </div>
           {/* Text */}
           <div className="flex flex-col justify-center px-8 md:px-12 py-12 md:py-24">
-            <Image
-              src="/images/logo-horizontal.png"
-              alt="Iv\u00e1n Chocr\u00f3n Logo"
-              width={500}
-              height={100}
+            <img
+              src={img("/images/logo-horizontal.png")}
+              alt="Iván Chocrón Logo"
               className="mb-6 w-[280px] md:w-[500px] h-auto"
             />
             <h1 className="text-2xl md:text-[2.5rem] font-light text-[#4b4746] mb-4 leading-snug">
@@ -171,11 +169,10 @@ export default async function HomePage({
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           {/* Photo */}
           <div className="relative aspect-[3/4] rounded-lg overflow-hidden">
-            <Image
-              src="/images/about-ivan.jpg"
-              alt="Iv\u00e1n Chocr\u00f3n"
-              fill
-              className="object-cover"
+            <img
+              src={img("/images/about-ivan.jpg")}
+              alt="Iván Chocrón"
+              className="absolute inset-0 w-full h-full object-cover"
             />
           </div>
           {/* Text */}
@@ -225,11 +222,10 @@ export default async function HomePage({
         {/* Background image */}
         <div className="relative">
           <div className="absolute inset-0 z-0">
-            <Image
-              src="/images/methodology-ivan.jpg"
+            <img
+              src={img("/images/methodology-ivan.jpg")}
               alt="Methodology"
-              fill
-              className="object-cover"
+              className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-black/60" />
           </div>
@@ -268,7 +264,7 @@ export default async function HomePage({
             ].map((item) => (
               <div key={item.title} className="text-center">
                 <div className="w-24 h-24 mx-auto mb-5">
-                  <Image src={item.icon} alt={item.title} width={96} height={96} className="w-full h-full object-contain" />
+                  <img src={img(item.icon)} alt={item.title} className="w-full h-full object-contain" />
                 </div>
                 <h3 className="text-lg font-semibold text-[#333] mb-3">{item.title}</h3>
                 <p className="text-sm text-[#4b4746]/80 leading-relaxed">{item.desc}</p>
@@ -283,11 +279,10 @@ export default async function HomePage({
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           {/* Photo */}
           <div className="relative aspect-[3/4] rounded-lg overflow-hidden">
-            <Image
-              src="/images/services-ivan.jpg"
-              alt="Iv\u00e1n Chocr\u00f3n Services"
-              fill
-              className="object-cover"
+            <img
+              src={img("/images/services-ivan.jpg")}
+              alt="Iván Chocrón Services"
+              className="absolute inset-0 w-full h-full object-cover"
             />
           </div>
           {/* Services list */}
@@ -369,9 +364,9 @@ export default async function HomePage({
             </a>
           </div>
           <div className="flex justify-center">
-            <Image
-              src="/images/logo-large.png"
-              alt="Iv\u00e1n Chocr\u00f3n"
+            <img
+              src={img("/images/logo-large.png")}
+              alt="Iván Chocrón"
               width={300}
               height={300}
               className="opacity-60"
