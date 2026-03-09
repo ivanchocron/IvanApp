@@ -367,7 +367,7 @@ export default async function HomePage({
           <div className="relative aspect-video bg-black rounded-lg overflow-hidden">
             <iframe
               className="absolute inset-0 w-full h-full"
-              src="https://www.youtube.com/embed?listType=user_uploads&list=IvanChocron"
+              src="https://www.youtube.com/embed/dPly3ltTBso"
               title="Iván Chocrón YouTube"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
