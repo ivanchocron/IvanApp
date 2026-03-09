@@ -1,6 +1,7 @@
 import { getDictionary } from "@/i18n/get-dictionary";
 import type { Locale } from "@/i18n/config";
 import Image from "next/image";
+import versionData from "../../../version.json";
 
 const INQUIRY_URL = "https://forms.gle/MLqbYfbZhWQvkNpXA";
 
@@ -93,9 +94,14 @@ export default async function HomePage({
       {/* ─── NAVIGATION ─── */}
       <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[#9c8a78]/80">
         <div className="max-w-[1500px] mx-auto px-[4vw] flex items-center justify-between py-4">
-          <a href={`/${lang}`}>
-            <Image src="/images/logo-icon.png" alt="Iv\u00e1n Chocr\u00f3n" width={50} height={50} className="h-[50px] w-auto" />
-          </a>
+          <div className="flex items-center gap-3">
+            <a href={`/${lang}`}>
+              <Image src="/images/logo-icon.png" alt="Iv\u00e1n Chocr\u00f3n" width={50} height={50} className="h-[50px] w-auto" />
+            </a>
+            <span className="text-[10px] text-[#4b4746]/40 font-mono hidden md:inline">
+              {versionData.version}
+            </span>
+          </div>
           <nav className="hidden md:flex items-center gap-8">
             {[
               { label: "Home", href: `/${lang}` },

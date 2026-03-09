@@ -7,6 +7,7 @@ import { type Locale, INTRANET_LOCALES } from "@/i18n/config";
 import { LanguageSwitcher } from "./language-switcher";
 import { useAuth } from "@/contexts/auth-context";
 import { useState } from "react";
+import versionData from "../../version.json";
 
 export function Navbar({ dict, lang }: { dict: Dictionary; lang: Locale }) {
   const pathname = usePathname();
@@ -31,9 +32,14 @@ export function Navbar({ dict, lang }: { dict: Dictionary; lang: Locale }) {
   return (
     <nav className="sticky top-0 z-50 border-b border-[#4b4746]/10 bg-[#9c8a78]/80 backdrop-blur-md">
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
-        <Link href={`/${lang}`} className="text-xl font-bold text-[#4b4746]">
-          {dict.metadata.title}
-        </Link>
+        <div className="flex items-center gap-3">
+          <Link href={`/${lang}`} className="text-xl font-bold text-[#4b4746]">
+            {dict.metadata.title}
+          </Link>
+          <span className="text-[10px] text-[#4b4746]/40 font-mono hidden sm:inline">
+            {versionData.version}
+          </span>
+        </div>
 
         {/* Desktop nav */}
         <div className="hidden sm:flex items-center gap-6">
