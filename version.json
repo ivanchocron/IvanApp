@@ -1,9 +1,9 @@
 {
-  "version": "v260309.11 6:13pm",
-  "release": 11,
-  "sha": "9ef732b",
-  "fullSha": "9ef732b340306a075776a18c511ce428dbcf6951",
+  "version": "v260309.12 6:26pm",
+  "release": 12,
+  "sha": "95723e7",
+  "fullSha": "95723e724b17c1e6300dd624988046a64001ffb1",
   "actor": "ivanchocron",
-  "pushedAt": "2026-03-09T23:13:30Z",
-  "commits": [{"sha": "9ef732b", "message": "fix: methodology bg, services layout, youtube embed (#4)", "author": "ivanchocron"}]
+  "pushedAt": "2026-03-09T23:26:06Z",
+  "commits": [{"sha": "95723e7", "message": "fix: deploy methodology bg image, services layout, youtube embed (#5)", "author": "ivanchocron"}]
 }
