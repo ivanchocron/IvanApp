@@ -1,9 +1,9 @@
 {
-  "version": "v260309.03 3:58pm",
-  "release": 3,
-  "sha": "233f8eb",
-  "fullSha": "233f8eb59db03bd06f9cb5552bb765a9c9d6f4a7",
+  "version": "v260309.04 4:29pm",
+  "release": 4,
+  "sha": "bdb40ea",
+  "fullSha": "bdb40ea421170b24878b0fcd2409691178fd6693",
   "actor": "ivanchocron",
-  "pushedAt": "2026-03-09T20:58:58Z",
-  "commits": [{"sha": "233f8eb", "message": "feat: new home page matching ivanchocron.com \u2014 hero, approach, methodology, philosophy, services, testimonials", "author": "Ivan"}]
+  "pushedAt": "2026-03-09T21:29:27Z",
+  "commits": [{"sha": "bdb40ea", "message": "feat: exact replica of ivanchocron.com \u2014 real images, warm brown palette, all 11 testimonials", "author": "Ivan"}]
 }
