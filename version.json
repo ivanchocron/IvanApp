@@ -1,9 +1,9 @@
 {
-  "version": "v260309.06 5:06pm",
-  "release": 6,
-  "sha": "775215f",
-  "fullSha": "775215fb1287b7284293dd48a27e9f1016dcf34d",
+  "version": "v260309.08 5:22pm",
+  "release": 8,
+  "sha": "e2e3431",
+  "fullSha": "e2e343132d1ce8f5ba147976a7b3dd7e7e67eadd",
   "actor": "ivanchocron",
-  "pushedAt": "2026-03-09T22:06:31Z",
-  "commits": [{"sha": "775215f", "message": "fix: hero section \u2014 light bg behind photo, larger logo to match original", "author": "Ivan"}]
+  "pushedAt": "2026-03-09T22:22:25Z",
+  "commits": [{"sha": "e2e3431", "message": "fix: replace Next.js Image with plain img tags to fix basePath issue (#1)", "author": "ivanchocron"}]
 }
