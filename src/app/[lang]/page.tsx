@@ -94,7 +94,7 @@ export default async function HomePage({
       <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[#9c8a78]/80">
         <div className="max-w-[1500px] mx-auto px-[4vw] flex items-center justify-between py-4">
           <a href={`/${lang}`}>
-            <Image src="/IvanApp/images/logo-icon.png" alt="Iv\u00e1n Chocr\u00f3n" width={50} height={50} className="h-[50px] w-auto" />
+            <Image src="/images/logo-icon.png" alt="Iv\u00e1n Chocr\u00f3n" width={50} height={50} className="h-[50px] w-auto" />
           </a>
           <nav className="hidden md:flex items-center gap-8">
             {[
@@ -122,7 +122,7 @@ export default async function HomePage({
           {/* Photo */}
           <div className="relative h-[60vh] md:h-[85vh]">
             <Image
-              src="/IvanApp/images/hero-ivan.png"
+              src="/images/hero-ivan.png"
               alt="Iv\u00e1n Chocr\u00f3n"
               fill
               className="object-contain object-bottom"
@@ -132,7 +132,7 @@ export default async function HomePage({
           {/* Text */}
           <div className="flex flex-col justify-center px-8 md:px-12 py-12 md:py-24">
             <Image
-              src="/IvanApp/images/logo-horizontal.png"
+              src="/images/logo-horizontal.png"
               alt="Iv\u00e1n Chocr\u00f3n Logo"
               width={400}
               height={80}
@@ -166,7 +166,7 @@ export default async function HomePage({
           {/* Photo */}
           <div className="relative aspect-[3/4] rounded-lg overflow-hidden">
             <Image
-              src="/IvanApp/images/about-ivan.jpg"
+              src="/images/about-ivan.jpg"
               alt="Iv\u00e1n Chocr\u00f3n"
               fill
               className="object-cover"
@@ -220,7 +220,7 @@ export default async function HomePage({
         <div className="relative">
           <div className="absolute inset-0 z-0">
             <Image
-              src="/IvanApp/images/methodology-ivan.jpg"
+              src="/images/methodology-ivan.jpg"
               alt="Methodology"
               fill
               className="object-cover"
@@ -255,10 +255,10 @@ export default async function HomePage({
           </h2>
           <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { title: "Science & Spirit", icon: "/IvanApp/images/icon-science-spirit.png", desc: "Science and spirit may seem to be incompatible worldviews, but that is not the case. Connecting these two worlds in a relatable way is essential for a balanced healing process." },
-              { title: "Real Healing is Real", icon: "/IvanApp/images/icon-real-healing.png", desc: "This might sound obvious, but is it? If we truly knew that we could heal, why would we decide to numb our pain? True healing is possible and there are accessible ways to get there." },
-              { title: "Relatability", icon: "/IvanApp/images/icon-relatability.png", desc: "Meeting people where they are at with a rational and grounded approach suitable for the modern western mind is key for everyone to feel that healing work is also meant for them." },
-              { title: "Inner Gift", icon: "/IvanApp/images/icon-inner-gift.png", desc: "Every person has unique gifts, but few are aware of them until they heal their wounds. As people walk the path of healing they begin discovering and embodying their gifts, which brings a great sense of purpose and enthusiasm for life." },
+              { title: "Science & Spirit", icon: "/images/icon-science-spirit.png", desc: "Science and spirit may seem to be incompatible worldviews, but that is not the case. Connecting these two worlds in a relatable way is essential for a balanced healing process." },
+              { title: "Real Healing is Real", icon: "/images/icon-real-healing.png", desc: "This might sound obvious, but is it? If we truly knew that we could heal, why would we decide to numb our pain? True healing is possible and there are accessible ways to get there." },
+              { title: "Relatability", icon: "/images/icon-relatability.png", desc: "Meeting people where they are at with a rational and grounded approach suitable for the modern western mind is key for everyone to feel that healing work is also meant for them." },
+              { title: "Inner Gift", icon: "/images/icon-inner-gift.png", desc: "Every person has unique gifts, but few are aware of them until they heal their wounds. As people walk the path of healing they begin discovering and embodying their gifts, which brings a great sense of purpose and enthusiasm for life." },
             ].map((item) => (
               <div key={item.title} className="text-center">
                 <div className="w-24 h-24 mx-auto mb-5">
@@ -278,7 +278,7 @@ export default async function HomePage({
           {/* Photo */}
           <div className="relative aspect-[3/4] rounded-lg overflow-hidden">
             <Image
-              src="/IvanApp/images/services-ivan.jpg"
+              src="/images/services-ivan.jpg"
               alt="Iv\u00e1n Chocr\u00f3n Services"
               fill
               className="object-cover"
@@ -364,7 +364,7 @@ export default async function HomePage({
           </div>
           <div className="flex justify-center">
             <Image
-              src="/IvanApp/images/logo-large.png"
+              src="/images/logo-large.png"
               alt="Iv\u00e1n Chocr\u00f3n"
               width={300}
               height={300}
