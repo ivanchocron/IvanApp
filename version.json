@@ -1,9 +1,9 @@
 {
-  "version": "v260309.08 5:22pm",
-  "release": 8,
-  "sha": "e2e3431",
-  "fullSha": "e2e343132d1ce8f5ba147976a7b3dd7e7e67eadd",
+  "version": "v260309.09 5:44pm",
+  "release": 9,
+  "sha": "e9f9a9c",
+  "fullSha": "e9f9a9cfbfc3021fd70c6c847f007bd0160f573c",
   "actor": "ivanchocron",
-  "pushedAt": "2026-03-09T22:22:25Z",
-  "commits": [{"sha": "e2e3431", "message": "fix: replace Next.js Image with plain img tags to fix basePath issue (#1)", "author": "ivanchocron"}]
+  "pushedAt": "2026-03-09T22:44:40Z",
+  "commits": [{"sha": "e9f9a9c", "message": "fix: rework home page to match ivanchocron.com exactly (#2)", "author": "ivanchocron"}]
 }
