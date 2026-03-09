@@ -1,9 +1,9 @@
 {
-  "version": "v260309.09 5:44pm",
-  "release": 9,
-  "sha": "e9f9a9c",
-  "fullSha": "e9f9a9cfbfc3021fd70c6c847f007bd0160f573c",
+  "version": "v260309.10 6:07pm",
+  "release": 10,
+  "sha": "b3d954f",
+  "fullSha": "b3d954fc3b96cec09ca0437a40aa4b617787d7af",
   "actor": "ivanchocron",
-  "pushedAt": "2026-03-09T22:44:40Z",
-  "commits": [{"sha": "e9f9a9c", "message": "fix: rework home page to match ivanchocron.com exactly (#2)", "author": "ivanchocron"}]
+  "pushedAt": "2026-03-09T23:07:04Z",
+  "commits": [{"sha": "b3d954f", "message": "fix: match original ivanchocron.com layout and colors (#3)", "author": "ivanchocron"}]
 }
