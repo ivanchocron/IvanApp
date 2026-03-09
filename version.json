@@ -1,9 +1,9 @@
 {
-  "version": "v260309.05 4:42pm",
-  "release": 5,
-  "sha": "1cc31e1",
-  "fullSha": "1cc31e146886328c7bc3ed9eec4ec6b9f4ef79a5",
+  "version": "v260309.06 5:06pm",
+  "release": 6,
+  "sha": "775215f",
+  "fullSha": "775215fb1287b7284293dd48a27e9f1016dcf34d",
   "actor": "ivanchocron",
-  "pushedAt": "2026-03-09T21:42:59Z",
-  "commits": [{"sha": "1cc31e1", "message": "fix: remove double basePath prefix from image paths", "author": "Ivan"}]
+  "pushedAt": "2026-03-09T22:06:31Z",
+  "commits": [{"sha": "775215f", "message": "fix: hero section \u2014 light bg behind photo, larger logo to match original", "author": "Ivan"}]
 }
