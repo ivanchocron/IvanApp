@@ -1,9 +1,9 @@
 {
-  "version": "v260309.10 6:07pm",
-  "release": 10,
-  "sha": "b3d954f",
-  "fullSha": "b3d954fc3b96cec09ca0437a40aa4b617787d7af",
+  "version": "v260309.11 6:13pm",
+  "release": 11,
+  "sha": "9ef732b",
+  "fullSha": "9ef732b340306a075776a18c511ce428dbcf6951",
   "actor": "ivanchocron",
-  "pushedAt": "2026-03-09T23:07:04Z",
-  "commits": [{"sha": "b3d954f", "message": "fix: match original ivanchocron.com layout and colors (#3)", "author": "ivanchocron"}]
+  "pushedAt": "2026-03-09T23:13:30Z",
+  "commits": [{"sha": "9ef732b", "message": "fix: methodology bg, services layout, youtube embed (#4)", "author": "ivanchocron"}]
 }
