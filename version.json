@@ -1,9 +1,9 @@
 {
-  "version": "v260309.12 6:26pm",
-  "release": 12,
-  "sha": "95723e7",
-  "fullSha": "95723e724b17c1e6300dd624988046a64001ffb1",
+  "version": "v260309.13 6:31pm",
+  "release": 13,
+  "sha": "ac39e6c",
+  "fullSha": "ac39e6c06fc4eac6fc70f3b247c30b350cfaba94",
   "actor": "ivanchocron",
-  "pushedAt": "2026-03-09T23:26:06Z",
-  "commits": [{"sha": "95723e7", "message": "fix: deploy methodology bg image, services layout, youtube embed (#5)", "author": "ivanchocron"}]
+  "pushedAt": "2026-03-09T23:31:45Z",
+  "commits": [{"sha": "ac39e6c", "message": "fix: use correct YouTube video ID for embed (#6)", "author": "ivanchocron"}]
 }
