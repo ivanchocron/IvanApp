@@ -1,9 +1,9 @@
 {
-  "version": "v260309.07 5:15pm",
-  "release": 7,
-  "sha": "2e1f381",
-  "fullSha": "2e1f38151e73ce74f005b8649d333aadb0a3f977",
+  "version": "v260309.08 5:22pm",
+  "release": 8,
+  "sha": "e2e3431",
+  "fullSha": "e2e343132d1ce8f5ba147976a7b3dd7e7e67eadd",
   "actor": "ivanchocron",
-  "pushedAt": "2026-03-09T22:15:21Z",
-  "commits": [{"sha": "2e1f381", "message": "feat: add version stamp to top nav on all pages", "author": "Ivan"}]
+  "pushedAt": "2026-03-09T22:22:25Z",
+  "commits": [{"sha": "e2e3431", "message": "fix: replace Next.js Image with plain img tags to fix basePath issue (#1)", "author": "ivanchocron"}]
 }
