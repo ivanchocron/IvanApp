@@ -1,9 +1,9 @@
 {
-  "version": "v260309.04 4:29pm",
-  "release": 4,
-  "sha": "bdb40ea",
-  "fullSha": "bdb40ea421170b24878b0fcd2409691178fd6693",
+  "version": "v260309.05 4:42pm",
+  "release": 5,
+  "sha": "1cc31e1",
+  "fullSha": "1cc31e146886328c7bc3ed9eec4ec6b9f4ef79a5",
   "actor": "ivanchocron",
-  "pushedAt": "2026-03-09T21:29:27Z",
-  "commits": [{"sha": "bdb40ea", "message": "feat: exact replica of ivanchocron.com \u2014 real images, warm brown palette, all 11 testimonials", "author": "Ivan"}]
+  "pushedAt": "2026-03-09T21:42:59Z",
+  "commits": [{"sha": "1cc31e1", "message": "fix: remove double basePath prefix from image paths", "author": "Ivan"}]
 }
