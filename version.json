@@ -1,9 +1,9 @@
 {
-  "version": "v260309.02 3:50pm",
-  "release": 2,
-  "sha": "b15847a",
-  "fullSha": "b15847a99388f77d19393bb7c864d8de2b9a26bb",
+  "version": "v260309.03 3:58pm",
+  "release": 3,
+  "sha": "233f8eb",
+  "fullSha": "233f8eb59db03bd06f9cb5552bb765a9c9d6f4a7",
   "actor": "ivanchocron",
-  "pushedAt": "2026-03-09T20:50:18Z",
-  "commits": [{"sha": "bf7ab11", "message": "feat: add Supabase setup \u2014 core tables, storage buckets, project URL", "author": "Ivan"}, {"sha": "e9d0177", "message": "feat: wire anon key into supabase client", "author": "Ivan"}, {"sha": "b15847a", "message": "fix: add GitHub Pages build+deploy workflow, set basePath", "author": "Ivan"}]
+  "pushedAt": "2026-03-09T20:58:58Z",
+  "commits": [{"sha": "233f8eb", "message": "feat: new home page matching ivanchocron.com \u2014 hero, approach, methodology, philosophy, services, testimonials", "author": "Ivan"}]
 }
