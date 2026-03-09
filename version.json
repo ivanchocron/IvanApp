@@ -1,9 +1,9 @@
 {
-  "version": "v260309.01 1:47pm",
-  "release": 1,
-  "sha": "d427311",
-  "fullSha": "d42731139d28cecc5e3f631da18bd5a097a61c53",
+  "version": "v260309.02 3:50pm",
+  "release": 2,
+  "sha": "b15847a",
+  "fullSha": "b15847a99388f77d19393bb7c864d8de2b9a26bb",
   "actor": "ivanchocron",
-  "pushedAt": "2026-03-09T18:47:41Z",
-  "commits": []
+  "pushedAt": "2026-03-09T20:50:18Z",
+  "commits": [{"sha": "bf7ab11", "message": "feat: add Supabase setup \u2014 core tables, storage buckets, project URL", "author": "Ivan"}, {"sha": "e9d0177", "message": "feat: wire anon key into supabase client", "author": "Ivan"}, {"sha": "b15847a", "message": "fix: add GitHub Pages build+deploy workflow, set basePath", "author": "Ivan"}]
 }
