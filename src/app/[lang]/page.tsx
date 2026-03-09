@@ -119,8 +119,8 @@ export default async function HomePage({
       {/* ─── HERO ─── */}
       <section className="relative min-h-[90vh] flex items-end overflow-hidden bg-[#c4b5a5] pt-20">
         <div className="max-w-[1500px] mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-end">
-          {/* Photo */}
-          <div className="relative h-[60vh] md:h-[85vh]">
+          {/* Photo — light background so Ivan pops */}
+          <div className="relative h-[60vh] md:h-[85vh] bg-[#f0ece6]">
             <Image
               src="/images/hero-ivan.png"
               alt="Iv\u00e1n Chocr\u00f3n"
@@ -134,14 +134,14 @@ export default async function HomePage({
             <Image
               src="/images/logo-horizontal.png"
               alt="Iv\u00e1n Chocr\u00f3n Logo"
-              width={400}
-              height={80}
-              className="mb-6 w-[300px] md:w-[400px] h-auto"
+              width={500}
+              height={100}
+              className="mb-6 w-[280px] md:w-[500px] h-auto"
             />
-            <h1 className="text-3xl md:text-4xl font-light text-[#4b4746] mb-4">
+            <h1 className="text-2xl md:text-[2.5rem] font-light text-[#4b4746] mb-4 leading-snug">
               Speaker &amp; Healing Coach
             </h1>
-            <p className="text-lg text-[#4b4746]/80 leading-relaxed max-w-lg">
+            <p className="text-base md:text-lg text-[#4b4746]/80 leading-relaxed max-w-lg">
               Bridging the gap between science and spirit through a grounded and approachable healing methodology.
             </p>
           </div>
