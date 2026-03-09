@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 
-const geist = Geist({
+const poppins = Poppins({
   subsets: ["latin"],
-  variable: "--font-geist",
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-poppins",
 });
 
 export const metadata: Metadata = {
-  title: "AlpacApps",
-  description: "Community management platform",
+  title: "Iván Chocrón",
+  description: "Speaker & Healing Coach — Bridging the gap between science and spirit",
 };
 
 export default function RootLayout({
@@ -18,11 +19,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={geist.variable}>
-      <head>
-        {/* Add Google Fonts here if your locales need non-Latin scripts */}
-      </head>
-      <body className="min-h-screen flex flex-col antialiased bg-background text-foreground">
+    <html lang="en" className={poppins.variable}>
+      <head />
+      <body className="min-h-screen flex flex-col antialiased">
         {children}
       </body>
     </html>

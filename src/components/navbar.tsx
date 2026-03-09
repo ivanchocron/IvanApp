@@ -29,9 +29,9 @@ export function Navbar({ dict, lang }: { dict: Dictionary; lang: Locale }) {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur-md">
+    <nav className="sticky top-0 z-50 border-b border-[#4b4746]/10 bg-[#9c8a78]/80 backdrop-blur-md">
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
-        <Link href={`/${lang}`} className="text-xl font-bold">
+        <Link href={`/${lang}`} className="text-xl font-bold text-[#4b4746]">
           {dict.metadata.title}
         </Link>
 
@@ -41,8 +41,8 @@ export function Navbar({ dict, lang }: { dict: Dictionary; lang: Locale }) {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium transition-colors hover:text-emerald-700 ${
-                pathname === link.href ? "text-emerald-700" : "text-slate-700"
+              className={`text-sm font-medium transition-colors hover:text-[#333] ${
+                pathname === link.href ? "text-[#333]" : "text-[#4b4746]"
               }`}
             >
               {link.label}
@@ -53,14 +53,14 @@ export function Navbar({ dict, lang }: { dict: Dictionary; lang: Locale }) {
             user ? (
               <Link
                 href={`/${intranetLang}/intranet`}
-                className="text-sm font-medium px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg transition-colors"
+                className="text-sm font-medium px-4 py-2 bg-[#4b4746] hover:bg-[#3a3635] text-white rounded-lg transition-colors"
               >
                 {dict.nav.intranet}
               </Link>
             ) : (
               <Link
                 href={`/${intranetLang}/signin`}
-                className="text-sm font-medium px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg transition-colors"
+                className="text-sm font-medium px-4 py-2 bg-[#4b4746] hover:bg-[#3a3635] text-white rounded-lg transition-colors"
               >
                 {dict.nav.signIn}
               </Link>
@@ -71,7 +71,7 @@ export function Navbar({ dict, lang }: { dict: Dictionary; lang: Locale }) {
         {/* Mobile toggle */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="sm:hidden p-2 text-slate-700"
+          className="sm:hidden p-2 text-[#4b4746]"
           aria-label="Toggle menu"
         >
           <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -86,14 +86,14 @@ export function Navbar({ dict, lang }: { dict: Dictionary; lang: Locale }) {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="sm:hidden border-t border-slate-200 bg-white px-6 py-4 space-y-3">
+        <div className="sm:hidden border-t border-[#4b4746]/10 bg-[#9c8a78] px-6 py-4 space-y-3">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
               className={`block text-sm font-medium ${
-                pathname === link.href ? "text-emerald-700" : "text-slate-700"
+                pathname === link.href ? "text-[#333]" : "text-[#4b4746]"
               }`}
             >
               {link.label}
@@ -108,7 +108,7 @@ export function Navbar({ dict, lang }: { dict: Dictionary; lang: Locale }) {
                 <Link
                   href={`/${intranetLang}/intranet`}
                   onClick={() => setMenuOpen(false)}
-                  className="block text-sm font-medium text-emerald-700"
+                  className="block text-sm font-medium text-[#333]"
                 >
                   {dict.nav.intranet}
                 </Link>
@@ -116,7 +116,7 @@ export function Navbar({ dict, lang }: { dict: Dictionary; lang: Locale }) {
                 <Link
                   href={`/${intranetLang}/signin`}
                   onClick={() => setMenuOpen(false)}
-                  className="block text-sm font-medium text-emerald-700"
+                  className="block text-sm font-medium text-[#333]"
                 >
                   {dict.nav.signIn}
                 </Link>

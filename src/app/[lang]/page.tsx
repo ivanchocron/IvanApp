@@ -1,6 +1,6 @@
 import { getDictionary } from "@/i18n/get-dictionary";
 import type { Locale } from "@/i18n/config";
-import Link from "next/link";
+import Image from "next/image";
 
 const INQUIRY_URL = "https://forms.gle/MLqbYfbZhWQvkNpXA";
 
@@ -10,15 +10,65 @@ const SOCIALS = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/ivanchocron/", icon: "M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" },
   { label: "Facebook", href: "https://facebook.com/ivanchocron", icon: "M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" },
   { label: "TikTok", href: "https://tiktok.com/@IvanChocron", icon: "M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" },
+  { label: "X", href: "https://x.com/IvanChocron", icon: "M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" },
 ];
 
 const TESTIMONIALS = [
-  { name: "Andrew H.", role: "Assistant City Manager, Lt. Colonel (ret.) US Air Force", quote: "His coaching is unlike any I've experienced before. The insights and tools he provides have been transformative." },
-  { name: "Karina Cury", role: "Flight Attendant, 26 years", quote: "During a difficult and overwhelming period of my life, I found solace and guidance that truly changed everything." },
-  { name: "Jennifer Estevez", role: "Founder & CEO, OMvino", quote: "A profound impact on my life as a stressed-out CEO. The clarity and peace I gained were beyond what I expected." },
-  { name: "Devon Anderson", role: "VP Product/AI, Tech Company", quote: "An incredibly powerful experience. The approach is grounded, relatable, and deeply effective." },
-  { name: "Christiane Robbins", role: "Senior Scientific Review Officer, NIH", quote: "As a scientist, I was skeptical at first. The results spoke for themselves in ways I couldn't have predicted." },
-  { name: "Jay Deshpande", role: "Wealth Manager", quote: "A rare gift of creating a sense of welcoming, love, and safety that allows real transformation to happen." },
+  {
+    name: "Andrew H.",
+    role: "Assistant City Manager, Governor\u2019s Military Council, California Space Industry Task Force, Lieutenant Colonel (retired), US Air Force",
+    quote: "I first met Iv\u00e1n at a retreat and many times, subsequently. His coaching is unlike any I\u2019ve experienced before. Instead of prescriptive advice, he approaches relating to people by listening with empathy and compassion, then helping them connect to how they feel. I\u2019m convinced the toughest challenges we all face simply aren\u2019t accessible to analysis; we have to also (and mostly) find alignment with our feelings and act accordingly. As a person in an executive position, I\u2019m used to relying heavily on my thinking function, so it was really remarkable for me to be able to articulate a challenge to Iv\u00e1n and have him cut through confusion and fear, allowing me to gain direct insight that truly helped me make meaningful changes in every aspect of my life. I look forward to working with Iv\u00e1n again and again!",
+  },
+  {
+    name: "Karina Cury",
+    role: "Flight Attendant",
+    quote: "During a difficult and overwhelming period of my life, I found solace and guidance in Iv\u00e1n Chocron. As a Flight Attendant for 26 years, I was struggling with emotional challenges and heavily relied on medication. Ivan played a crucial role in my healing journey, providing a safe space for me to express my fears and concerns. With his compassionate nature, he listened attentively and offered valuable insights that allowed me to see things from a new perspective. Ivan\u2019s coaching style combines empathy and challenge, encouraging me to step out of my comfort zone, confront my fears, and take proactive steps towards personal growth. He empowered me to believe in myself and reminded me that healing is a gradual process. With his support, I developed new coping strategies, built resilience, and regained control over my life. Today, I am joyful and medication-free, thanks to Ivan\u2019s motivation and guidance.",
+  },
+  {
+    name: "Hanja H.",
+    role: "Creative Director",
+    quote: "Iv\u00e1n is a truly unique and compassionate soul. His rapid-fire brain impresses me as he effortlessly connects the dots, helping clients process deep-rooted emotions. What sets him apart is his ability to seamlessly blend in-depth psychology, Western science, and traditional spirituality. As a public speaker, his wisdom flows effortlessly, and he has a remarkable talent for simplifying complex concepts into relatable terms and analogies. Personally attending his coaching sessions and retreats, I\u2019ve witnessed how he guides and heals countless individuals. I wholeheartedly recommend Iv\u00e1n and am immensely grateful to have crossed paths with such an incredible person. Thank you endlessly for your kindness and support.",
+  },
+  {
+    name: "Mauricio J",
+    role: "Engineer \u2014 Alcon Laboratories",
+    quote: "Ivan is not just great with abilities related to his practice. He has large set of skills, academic degrees, multiple languages, technical degrees, book and street smart, an athlete, a champion, a fighter, an inspiration and motivation for many. Ultimately, he really cares for people that he comes across. He made me feel welcome, supported and appreciated when I needed the most. I wish I could spend more time and create a stronger friendship, but due to our different schedules, location and his devotion for his work, I simply appreciate the limited time we interacted and wish him the best because he is making the world a better place.",
+  },
+  {
+    name: "Ekaterina Klyukina",
+    role: "Project Manager",
+    quote: "I visited Ivan\u2019s retreat twice and it really changed my life. I was deeply depressed for years and I started anti-depressants couple months before coming to Ivan\u2019s retreat. After the first experience with Ivan, I was able to stop antidepressants, I got really better. Now, two years later, I really changed my life for the best, I quit smoking, drinking, doing drugs. My marriage is in the better place. I cannot thank Ivan enough. It all won\u2019t be possible without him, without this beautiful safe space that he creates for people to heal. Ivan\u2019s ability to get people together, to listen and understand their darkest moments without judgment and shame make a huge difference in our life. I\u2019m forever grateful.",
+  },
+  {
+    name: "George M",
+    role: "Director of Business Development, EV Charging",
+    quote: "Iv\u00e1n curates amazing opportunities for healing. His experience and open heart provides the most comforting environment as he guides participants through journeys that can be quite challenging. 1-1 processing with Iv\u00e1n is truly remarkable as he is somehow able to relate to any number of different people, succinctly engage and often solve many hard and persistent issues. After each time working with Ivan, it really feels like our whole group is family. I cannot recommend him highly enough. As I direct business development for a bidirectional EV charging company, the lessons learned with Iv\u00e1n help me to feel more comfortable and initiating and advancing dialogue across a wide variety of partners and customers. Truly invaluable all around!",
+  },
+  {
+    name: "Jennifer Estevez",
+    role: "Founder of OMvino, Consciously Planted, Crystals & Smudge Stick, Palate Club",
+    quote: "Iv\u00e1n Chocron had a profound impact on my life as a stressed-out CEO. His ability to bridge science and spirituality gave me hope when I was overwhelmed and on the brink of burnout. Through personalized coaching sessions, Iv\u00e1n guided me towards self-awareness, acceptance, and the release of stress and limiting beliefs. His approach empowered me to take control of my healing, leading to a transformed CEO who has rediscovered balance, fulfillment, and joy. Iv\u00e1n\u2019s teachings have permeated every aspect of my life, allowing me to lead with compassion and purpose. I wholeheartedly recommend Iv\u00e1n Chocron to anyone seeking inner transformation. Trust in him and embark on your journey towards healing \u2014 it will be the most empowering decision you make.",
+  },
+  {
+    name: "Jay Deshpande",
+    role: "Wealth Manager",
+    quote: "Ivan possesses a rare gift of creating a sense of welcoming, love, and safety for everyone he encounters. Meeting him during a wellness retreat in Washington DC, I immediately felt comfortable in his presence, as if we had known each other for years. Ivan\u2019s ability to understand and accept people, regardless of their background or past, is truly remarkable. I have learned invaluable lessons from him, which have helped me navigate and restructure difficulties in my personal life, such as repairing family and relationship dynamics. His advice has grounded me and allowed me to face challenges with a calm mind. In just a short time, I have experienced a profound positive shift in my mood and demeanor. Ivan\u2019s expertise in biochemistry, psychology, and personal wellness shines through as he explains complex topics in an easy-to-understand and compassionate manner. His dedication to self-care enhances his ability to facilitate healing. My overall experience with Ivan has been incredibly therapeutic, and I am excited to continue working with him in the future.",
+  },
+  {
+    name: "Christiane Robbins",
+    role: "Senior Scientific Review Officer, NICHD/NIH",
+    quote: "I am a 55-year-old scientist and mother of two. Overcoming childhood trauma and the unexpected loss of my husband were immense challenges, but nothing prepared me for my son David\u2019s battle with pediatric osteosarcoma. When David eventually passed away, the pain was indescribable. Determined to grieve authentically, I tried various healing modalities before attending Ivan\u2019s retreat in 2020. It was a truly transformative experience, marked by Ivan\u2019s knowledge, care, and professionalism. Despite a large group, he made sure to provide personalized attention to each participant. Through countless conversations with Ivan, I had a major shift in healing. I\u2019ve attended a second retreat and eagerly anticipate future ones. Ivan\u2019s unmatched understanding of psychology and spirituality, coupled with his divine gift for facilitating healing, has been invaluable. I believe David sent Ivan into my life to help me rise from the depths of pain. Aho Ivan!",
+  },
+  {
+    name: "Liana Prieto",
+    role: "Attorney",
+    quote: "Ivan has helped me in countless ways. His ability to simultaneously analyze, empathize, and counsel is unique. After my sessions with Ivan I was able to better understand and tackle the feelings and thoughts that were holding me back in a job and mindset that weren\u2019t healthy, and I was also able to conquer a physical ailment. I cannot recommend Ivan enough.",
+  },
+  {
+    name: "Devon Anderson",
+    role: "VP Product/AI at Tech Company",
+    quote: "I joined Ivan\u2019s retreat at Cielos in November 2022. I can\u2019t express enough what a transformational experience that weekend was for me. I had so many insights and breakthroughs from the sessions we had. Ivan and his team were incredibly supportive and helpful, guiding me through the difficult parts of the sessions and helping me make sense of my feelings. I have done many different healing retreats and modalities and this was by far one of the most impactful experiences. I have recommended Ivan\u2019s retreats and will continue to do so. I plan on attending a retreat again in the near future.",
+  },
 ];
 
 function SocialIcon({ d, label }: { d: string; label: string }) {
@@ -36,140 +86,186 @@ export default async function HomePage({
 }) {
   const { lang: rawLang } = await params;
   const lang = rawLang as Locale;
-  const dict = await getDictionary(lang);
+  await getDictionary(lang);
 
   return (
-    <>
+    <div style={{ fontFamily: "var(--font-poppins), Poppins, sans-serif" }}>
+      {/* ─── NAVIGATION ─── */}
+      <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[#9c8a78]/80">
+        <div className="max-w-[1500px] mx-auto px-[4vw] flex items-center justify-between py-4">
+          <a href={`/${lang}`}>
+            <Image src="/IvanApp/images/logo-icon.png" alt="Iv\u00e1n Chocr\u00f3n" width={50} height={50} className="h-[50px] w-auto" />
+          </a>
+          <nav className="hidden md:flex items-center gap-8">
+            {[
+              { label: "Home", href: `/${lang}` },
+              { label: "About", href: `/${lang}/about` },
+              { label: "Services", href: `/${lang}/services` },
+              { label: "Contact", href: INQUIRY_URL },
+            ].map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="text-sm font-medium text-[#4b4746] hover:text-[#333] transition-colors tracking-wide"
+                {...(link.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+        </div>
+      </header>
+
       {/* ─── HERO ─── */}
-      <section className="relative min-h-[85vh] flex items-center justify-center text-center text-white overflow-hidden bg-[#0f2318]">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0f2318]/80 via-[#0f2318]/60 to-[#0f2318]" />
-        <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "40px 40px" }} />
-        <div className="relative z-10 max-w-3xl mx-auto px-6 py-24">
-          <p className="uppercase tracking-[0.3em] text-emerald-400/80 text-sm mb-6 font-medium">
-            Iv&aacute;n Chocr&oacute;n
-          </p>
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-[1.1]">
-            Speaker &amp;<br />Healing Coach
-          </h1>
-          <p className="text-lg sm:text-xl text-white/70 max-w-xl mx-auto mb-10 leading-relaxed">
-            Bridging the gap between science and spirit through a grounded and approachable healing methodology.
-          </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <a
-              href={INQUIRY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-8 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full font-medium transition-colors text-sm tracking-wide uppercase"
-            >
-              Get In Touch
-            </a>
-            <Link
-              href={`/${lang}/about`}
-              className="inline-block px-8 py-3.5 bg-white/10 hover:bg-white/20 text-white rounded-full font-medium transition-colors text-sm tracking-wide uppercase border border-white/20"
-            >
-              Learn More
-            </Link>
+      <section className="relative min-h-[90vh] flex items-end overflow-hidden bg-[#c4b5a5] pt-20">
+        <div className="max-w-[1500px] mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-end">
+          {/* Photo */}
+          <div className="relative h-[60vh] md:h-[85vh]">
+            <Image
+              src="/IvanApp/images/hero-ivan.png"
+              alt="Iv\u00e1n Chocr\u00f3n"
+              fill
+              className="object-contain object-bottom"
+              priority
+            />
+          </div>
+          {/* Text */}
+          <div className="flex flex-col justify-center px-8 md:px-12 py-12 md:py-24">
+            <Image
+              src="/IvanApp/images/logo-horizontal.png"
+              alt="Iv\u00e1n Chocr\u00f3n Logo"
+              width={400}
+              height={80}
+              className="mb-6 w-[300px] md:w-[400px] h-auto"
+            />
+            <h1 className="text-3xl md:text-4xl font-light text-[#4b4746] mb-4">
+              Speaker &amp; Healing Coach
+            </h1>
+            <p className="text-lg text-[#4b4746]/80 leading-relaxed max-w-lg">
+              Bridging the gap between science and spirit through a grounded and approachable healing methodology.
+            </p>
           </div>
         </div>
       </section>
 
       {/* ─── INTRO ─── */}
-      <section className="py-24 px-6 bg-white">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-8 leading-tight">
-            Enough is enough.<br />
-            It is time to <span className="text-emerald-700">heal</span>.
+      <section className="py-20 px-6 bg-[#9c8a78]">
+        <div className="max-w-[1200px] mx-auto text-center">
+          <h2 className="text-2xl md:text-3xl font-semibold text-[#fffaf4] mb-6 leading-snug">
+            Enough is enough. It is time to heal, shift into consciousness<br className="hidden md:block" /> from unawareness and discover our unique gifts.
           </h2>
-          <p className="text-lg text-slate-600 leading-relaxed mb-6">
-            It is my vision to make grounded, relatable healing accessible to individuals from every walk of life, belief system and background.
+          <p className="text-lg text-[#fffaf4]/80 max-w-2xl mx-auto leading-relaxed">
+            It is my vision to make grounded relatable healing accessible to individuals from every walk of life, belief system and background.
           </p>
-          <p className="text-lg text-slate-600 leading-relaxed mb-10">
-            I&apos;ve been helping people change their lives for over a decade, assisting over <strong className="text-slate-900">10,000+ people</strong> in their process of transformation. My goal is to guide people from feeling discontent to being excited to wake up every day.
-          </p>
-          <blockquote className="border-l-4 border-emerald-600 pl-6 py-2 text-left max-w-xl mx-auto">
-            <p className="text-xl italic text-slate-700 leading-relaxed">
-              &ldquo;Healing work is the most important thing anyone can do for themselves and the world around them.&rdquo;
-            </p>
-          </blockquote>
         </div>
       </section>
 
-      {/* ─── APPROACH ─── */}
-      <section className="py-24 px-6 bg-slate-50">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <p className="uppercase tracking-[0.2em] text-emerald-700 text-sm mb-3 font-medium">My Approach</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">
-              Grounded. Relatable. Transformative.
-            </h2>
+      {/* ─── ABOUT ─── */}
+      <section className="py-20 px-6 bg-[#9c8a78]">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+          {/* Photo */}
+          <div className="relative aspect-[3/4] rounded-lg overflow-hidden">
+            <Image
+              src="/IvanApp/images/about-ivan.jpg"
+              alt="Iv\u00e1n Chocr\u00f3n"
+              fill
+              className="object-cover"
+            />
           </div>
-          <div className="grid gap-8 md:grid-cols-3">
-            {[
-              { title: "Grounded", desc: "I have created my own system of healing, working with proven methods based on science and psychology to help people overcome their blocks." },
-              { title: "Relatable", desc: "Whether you are spiritual, scientific, religious, atheist, a mechanic or a CEO, you will feel seen and understood." },
-              { title: "Bridging Worlds", desc: "I merge the worlds of science and spirit and bring a fresh perspective to make healing simple, fun, effective and available for everybody." },
-            ].map((item) => (
-              <div key={item.title} className="bg-white rounded-2xl p-8 border border-slate-200 hover:shadow-lg transition-shadow">
-                <div className="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center mb-5">
-                  <svg className="w-6 h-6 text-emerald-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-3">{item.title}</h3>
-                <p className="text-slate-500 leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
+          {/* Text */}
+          <div className="text-[#4b4746]">
+            <h2 className="text-3xl font-semibold mb-6">Hi! My name is Iv&aacute;n.</h2>
+            <p className="text-base leading-relaxed mb-5">
+              I&apos;ve been helping people change their lives for over a decade. Whether you need to overcome depression, are curious about what your next steps are in life are or want to heal PTSD or deep trauma from sexual or physical abuse, I am here to support you. I&apos;ve assisted over 10,000+ people in their process of transformation, it&apos;s my goal to guide people from being discontent to being excited to wake up every day.
+            </p>
+            <p className="text-base leading-relaxed mb-5">
+              My approach is <strong>grounded</strong>. I have created my own system of healing, working with proven methods based on science and psychology to help people overcome their blocks.
+            </p>
+            <p className="text-base leading-relaxed mb-5">
+              My approach is <strong>relatable</strong>. Whether you are spiritual, scientific, religious, atheist, a mechanic or a CEO, you will feel seen and understood by me.
+            </p>
+            <p className="text-base leading-relaxed mb-5">
+              I merge the worlds of science and spirit and bring a fresh perspective to make healing simple, fun, effective and available for everybody.
+            </p>
+            <p className="text-base leading-relaxed mb-8">
+              I&apos;m excited to be a part of your healing process, witness your natural gifts bloom and share my own with you.
+            </p>
+            <p className="text-2xl italic font-light text-[#4b4746] mb-8" style={{ fontFamily: "'Dancing Script', cursive" }}>
+              Iv&aacute;n Chocr&oacute;n
+            </p>
+            <a
+              href={INQUIRY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-3.5 bg-[#4b4746] hover:bg-[#3a3635] text-white font-medium transition-colors text-sm tracking-wider uppercase"
+            >
+              Get In Touch
+            </a>
           </div>
+        </div>
+      </section>
+
+      {/* ─── QUOTE ─── */}
+      <section className="py-20 px-6 bg-[#b8d8d0]">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-2xl md:text-3xl font-semibold text-[#4b4746] leading-snug italic">
+            &ldquo;Healing work is the most important thing anyone can do for themselves and the world around them.&rdquo;
+          </p>
         </div>
       </section>
 
       {/* ─── METHODOLOGY ─── */}
-      <section className="py-24 px-6 bg-[#0f2318] text-white">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <p className="uppercase tracking-[0.2em] text-emerald-400/80 text-sm mb-3 font-medium">Methodology</p>
-            <h2 className="text-3xl sm:text-4xl font-bold">Three Pillars of Healing</h2>
+      <section className="relative text-white overflow-hidden">
+        {/* Background image */}
+        <div className="relative">
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/IvanApp/images/methodology-ivan.jpg"
+              alt="Methodology"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-black/60" />
           </div>
-          <div className="grid gap-8 md:grid-cols-3">
-            {[
-              { num: "01", title: "Education", desc: "Through YouTube, podcasts, speaking, and retreats, I build up knowledge about what real healing encompasses \u2014 creating those incredible ah-ha moments of insight and breakthroughs." },
-              { num: "02", title: "Emotional Processing", desc: "Using my knowledge of psychology and a decade of experience working in healing retreats, I help people process and heal their trauma while releasing stuck emotions." },
-              { num: "03", title: "Retreats", desc: "My private retreats fuse philosophies and lessons from leading 500+ healing events. Thousands of people have freed themselves from physical and psychological challenges through these experiences." },
-            ].map((item) => (
-              <div key={item.num} className="border border-white/10 rounded-2xl p-8 hover:border-emerald-500/30 transition-colors">
-                <span className="text-emerald-400 font-mono text-sm mb-4 block">{item.num}</span>
-                <h3 className="text-xl font-semibold mb-4">{item.title}</h3>
-                <p className="text-white/60 leading-relaxed">{item.desc}</p>
+          <div className="relative z-10 py-24 px-6">
+            <div className="max-w-[1200px] mx-auto">
+              <p className="uppercase tracking-[0.2em] text-white/60 text-sm mb-3 font-medium">A Three Part</p>
+              <h2 className="text-4xl md:text-5xl font-bold mb-16">Methodology</h2>
+              <div className="space-y-0">
+                {[
+                  { title: "EDUCATION", desc: "Through YouTube, podcasts, speaking engagements, and retreats, I educate people about what real healing encompasses \u2014 creating those incredible ah-ha moments of insight and breakthroughs that help people understand themselves at a deeper level." },
+                  { title: "EMOTIONAL PROCESSING", desc: "Using my knowledge of psychology and a decade of experience working in healing retreats, I help people process and heal their trauma while releasing stuck emotions in a safe, supported environment." },
+                  { title: "RETREATS", desc: "My private retreats fuse philosophies and lessons from leading 500+ healing events. Thousands of people have freed themselves from physical and psychological challenges through these transformative experiences hosted worldwide." },
+                ].map((item, i) => (
+                  <div key={item.title} className={`border-t border-white/20 py-6 ${i === 2 ? "border-b" : ""}`}>
+                    <h3 className="text-xl font-semibold tracking-wider">{item.title}</h3>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* ─── PHILOSOPHY ─── */}
-      <section className="py-24 px-6 bg-white">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <p className="uppercase tracking-[0.2em] text-emerald-700 text-sm mb-3 font-medium">Pillars of My Philosophy</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">What I Believe</h2>
-          </div>
-          <div className="grid gap-8 sm:grid-cols-2">
+      <section className="py-24 px-6 bg-[#ece5de]">
+        <div className="max-w-[1200px] mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-[#333] mb-16">
+            Pillars of My Philosophy
+          </h2>
+          <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { title: "Science & Spirit", desc: "Science and spirit may seem to be incompatible worldviews, but that is not the case. Connecting these two worlds in a relatable way is essential for a balanced healing process.", icon: "M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" },
-              { title: "Real Healing is Real", desc: "If we truly knew that we could heal, why would we decide to numb our pain? True healing is possible and there are accessible ways to get there.", icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" },
-              { title: "Relatability", desc: "Meeting people where they are at with a rational and grounded approach suitable for the modern western mind is key for everyone to feel that healing work is also meant for them.", icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" },
-              { title: "Inner Gift", desc: "Every person has unique gifts, but few are aware of them until they heal their wounds. As people walk the path of healing they begin discovering and embodying their gifts.", icon: "M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" },
+              { title: "Science & Spirit", icon: "/IvanApp/images/icon-science-spirit.png", desc: "Science and spirit may seem to be incompatible worldviews, but that is not the case. Connecting these two worlds in a relatable way is essential for a balanced healing process." },
+              { title: "Real Healing is Real", icon: "/IvanApp/images/icon-real-healing.png", desc: "This might sound obvious, but is it? If we truly knew that we could heal, why would we decide to numb our pain? True healing is possible and there are accessible ways to get there." },
+              { title: "Relatability", icon: "/IvanApp/images/icon-relatability.png", desc: "Meeting people where they are at with a rational and grounded approach suitable for the modern western mind is key for everyone to feel that healing work is also meant for them." },
+              { title: "Inner Gift", icon: "/IvanApp/images/icon-inner-gift.png", desc: "Every person has unique gifts, but few are aware of them until they heal their wounds. As people walk the path of healing they begin discovering and embodying their gifts, which brings a great sense of purpose and enthusiasm for life." },
             ].map((item) => (
-              <div key={item.title} className="flex gap-5 p-6 rounded-2xl border border-slate-200 hover:shadow-md transition-shadow">
-                <div className="w-12 h-12 shrink-0 rounded-full bg-emerald-50 flex items-center justify-center">
-                  <svg className="w-6 h-6 text-emerald-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
-                  </svg>
+              <div key={item.title} className="text-center">
+                <div className="w-24 h-24 mx-auto mb-5">
+                  <Image src={item.icon} alt={item.title} width={96} height={96} className="w-full h-full object-contain" />
                 </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-slate-900 mb-2">{item.title}</h3>
-                  <p className="text-slate-500 leading-relaxed text-sm">{item.desc}</p>
-                </div>
+                <h3 className="text-lg font-semibold text-[#333] mb-3">{item.title}</h3>
+                <p className="text-sm text-[#4b4746]/80 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -177,57 +273,64 @@ export default async function HomePage({
       </section>
 
       {/* ─── SERVICES ─── */}
-      <section className="py-24 px-6 bg-slate-50">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <p className="uppercase tracking-[0.2em] text-emerald-700 text-sm mb-3 font-medium">Services</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">How I Can Help</h2>
+      <section className="py-24 px-6 bg-[#ece5de]">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+          {/* Photo */}
+          <div className="relative aspect-[3/4] rounded-lg overflow-hidden">
+            <Image
+              src="/IvanApp/images/services-ivan.jpg"
+              alt="Iv\u00e1n Chocr\u00f3n Services"
+              fill
+              className="object-cover"
+            />
           </div>
-          <div className="grid gap-8 sm:grid-cols-2">
-            {[
-              { title: "Public Speaking", desc: "Experience inspirational and educational talks on topics including the healing process, human emotions, science and spirituality, psychology, and living with an open heart.", topics: ["Healing Process", "Science & Spirituality", "Psychology", "Self-Love"] },
-              { title: "Leadership Coaching & Consulting", desc: "From individuals to executives of Fortune 500 companies \u2014 creating conversation and bringing clarity by opening awareness to release communication blocks.", topics: ["Executive Coaching", "Team Connection", "Corporate Retreats"] },
-              { title: "Integration Support", desc: "One-on-one support making sense of healing experiences. Grounded and relatable emotional processing techniques to bring your process to a more peaceful completion.", topics: ["1-on-1 Sessions", "Post-Retreat Integration", "Emotional Processing"] },
-              { title: "Retreats", desc: "Private retreats fusing unique methods of emotional processing. Hosted worldwide in luxury settings with organic vegan cuisine and thoughtful amenities.", topics: ["Private Groups", "Corporate Teams", "Luxury Settings", "Global Locations"] },
-            ].map((svc) => (
-              <div key={svc.title} className="bg-white rounded-2xl border border-slate-200 p-8 hover:shadow-lg transition-shadow flex flex-col">
-                <h3 className="text-xl font-semibold text-slate-900 mb-3">{svc.title}</h3>
-                <p className="text-slate-500 leading-relaxed mb-5 flex-1">{svc.desc}</p>
-                <div className="flex flex-wrap gap-2 mb-5">
-                  {svc.topics.map((t) => (
-                    <span key={t} className="text-xs px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 font-medium">{t}</span>
-                  ))}
+          {/* Services list */}
+          <div>
+            <p className="uppercase tracking-[0.2em] text-[#4b4746]/60 text-sm mb-3 font-medium">Services</p>
+            <div className="space-y-0">
+              {[
+                { title: "PUBLIC SPEAKING", desc: "Experience inspirational and educational talks on topics including the healing process, human emotions, science and spirituality, psychology, self-love, plant-medicine, and neo-shamanism." },
+                { title: "LEADERSHIP COACHING & CONSULTING", desc: "From individuals to executives of Fortune 500 companies \u2014 creating conversation and bringing clarity by opening awareness to release communication blocks and improve team cohesion." },
+                { title: "INTEGRATION SUPPORT", desc: "One-on-one support making sense of healing experiences. Grounded and relatable emotional processing techniques to bring your process to a more peaceful completion." },
+                { title: "RETREATS", desc: "Private retreats fusing unique methods of emotional processing. Hosted worldwide in luxury settings with organic vegan cuisine and thoughtful amenities." },
+              ].map((svc, i) => (
+                <div key={svc.title} className={`border-t border-[#4b4746]/20 py-5 ${i === 3 ? "border-b" : ""}`}>
+                  <h3 className="text-base font-semibold text-[#4b4746] tracking-wider">{svc.title}</h3>
                 </div>
-                <a
-                  href={INQUIRY_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm font-medium text-emerald-700 hover:text-emerald-900 transition-colors uppercase tracking-wide"
-                >
-                  Submit Inquiry &rarr;
-                </a>
-              </div>
-            ))}
+              ))}
+            </div>
+            <div className="mt-8">
+              <p className="text-[#4b4746] mb-4">Interested in working together?</p>
+              <a
+                href={INQUIRY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-8 py-3.5 bg-[#4b4746] hover:bg-[#3a3635] text-white font-medium transition-colors text-sm tracking-wider uppercase"
+              >
+                Get In Touch
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
       {/* ─── TESTIMONIALS ─── */}
-      <section className="py-24 px-6 bg-[#0f2318] text-white">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <p className="uppercase tracking-[0.2em] text-emerald-400/80 text-sm mb-3 font-medium">Testimonials</p>
-            <h2 className="text-3xl sm:text-4xl font-bold">What People Say</h2>
-          </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <section className="py-24 px-6 bg-[#9c8a78] relative overflow-hidden">
+        {/* Decorative diagonal divider at top */}
+        <div className="absolute top-0 left-0 right-0 h-24 bg-[#ece5de]" style={{ clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 100%)" }} />
+        <div className="max-w-[1200px] mx-auto pt-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-[#fffaf4] mb-16">
+            Testimonials
+          </h2>
+          <div className="space-y-8">
             {TESTIMONIALS.map((t) => (
-              <div key={t.name} className="border border-white/10 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
-                <p className="text-white/70 leading-relaxed mb-5 text-sm italic">
+              <div key={t.name} className="bg-[#fffaf4]/10 backdrop-blur-sm rounded-xl p-8 border border-[#fffaf4]/10">
+                <p className="text-[#fffaf4]/90 leading-relaxed mb-5 text-sm italic">
                   &ldquo;{t.quote}&rdquo;
                 </p>
                 <div>
-                  <p className="font-semibold text-sm">{t.name}</p>
-                  <p className="text-white/40 text-xs mt-0.5">{t.role}</p>
+                  <p className="font-semibold text-[#fffaf4] text-sm">{t.name}</p>
+                  <p className="text-[#fffaf4]/50 text-xs mt-1">{t.role}</p>
                 </div>
               </div>
             ))}
@@ -235,43 +338,65 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ─── CTA ─── */}
-      <section className="py-24 px-6 bg-white text-center">
-        <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
-            Interested in working together?
-          </h2>
-          <p className="text-slate-500 mb-10 text-lg">
-            Whether you&apos;re looking for a speaker, coach, integration support, or retreat experience &mdash; I&apos;d love to connect.
-          </p>
-          <a
-            href={INQUIRY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-10 py-4 bg-emerald-700 hover:bg-emerald-800 text-white rounded-full font-medium transition-colors text-sm tracking-wide uppercase"
-          >
-            Get In Touch
-          </a>
+      {/* ─── YOUTUBE CTA ─── */}
+      <section className="py-20 px-6 bg-[#1a1a1a] text-white">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div>
+            <p className="uppercase tracking-[0.2em] text-white/50 text-sm mb-3 font-medium">Now on YouTube</p>
+            <h2 className="text-3xl font-bold mb-4">Youtube: @IvanChocron</h2>
+            <p className="text-white/70 leading-relaxed mb-6">
+              Previously exclusively available only through limited private sessions, Iv&aacute;n&apos;s philosophy, methods, and guidance are now available to you online for free.
+            </p>
+            <blockquote className="border-l-4 border-white/30 pl-5 mb-8">
+              <p className="text-white/80 italic leading-relaxed">
+                &ldquo;After a decade of private events, I&apos;ve decided it&apos;s time to share all I&apos;ve learned with the world. My hope is that by freely passing on the knowledge I hold, millions of people will either begin or move further in their healing journey&rdquo;.
+              </p>
+              <p className="text-white/60 mt-3 italic">Iv&aacute;n</p>
+            </blockquote>
+            <a
+              href="https://youtube.com/@IvanChocron"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-3.5 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-medium transition-colors text-sm tracking-wider uppercase"
+            >
+              Subscribe
+            </a>
+          </div>
+          <div className="flex justify-center">
+            <Image
+              src="/IvanApp/images/logo-large.png"
+              alt="Iv\u00e1n Chocr\u00f3n"
+              width={300}
+              height={300}
+              className="opacity-60"
+            />
+          </div>
         </div>
       </section>
 
-      {/* ─── SOCIAL BAR ─── */}
-      <section className="py-8 px-6 bg-slate-50 border-t border-slate-200">
-        <div className="max-w-5xl mx-auto flex items-center justify-center gap-6">
-          {SOCIALS.map((s) => (
-            <a
-              key={s.label}
-              href={s.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-slate-400 hover:text-emerald-700 transition-colors"
-              aria-label={s.label}
-            >
-              <SocialIcon d={s.icon} label={s.label} />
-            </a>
-          ))}
+      {/* ─── FOOTER ─── */}
+      <footer className="py-12 px-6 bg-[#1a1a1a] border-t border-white/10">
+        <div className="max-w-[1200px] mx-auto">
+          {/* Social links */}
+          <div className="flex items-center justify-center gap-6 mb-8">
+            {SOCIALS.map((s) => (
+              <a
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/40 hover:text-white/80 transition-colors"
+                aria-label={s.label}
+              >
+                <SocialIcon d={s.icon} label={s.label} />
+              </a>
+            ))}
+          </div>
+          <p className="text-center text-white/30 text-xs">
+            &copy;Iv&aacute;n Chocr&oacute;n {new Date().getFullYear()}, All Rights Reserved.
+          </p>
         </div>
-      </section>
-    </>
+      </footer>
+    </div>
   );
 }
