@@ -1,9 +1,9 @@
 {
-  "version": "v260309.13 6:31pm",
-  "release": 13,
-  "sha": "ac39e6c",
-  "fullSha": "ac39e6c06fc4eac6fc70f3b247c30b350cfaba94",
+  "version": "v260310.01 7:05pm",
+  "release": 1,
+  "sha": "04d6996",
+  "fullSha": "04d6996f4ba59dcf9b636718f90329aeb5dfe0eb",
   "actor": "ivanchocron",
-  "pushedAt": "2026-03-09T23:31:45Z",
-  "commits": [{"sha": "ac39e6c", "message": "fix: use correct YouTube video ID for embed (#6)", "author": "ivanchocron"}]
+  "pushedAt": "2026-03-10T00:05:42Z",
+  "commits": [{"sha": "04d6996", "message": "fix: pixel-perfect hero, philosophy icons, testimonial photos (#7)", "author": "ivanchocron"}]
 }
