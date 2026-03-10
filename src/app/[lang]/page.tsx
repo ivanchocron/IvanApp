@@ -82,25 +82,54 @@ export default async function HomePage({
       </header>
 
       {/* ─── HERO ─── */}
-      <section className="relative min-h-[90vh] flex items-end overflow-hidden bg-[#d9cfc5]">
-        <div className="max-w-[1200px] mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-end">
-          <div className="relative h-[60vh] md:h-[85vh]">
+      <section className="relative overflow-hidden bg-[#d9cfc5]">
+        {/* Desktop: full-width background image with overlaid text */}
+        <div className="hidden md:block relative w-full" style={{ aspectRatio: "1172 / 710" }}>
+          <img
+            src={img("/images/hero-ivan.png")}
+            alt="Iván Chocrón"
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ objectPosition: "30.83% 25.60%" }}
+          />
+          <div className="absolute inset-0">
+            <div className="h-full w-full relative">
+              <div className="absolute" style={{ left: "35%", top: "23%", width: "55%", paddingRight: "4%" }}>
+                <img
+                  src={img("/images/logo-horizontal.png")}
+                  alt="Iván Chocrón Logo"
+                  className="mb-4 h-auto"
+                  style={{ width: "53%" }}
+                />
+                <p className="font-light text-[#4b4746] leading-snug mb-1" style={{ fontSize: "clamp(1.5rem, 3.91vw, 2.86rem)" }}>
+                  Speaker &amp; Healing Coach
+                </p>
+                <h2 className="text-black leading-snug" style={{ fontSize: "clamp(1.2rem, 2.78vw, 2.03rem)", maxWidth: "53%" }}>
+                  Bridging the gap between science and spirit through a grounded and approachable healing methodology.
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* Mobile: stacked layout */}
+        <div className="md:hidden">
+          <div className="relative h-[60vh]">
             <img
               src={img("/images/hero-ivan.png")}
               alt="Iván Chocrón"
-              className="absolute inset-0 w-full h-full object-contain object-bottom"
+              className="absolute inset-0 w-full h-full object-cover"
+              style={{ objectPosition: "25% 15%" }}
             />
           </div>
-          <div className="flex flex-col justify-center px-8 md:px-12 py-12 md:py-24">
+          <div className="px-6 py-10">
             <img
               src={img("/images/logo-horizontal.png")}
               alt="Iván Chocrón Logo"
-              className="mb-6 w-[280px] md:w-[420px] h-auto"
+              className="mb-4 w-[280px] h-auto"
             />
-            <h1 className="text-2xl md:text-[2rem] font-light text-[#4b4746] mb-4 leading-snug">
+            <p className="text-2xl font-light text-[#4b4746] leading-snug mb-2">
               Speaker &amp; Healing Coach
-            </h1>
-            <p className="text-base md:text-lg text-[#4b4746]/80 leading-relaxed max-w-lg">
+            </p>
+            <p className="text-base text-[#4b4746]/80 leading-relaxed">
               Bridging the gap between science and spirit through a grounded and approachable healing methodology.
             </p>
           </div>
@@ -141,43 +170,45 @@ export default async function HomePage({
       {/* ─── QUOTE + APPROACH ─── */}
       <section className="bg-[#9c8a78]">
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2">
-          <div className="relative min-h-[500px]">
+          <div className="relative" style={{ minHeight: "900px" }}>
             <img
               src={img("/images/ivan-meditating.jpg")}
               alt="Iván meditating"
               className="absolute inset-0 w-full h-full object-cover"
             />
-            {/* Quote overlay on the photo */}
-            <div className="absolute top-0 right-0 w-full md:w-auto bg-[#b8d8d0] p-10 md:p-12" style={{ maxWidth: "420px" }}>
+          </div>
+          <div className="text-[#4b4746]">
+            {/* Quote block with teal background */}
+            <div className="bg-[#b8d8d0] p-10 md:p-12">
               <p className="text-xl md:text-2xl font-bold text-[#4b4746] leading-snug">
                 &ldquo;Healing work is the most important thing anyone can do for themselves and the world around them.&rdquo;
               </p>
             </div>
-          </div>
-          <div className="px-8 md:px-12 py-12 text-[#4b4746]">
-            <p className="text-base leading-relaxed mb-5">
-              My approach is <strong>grounded</strong>. I have created my own system of healing, working with proven methods based on science and psychology to help people overcome their blocks.
-            </p>
-            <p className="text-base leading-relaxed mb-5">
-              My approach is <strong>relatable</strong>. Whether you are spiritual, scientific, religious, atheist, a mechanic or a CEO, you will feel seen and understood by me.
-            </p>
-            <p className="text-base leading-relaxed mb-5">
-              I merge the worlds of science and spirit and bring a fresh perspective to make healing simple, fun, effective and available for everybody.
-            </p>
-            <p className="text-base leading-relaxed mb-8">
-              I&apos;m excited to be a part of your healing process, witness your natural gifts bloom and share my own with you.
-            </p>
-            <p className="text-2xl italic font-light text-[#4b4746] mb-8" style={{ fontFamily: "'Dancing Script', cursive" }}>
-              Iván Chocrón
-            </p>
-            <a
-              href={INQUIRY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-10 py-4 bg-[#4b4746] hover:bg-[#3a3635] text-white font-medium transition-colors text-sm tracking-wider"
-            >
-              Get In Touch
-            </a>
+            <div className="px-8 md:px-12 py-8">
+              <p className="text-base leading-relaxed mb-5">
+                My approach is <strong>grounded</strong>. I have created my own system of healing, working with proven methods based on science and psychology to help people overcome their blocks.
+              </p>
+              <p className="text-base leading-relaxed mb-5">
+                My approach is <strong>relatable</strong>. Whether you are spiritual, scientific, religious, atheist, a mechanic or a CEO, you will feel seen and understood by me.
+              </p>
+              <p className="text-base leading-relaxed mb-5">
+                I merge the worlds of science and spirit and bring a fresh perspective to make healing simple, fun, effective and available for everybody.
+              </p>
+              <p className="text-base leading-relaxed mb-8">
+                I&apos;m excited to be a part of your healing process, witness your natural gifts bloom and share my own with you.
+              </p>
+              <p className="text-2xl italic font-light text-[#4b4746] mb-8" style={{ fontFamily: "'Dancing Script', cursive" }}>
+                Iván Chocrón
+              </p>
+              <a
+                href={INQUIRY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-10 py-4 bg-[#4b4746] hover:bg-[#3a3635] text-white font-medium transition-colors text-sm tracking-wider"
+              >
+                Get In Touch
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -239,8 +270,8 @@ export default async function HomePage({
               { title: "Inner Gift", icon: "/images/icon-inner-gift.png", desc: "Every person has unique gifts, but few are aware of them until they heal their wounds. As people walk the path of healing they begin discovering and embodying their gifts, which brings a great sense of purpose and enthusiasm for life." },
             ].map((item) => (
               <div key={item.title} className="text-center">
-                <div className="w-20 h-20 mx-auto mb-5">
-                  <img src={img(item.icon)} alt={item.title} className="w-full h-full object-contain" />
+                <div className="h-[127px] mx-auto mb-5 flex items-center justify-center">
+                  <img src={img(item.icon)} alt={item.title} className="h-full w-auto object-contain" />
                 </div>
                 <h3 className="text-xl font-bold text-black mb-3">{item.title}</h3>
                 <p className="text-sm text-[#4b4746]/80 leading-relaxed">{item.desc}</p>
@@ -326,7 +357,7 @@ export default async function HomePage({
                     <img
                       src={img(t.photo)}
                       alt={t.name}
-                      className="w-20 h-20 rounded-full object-cover mx-auto mb-8"
+                      className="w-[200px] h-[200px] md:w-[280px] md:h-[280px] rounded-full object-cover mx-auto mb-8"
                     />
                     <p className="text-[#fffaf4]/90 leading-relaxed mb-8 text-base">
                       &ldquo;{t.quote}&rdquo;
