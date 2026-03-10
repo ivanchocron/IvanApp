@@ -448,7 +448,7 @@ export default async function HomePage({
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white/50 hover:text-white hover:border-white/60 transition-colors"
+                    className="w-12 h-12 rounded-full border border-[#9c8a78] flex items-center justify-center text-[#9c8a78] hover:text-[#c4b5a5] hover:border-[#c4b5a5] transition-colors"
                     aria-label={s.label}
                   >
                     <SocialIcon d={s.icon} label={s.label} />
@@ -498,6 +498,9 @@ export default async function HomePage({
           <div className="mt-12 pt-8 border-t border-white/10">
             <p className="text-white/40 text-xs">
               &copy;Iván Chocrón {new Date().getFullYear()}, All Rights Reserved.
+            </p>
+            <p className="text-white/40 text-xs mt-2">
+              Credits: <a href="https://www.deusmarca.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-white/60">DEŪS MARCA</a> + <a href="https://crystalsandsmudgesticks.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-white/60">Crystals &amp; Smudge Sticks</a>
             </p>
           </div>
         </div>
