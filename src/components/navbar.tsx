@@ -18,7 +18,12 @@ export function Navbar({ dict, lang }: { dict: Dictionary; lang: Locale }) {
   const intranetLang = INTRANET_LOCALES.includes(lang) ? lang : "en";
 
   // Hide public navbar on intranet pages (intranet has its own header)
+  // Hide on homepage (homepage has its own custom header in page.tsx)
   if (pathname.includes("/intranet")) {
+    return null;
+  }
+  const isHomepage = pathname === `/${lang}` || pathname === `/${lang}/`;
+  if (isHomepage) {
     return null;
   }
 

@@ -1,8 +1,20 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import type { Dictionary } from "@/i18n/types";
-import { getVersion } from "@/lib/version";
+import versionData from "../../version.json";
 
 export function Footer({ dict }: { dict: Dictionary }) {
-  const version = getVersion();
+  const pathname = usePathname();
+  const version = versionData.version || "dev";
+
+  // Hide on homepage (homepage has its own custom footer in page.tsx)
+  const lang = pathname.split("/")[1] || "en";
+  const isHomepage = pathname === `/${lang}` || pathname === `/${lang}/`;
+  if (isHomepage) {
+    return null;
+  }
+
   return (
     <footer className="border-t border-slate-200 py-8 px-6">
       <div className="max-w-6xl mx-auto text-center text-sm text-slate-500">
