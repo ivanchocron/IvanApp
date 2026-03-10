@@ -1,9 +1,9 @@
 {
-  "version": "v260310.04 11:03am",
-  "release": 4,
-  "sha": "ce32219",
-  "fullSha": "ce3221999681ffe0b6492f42ef47069ad9ec7bd7",
+  "version": "v260310.05 11:07am",
+  "release": 5,
+  "sha": "5d3f9c2",
+  "fullSha": "5d3f9c26804a6b091b9ed0ea226dbbc98cb652cb",
   "actor": "ivanchocron",
-  "pushedAt": "2026-03-10T16:03:37Z",
-  "commits": [{"sha": "ce32219", "message": "fix: footer social icons style and credits line to match original (#10)", "author": "ivanchocron"}]
+  "pushedAt": "2026-03-10T16:07:40Z",
+  "commits": [{"sha": "5d3f9c2", "message": "fix: social icons filled background to match original (#11)", "author": "ivanchocron"}]
 }
