@@ -56,9 +56,7 @@ export default async function HomePage({
             <a href={`/${lang}`}>
               <img src={img("/images/logo-icon.png")} alt="Iván Chocrón" className="h-[72px] w-auto" />
             </a>
-            <span className="text-[10px] text-[#4b4746]/40 font-mono hidden md:inline">
-              {versionData.version}
-            </span>
+{/* version hidden in production */}
           </div>
           <nav className="hidden md:flex items-center gap-8">
             {[
