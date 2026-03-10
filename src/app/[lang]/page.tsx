@@ -448,7 +448,7 @@ export default async function HomePage({
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 rounded-full border border-[#9c8a78] flex items-center justify-center text-[#9c8a78] hover:text-[#c4b5a5] hover:border-[#c4b5a5] transition-colors"
+                    className="w-12 h-12 rounded-full bg-[#9c8a78] flex items-center justify-center text-white/80 hover:bg-[#8a7968] transition-colors"
                     aria-label={s.label}
                   >
                     <SocialIcon d={s.icon} label={s.label} />
