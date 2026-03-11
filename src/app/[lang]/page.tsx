@@ -3,6 +3,7 @@ import type { Locale } from "@/i18n/config";
 import versionData from "../../../version.json";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 import MobileNav from "@/components/MobileNav";
+import StickyHeader from "@/components/StickyHeader";
 
 const BASE = "/IvanApp";
 const img = (path: string) => `${BASE}${path}`;
@@ -52,7 +53,7 @@ export default async function HomePage({
   return (
     <div style={{ fontFamily: "var(--font-poppins), Poppins, sans-serif" }}>
       {/* ─── NAVIGATION ─── */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#9c8a78]">
+      <StickyHeader>
         <div className="max-w-[1298px] mx-auto flex items-center justify-between h-[100px] md:h-[114px] px-[30px] md:px-[57px]">
           <a href={`/${lang}`}>
             <img src={img("/images/logo-icon.png")} alt="Iván Chocrón" className="w-[39px] h-[39px] md:w-[72px] md:h-[71px]" />
@@ -125,7 +126,7 @@ export default async function HomePage({
             </a>
           </nav>
         </div>
-      </header>
+      </StickyHeader>
 
       {/* ─── SECTION 0: HERO ─── */}
       <section className="relative overflow-hidden bg-[#9c8a78]">
@@ -268,8 +269,8 @@ export default async function HomePage({
                   href={INQUIRY_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center bg-[#4b4746] hover:bg-[#3a3635] text-white font-medium transition-colors rounded-[6.4px]"
-                  style={{ fontSize: "16.94px", padding: "0 24px", height: "50px" }}
+                  className="inline-block bg-[#4b4746] hover:bg-[#3a3635] text-white font-medium transition-colors rounded-[6.4px]"
+                  style={{ fontSize: "17.37px", padding: "0 24px", lineHeight: "67px" }}
                 >
                   Get In Touch
                 </a>
@@ -357,8 +358,8 @@ export default async function HomePage({
           <div className="text-center mt-14">
             <a
               href={`/${lang}/about`}
-              className="inline-flex items-center bg-[#9aaaaf] hover:bg-[#8a9a9f] text-[#fffaf4] font-medium transition-colors rounded-[6.4px]"
-              style={{ fontSize: "16.94px", padding: "28.8px 24px" }}
+              className="inline-block bg-[#9aaaaf] hover:bg-[#8a9a9f] text-[#fffaf4] font-medium transition-colors rounded-[6.4px]"
+              style={{ fontSize: "17.37px", padding: "28.8px 24px" }}
             >
               Explore my Philosophy
             </a>
@@ -398,8 +399,8 @@ export default async function HomePage({
                 href={INQUIRY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center bg-[#4b4746] hover:bg-[#3a3635] text-white font-medium transition-colors rounded-[6.4px]"
-                style={{ fontSize: "16.94px", padding: "0 24px", height: "50px" }}
+                className="inline-block bg-[#4b4746] hover:bg-[#3a3635] text-white font-medium transition-colors rounded-[6.4px]"
+                style={{ fontSize: "17.37px", padding: "0 24px", lineHeight: "67px" }}
               >
                 Get In Touch
               </a>
@@ -460,8 +461,8 @@ export default async function HomePage({
               href="https://youtube.com/@IvanChocron?sub_confirmation=1"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center bg-[#9aaaaf] hover:bg-[#8a9a9f] text-[#fffaf4] font-medium transition-colors rounded-[6.4px] mb-6"
-              style={{ fontSize: "16.94px", padding: "0 24px", height: "50px" }}
+              className="inline-block bg-[#9aaaaf] hover:bg-[#8a9a9f] text-[#fffaf4] font-medium transition-colors rounded-[6.4px] mb-6"
+              style={{ fontSize: "17.37px", padding: "0 24px", lineHeight: "67px" }}
             >
               SUBSCRIBE
             </a>
@@ -490,28 +491,53 @@ export default async function HomePage({
       {/* ─── SECTION 7: RECENT APPEARANCES ─── */}
       <section id="appearances" className="py-24 px-6 bg-[#d9cfc5]">
         <div className="max-w-[1189px] mx-auto">
-          <h2 className="font-medium text-[#4b4746] text-center mb-4" style={{ fontSize: "clamp(28px, 3.18vw, 45.8px)" }}>
-            Recent Appearances
-          </h2>
-          <p className="font-light text-[#4b4746] mb-4" style={{ fontSize: "15.66px", lineHeight: "29.28px" }}>
-            Go deeper &amp; learn more by listening to Iv&aacute;n&apos;s interviews with trusted leaders in the health &amp; wellness space.
-          </p>
-          <h3 className="font-medium text-[#4b4746] mb-12" style={{ fontSize: "clamp(18px, 1.79vw, 25.76px)", lineHeight: "1.43" }}>
-            The Science of Psychedelics &amp; Spiritual Medicine Conference
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
-            <img src={img("/images/appearances-psychedelics.png")} alt="Science of Psychedelics conference" className="w-full" />
-            <img src={img("/images/appearances-screen1.png")} alt="Recent appearance" className="w-full" />
-            <img src={img("/images/appearances-screen2.png")} alt="Recent appearance" className="w-full" />
+          {/* Top row: Video left, Conference info right */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+            {/* Video embed */}
+            <div className="relative aspect-video bg-black overflow-hidden">
+              <iframe
+                className="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/dPly3ltTBso"
+                title="The Science of Psychedelics &amp; Spiritual Medicine Conference"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+            {/* Conference details */}
+            <div>
+              <img src={img("/images/appearances-psychedelics.png")} alt="Science of Psychedelics" className="w-[280px] mb-6" />
+              <h3 className="font-medium text-[#4b4746] mb-4" style={{ fontSize: "clamp(18px, 1.79vw, 25.76px)", lineHeight: "1.43" }}>
+                The Science of Psychedelics &amp; Spiritual Medicine Conference
+              </h3>
+              <p className="font-bold text-[#4b4746] mb-1" style={{ fontSize: "15.66px" }}>
+                TOPIC: <span className="font-light">How mescaline-containing plants heal your emotional body through the opening of the heart.</span>
+              </p>
+              <p className="font-bold text-[#4b4746] mb-1" style={{ fontSize: "15.66px" }}>
+                DATE: <span className="font-light">April 28th - 30th, 2023 | Phoenix AZ</span>
+              </p>
+              <p className="font-bold text-[#4b4746] mb-1" style={{ fontSize: "15.66px" }}>
+                WEB: <a href="https://www.thescienceofpsychedelics.com" target="_blank" rel="noopener noreferrer" className="font-light underline hover:text-[#333]">www.thescienceofpsychedelics.com</a>
+              </p>
+            </div>
           </div>
-          <div className="text-center">
-            <a
-              href={`/${lang}/about`}
-              className="inline-flex items-center bg-[#4b4746] hover:bg-[#3a3635] text-white font-medium transition-colors rounded-[6.4px]"
-              style={{ fontSize: "16.94px", padding: "0 24px", height: "50px" }}
-            >
-              See More Features
-            </a>
+          {/* Bottom row: Podcast images left, CTA right */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="flex gap-6">
+              <img src={img("/images/appearances-screen1.png")} alt="Mastering Overwhelm podcast" className="w-1/2" />
+              <img src={img("/images/appearances-screen2.png")} alt="Listen Hunnay podcast" className="w-1/2" />
+            </div>
+            <div>
+              <p className="font-medium text-[#4b4746] mb-6" style={{ fontSize: "15.66px", lineHeight: "29.28px" }}>
+                Go deeper &amp; learn more by listening to Iv&aacute;n&apos;s interviews.
+              </p>
+              <a
+                href={`/${lang}/about`}
+                className="inline-block bg-[#4b4746] hover:bg-[#3a3635] text-white font-medium transition-colors rounded-[6.4px] uppercase"
+                style={{ fontSize: "17.37px", padding: "0 24px", lineHeight: "67px" }}
+              >
+                See More Features
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -535,7 +561,7 @@ export default async function HomePage({
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 rounded-full flex items-center justify-center text-[#9c8a78] hover:text-[#b8a694] transition-colors"
+                    className="w-12 h-12 rounded-full flex items-center justify-center bg-[#9c8a78]/20 text-[#9c8a78] hover:text-[#b8a694] transition-colors"
                     aria-label={s.label}
                   >
                     <SocialIcon d={s.icon} label={s.label} />
