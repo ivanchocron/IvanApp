@@ -187,7 +187,7 @@ export default async function HomePage({
         {/* Block A: Intro Heading */}
         <div className="px-6 pt-20">
           <div className="max-w-[1189px] mx-auto">
-            <h3 className="font-medium text-[#4b4746]" style={{ fontSize: "35.87px", lineHeight: "49.94px" }}>
+            <h3 className="font-medium text-[#4b4746]" style={{ fontSize: "clamp(24px, 2.49vw, 35.87px)", lineHeight: "1.39" }}>
               Enough is enough. It is time to heal, shift into consciousness from unawareness and discover our unique gifts.
             </h3>
           </div>
@@ -196,7 +196,7 @@ export default async function HomePage({
         {/* Block B: Vision Statement */}
         <div className="px-6 pt-10">
           <div className="max-w-[1189px] mx-auto">
-            <h4 className="font-medium text-[#4b4746]" style={{ fontSize: "25.76px", lineHeight: "36.76px" }}>
+            <h4 className="font-medium text-[#4b4746]" style={{ fontSize: "clamp(18px, 1.79vw, 25.76px)", lineHeight: "1.43" }}>
               It is my vision to make grounded relatable healing accessible to individuals from every walk of life, belief system and background.
             </h4>
           </div>
@@ -206,7 +206,7 @@ export default async function HomePage({
         <div className="px-6 pt-16">
           <div className="max-w-[1189px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
             <div className="text-[#4b4746]">
-              <p className="font-bold mb-6" style={{ fontSize: "15.66px", lineHeight: "29.28px" }}>
+              <p className="font-light mb-6" style={{ fontSize: "15.66px", lineHeight: "29.28px" }}>
                 Hi! My name is Iv&aacute;n.
               </p>
               <p className="font-light leading-relaxed" style={{ fontSize: "15.66px", lineHeight: "29.28px" }}>
@@ -238,8 +238,8 @@ export default async function HomePage({
             {/* RIGHT: quote block + approach text + signature + button */}
             <div className="text-[#4b4746]">
               {/* Teal quote block — bg #9AAAAF */}
-              <div style={{ backgroundColor: "#9AAAAF", padding: "35.33px" }}>
-                <h3 className="font-medium text-[#4b4746]" style={{ fontSize: "35.87px", lineHeight: "49.94px" }}>
+              <div style={{ backgroundColor: "#9AAAAF", padding: "24px" }}>
+                <h3 className="font-medium text-[#4b4746]" style={{ fontSize: "clamp(24px, 2.49vw, 35.87px)", lineHeight: "1.39" }}>
                   &ldquo;Healing work is the most important thing anyone can do for themselves and the world around them.&rdquo;
                 </h3>
               </div>
@@ -268,8 +268,8 @@ export default async function HomePage({
                   href={INQUIRY_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block bg-[#4b4746] hover:bg-[#3a3635] text-white font-medium transition-colors rounded-[6.4px]"
-                  style={{ fontSize: "17.37px", padding: "0 24px", lineHeight: "67px" }}
+                  className="inline-flex items-center bg-[#4b4746] hover:bg-[#3a3635] text-white font-medium transition-colors rounded-[6.4px]"
+                  style={{ fontSize: "16.94px", padding: "0 24px", height: "50px" }}
                 >
                   Get In Touch
                 </a>
@@ -331,7 +331,7 @@ export default async function HomePage({
       {/* ─── SECTION 3: PHILOSOPHY ─── */}
       <section id="philosophy" className="py-24 px-6 bg-[#fffaf4]">
         <div className="max-w-[1189px] mx-auto">
-          <h2 className="font-medium text-center text-black mb-16" style={{ fontSize: "45.8px" }}>
+          <h2 className="font-medium text-center text-black mb-16" style={{ fontSize: "clamp(28px, 3.18vw, 45.8px)" }}>
             Pillars of My Philosophy
           </h2>
           <div className="grid gap-12 grid-cols-1 sm:grid-cols-2">
@@ -345,7 +345,7 @@ export default async function HomePage({
                 <div className="h-[127px] mx-auto mb-5 flex items-center justify-center">
                   <img src={img(item.icon)} alt={item.title} className="h-full w-auto object-contain" />
                 </div>
-                <h3 className="font-medium text-black mb-3" style={{ fontSize: "35.87px", lineHeight: "49.94px" }}>
+                <h3 className="font-medium text-black mb-3" style={{ fontSize: "clamp(24px, 2.49vw, 35.87px)", lineHeight: "1.39" }}>
                   {item.title}
                 </h3>
                 <p className="font-light text-black leading-relaxed" style={{ fontSize: "15.66px", lineHeight: "29.28px" }}>
@@ -357,8 +357,8 @@ export default async function HomePage({
           <div className="text-center mt-14">
             <a
               href={`/${lang}/about`}
-              className="inline-block bg-[#9aaaaf] hover:bg-[#8a9a9f] text-white font-medium transition-colors rounded-[6.4px]"
-              style={{ fontSize: "17.37px", padding: "0 24px", lineHeight: "67px" }}
+              className="inline-flex items-center bg-[#9aaaaf] hover:bg-[#8a9a9f] text-[#fffaf4] font-medium transition-colors rounded-[6.4px]"
+              style={{ fontSize: "16.94px", padding: "28.8px 24px" }}
             >
               Explore my Philosophy
             </a>
@@ -375,7 +375,7 @@ export default async function HomePage({
       <section className="py-24 px-6 bg-[#d9cfc5]">
         <div className="max-w-[1189px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <div>
-            <h2 className="font-medium text-[#4b4746] mb-6" style={{ fontSize: "45.8px" }}>Services</h2>
+            <h2 className="font-medium text-[#4b4746] mb-6" style={{ fontSize: "clamp(28px, 3.18vw, 45.8px)" }}>Services</h2>
             <div className="space-y-0">
               {[
                 { title: "PUBLIC SPEAKING", desc: "Experience inspirational and educational talks on topics including the healing process, human emotions, science and spirituality, psychology, self-love, plant-medicine, and neo-shamanism." },
@@ -398,10 +398,10 @@ export default async function HomePage({
                 href={INQUIRY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-[#4b4746] hover:bg-[#3a3635] text-white font-medium transition-colors rounded-[6.4px] uppercase"
-                style={{ fontSize: "17.37px", padding: "0 24px", lineHeight: "67px" }}
+                className="inline-flex items-center bg-[#4b4746] hover:bg-[#3a3635] text-white font-medium transition-colors rounded-[6.4px]"
+                style={{ fontSize: "16.94px", padding: "0 24px", height: "50px" }}
               >
-                GET IN TOUCH
+                Get In Touch
               </a>
             </div>
           </div>
@@ -423,7 +423,7 @@ export default async function HomePage({
       {/* ─── SECTION 5: TESTIMONIALS (carousel) ─── */}
       <section className="py-24 px-6 bg-[#9c8a78]">
         <div className="max-w-[1000px] mx-auto">
-          <h2 className="font-medium text-center text-[#fffaf4] mb-16" style={{ fontSize: "45.8px" }}>
+          <h2 className="font-medium text-center text-[#fffaf4] mb-16" style={{ fontSize: "clamp(28px, 3.18vw, 45.8px)" }}>
             Testimonials
           </h2>
           <TestimonialCarousel testimonials={TESTIMONIALS} imgBase={BASE} />
@@ -440,11 +440,11 @@ export default async function HomePage({
         <div className="max-w-[1189px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
             {/* 1. "Now on YouTube" */}
-            <h2 className="font-medium text-black mb-6" style={{ fontSize: "45.8px" }}>
+            <h2 className="font-medium text-black mb-6" style={{ fontSize: "clamp(28px, 3.18vw, 45.8px)" }}>
               Now on <a href="https://youtube.com/@IvanChocron" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:text-red-700">YouTube</a>
             </h2>
             {/* 2. Body text */}
-            <p className="font-medium text-black leading-relaxed mb-6" style={{ fontSize: "25.76px", lineHeight: "36.76px" }}>
+            <p className="font-medium text-black leading-relaxed mb-6" style={{ fontSize: "clamp(18px, 1.79vw, 25.76px)", lineHeight: "1.43" }}>
               Previously exclusively available only through limited private sessions, Iv&aacute;n&apos;s philosophy, methods, and guidance are now available to you online for free.
             </p>
             {/* 3. Quote */}
@@ -460,13 +460,13 @@ export default async function HomePage({
               href="https://youtube.com/@IvanChocron?sub_confirmation=1"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-[#9aaaaf] hover:bg-[#8a9a9f] text-white font-medium transition-colors rounded-[6.4px] uppercase mb-6"
-              style={{ fontSize: "17.37px", padding: "0 24px", lineHeight: "67px" }}
+              className="inline-flex items-center bg-[#9aaaaf] hover:bg-[#8a9a9f] text-[#fffaf4] font-medium transition-colors rounded-[6.4px] mb-6"
+              style={{ fontSize: "16.94px", padding: "0 24px", height: "50px" }}
             >
               SUBSCRIBE
             </a>
             {/* 6. "Youtube: @IvanChocron" */}
-            <h4 className="font-medium text-black" style={{ fontSize: "25.76px", lineHeight: "36.76px" }}>
+            <h4 className="font-medium text-black" style={{ fontSize: "clamp(18px, 1.79vw, 25.76px)", lineHeight: "1.43" }}>
               Youtube: @IvanChocron
             </h4>
           </div>
@@ -490,13 +490,13 @@ export default async function HomePage({
       {/* ─── SECTION 7: RECENT APPEARANCES ─── */}
       <section id="appearances" className="py-24 px-6 bg-[#d9cfc5]">
         <div className="max-w-[1189px] mx-auto">
-          <h2 className="font-medium text-[#4b4746] text-center mb-4" style={{ fontSize: "45.8px" }}>
+          <h2 className="font-medium text-[#4b4746] text-center mb-4" style={{ fontSize: "clamp(28px, 3.18vw, 45.8px)" }}>
             Recent Appearances
           </h2>
           <p className="font-light text-[#4b4746] mb-4" style={{ fontSize: "15.66px", lineHeight: "29.28px" }}>
             Go deeper &amp; learn more by listening to Iv&aacute;n&apos;s interviews with trusted leaders in the health &amp; wellness space.
           </p>
-          <h3 className="font-medium text-[#4b4746] mb-12" style={{ fontSize: "25.76px", lineHeight: "36.76px" }}>
+          <h3 className="font-medium text-[#4b4746] mb-12" style={{ fontSize: "clamp(18px, 1.79vw, 25.76px)", lineHeight: "1.43" }}>
             The Science of Psychedelics &amp; Spiritual Medicine Conference
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
@@ -507,8 +507,8 @@ export default async function HomePage({
           <div className="text-center">
             <a
               href={`/${lang}/about`}
-              className="inline-block bg-[#4b4746] hover:bg-[#3a3635] text-white font-medium transition-colors rounded-[6.4px] uppercase"
-              style={{ fontSize: "17.37px", padding: "0 24px", lineHeight: "67px" }}
+              className="inline-flex items-center bg-[#4b4746] hover:bg-[#3a3635] text-white font-medium transition-colors rounded-[6.4px]"
+              style={{ fontSize: "16.94px", padding: "0 24px", height: "50px" }}
             >
               See More Features
             </a>
