@@ -1,6 +1,7 @@
 import { getDictionary } from "@/i18n/get-dictionary";
 import type { Locale } from "@/i18n/config";
 import versionData from "../../../version.json";
+import TestimonialCarousel from "@/components/TestimonialCarousel";
 
 const BASE = "/IvanApp";
 const img = (path: string) => `${BASE}${path}`;
@@ -51,26 +52,29 @@ export default async function HomePage({
     <div style={{ fontFamily: "var(--font-poppins), Poppins, sans-serif" }}>
       {/* ─── NAVIGATION ─── */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-transparent">
-        <div className="max-w-[1200px] mx-auto px-[4vw] flex items-center justify-between" style={{ paddingTop: "26px", paddingBottom: "26px" }}>
-          <div className="flex items-center gap-3">
-            <a href={`/${lang}`}>
-              <img src={img("/images/logo-icon.png")} alt="Iván Chocrón" className="h-[72px] w-auto" />
-            </a>
-{/* version hidden in production */}
-          </div>
-          <nav className="hidden md:flex items-center gap-8">
+        <div className="max-w-[1298px] mx-auto flex items-center justify-between h-[100px] md:h-[134px] px-[30px] md:px-[57px]">
+          <a href={`/${lang}`}>
+            <img src={img("/images/logo-icon.png")} alt="Iván Chocrón" className="w-[39px] h-[39px] md:w-[72px] md:h-[71px]" />
+          </a>
+          {/* Hamburger menu - mobile only */}
+          <button className="md:hidden flex flex-col justify-center items-center gap-[7px]" aria-label="Menu" style={{ width: "47px", height: "37px" }}>
+            <span className="block w-[30px] h-[1.5px] bg-[#4b4746]"></span>
+            <span className="block w-[30px] h-[1.5px] bg-[#4b4746]"></span>
+            <span className="block w-[30px] h-[1.5px] bg-[#4b4746]"></span>
+          </button>
+          <nav className="hidden md:flex items-center" style={{ gap: "42px" }}>
             {[
               { label: "Home", href: `/${lang}` },
               { label: "About", href: `/${lang}/about` },
               { label: "Services", href: `/${lang}/services` },
-              { label: "Explore", href: "#philosophy" },
+              { label: "Explore", href: `/${lang}#philosophy` },
               { label: "Contact", href: INQUIRY_URL },
             ].map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="font-light text-[#4b4746] hover:text-[#333] transition-colors tracking-wide"
-                style={{ fontSize: "17px" }}
+                className="font-light text-[#4b4746] hover:text-[#333] transition-colors"
+                style={{ fontSize: "17.37px", lineHeight: "32.48px" }}
                 {...(link.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               >
                 {link.label}
@@ -80,10 +84,10 @@ export default async function HomePage({
         </div>
       </header>
 
-      {/* ─── HERO ─── */}
-      <section className="relative overflow-hidden bg-[#d9cfc5]">
+      {/* ─── SECTION 0: HERO ─── */}
+      <section className="relative overflow-hidden bg-[#9c8a78]">
         {/* Desktop: full-width background image with overlaid text */}
-        <div className="hidden md:block relative w-full" style={{ aspectRatio: "1172 / 710" }}>
+        <div className="hidden md:block relative w-full" style={{ height: "812px" }}>
           <img
             src={img("/images/hero-ivan.png")}
             alt="Iván Chocrón"
@@ -92,17 +96,17 @@ export default async function HomePage({
           />
           <div className="absolute inset-0">
             <div className="h-full w-full relative">
-              <div className="absolute" style={{ left: "34.5%", top: "23%", width: "53%"}}>
+              <div className="absolute" style={{ left: "34.5%", top: "181px", width: "733px", maxWidth: "53%" }}>
                 <img
                   src={img("/images/logo-horizontal.png")}
                   alt="Iván Chocrón Logo"
-                  className="mb-4 h-auto"
-                  style={{ width: "100%" }}
+                  className="mb-4"
+                  style={{ width: "733px", maxWidth: "100%", height: "146px", objectFit: "contain" }}
                 />
-                <p className="font-light text-[#4b4746] leading-snug mb-1" style={{ fontSize: "clamp(1.5rem, 3.91vw, 2.86rem)" }}>
+                <p className="font-light text-[#4b4746]" style={{ fontSize: "55.3px", lineHeight: "55.3px" }}>
                   Speaker &amp; Healing Coach
                 </p>
-                <h2 className="font-medium text-black leading-snug" style={{ fontSize: "clamp(1.2rem, 2.78vw, 2.03rem)", lineHeight: 1.39 }}>
+                <h2 className="font-medium text-black mt-4" style={{ fontSize: "35.87px", lineHeight: "49.94px" }}>
                   Bridging the gap between science and spirit through a grounded and approachable healing methodology.
                 </h2>
               </div>
@@ -135,89 +139,109 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ─── INTRO ─── */}
-      <section className="py-20 px-6 bg-[#9c8a78]">
-        <div className="max-w-[1000px] mx-auto">
-          <h2 className="font-medium text-[#4b4746] leading-snug mb-6" style={{ fontSize: "clamp(1.5rem, 2.78vw, 32.53px)" }}>
-            Enough is enough. It is time to heal, shift into consciousness from unawareness and discover our unique gifts.
-          </h2>
-          <p className="font-medium text-[#4b4746] max-w-3xl leading-relaxed" style={{ fontSize: "clamp(1.1rem, 2.06vw, 24.12px)" }}>
-            It is my vision to make grounded relatable healing accessible to individuals from every walk of life, belief system and background.
-          </p>
-        </div>
-      </section>
-
-      {/* ─── ABOUT — text left, coaching photo right ─── */}
-      <section className="py-20 px-6 bg-[#9c8a78]">
-        <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-          <div className="text-[#4b4746]">
-            <p className="font-light mb-6" style={{ fontSize: "15.72px" }}>Hi! My name is Iván.</p>
-            <p className="font-light leading-relaxed mb-5" style={{ fontSize: "15.72px" }}>
-              I&apos;ve been helping people change their lives for over a decade. Whether you need to overcome depression, are curious about what your next steps are in life are or want to heal PTSD or deep trauma from sexual or physical abuse, I am here to support you. I&apos;ve assisted over 10,000+ people in their process of transformation, it&apos;s my goal to guide people from being discontent to being excited to wake up every day.
-            </p>
-          </div>
-          <div className="relative overflow-hidden" style={{ aspectRatio: "488 / 368" }}>
-            <img
-              src={img("/images/coaching-session.jpg")}
-              alt="Iván coaching session"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* ─── QUOTE + APPROACH ─── */}
+      {/* ─── SECTION 1: ABOUT / INTRO (one merged section) ─── */}
       <section className="bg-[#9c8a78]">
-        <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2">
-          <div className="relative" style={{ aspectRatio: "578 / 905" }}>
-            <img
-              src={img("/images/ivan-meditating.jpg")}
-              alt="Iván meditating"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
+        {/* Block A: Intro Heading */}
+        <div className="px-6 pt-20">
+          <div className="max-w-[1189px] mx-auto">
+            <h3 className="font-medium text-[#4b4746]" style={{ fontSize: "35.87px", lineHeight: "49.94px" }}>
+              Enough is enough. It is time to heal, shift into consciousness from unawareness and discover our unique gifts.
+            </h3>
           </div>
-          <div className="text-[#4b4746]">
-            {/* Quote block with teal background */}
-            <div className="bg-[#b8d8d0] p-10 md:p-12">
-              <p className="text-xl md:text-2xl font-bold text-[#4b4746] leading-snug">
-                &ldquo;Healing work is the most important thing anyone can do for themselves and the world around them.&rdquo;
+        </div>
+
+        {/* Block B: Vision Statement */}
+        <div className="px-6 pt-10">
+          <div className="max-w-[1189px] mx-auto">
+            <h4 className="font-medium text-[#4b4746]" style={{ fontSize: "25.76px", lineHeight: "36.76px" }}>
+              It is my vision to make grounded relatable healing accessible to individuals from every walk of life, belief system and background.
+            </h4>
+          </div>
+        </div>
+
+        {/* Block C: About Text + Photo (2-col) */}
+        <div className="px-6 pt-16">
+          <div className="max-w-[1189px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+            <div className="text-[#4b4746]">
+              <p className="font-bold mb-6" style={{ fontSize: "15.66px", lineHeight: "29.28px" }}>
+                Hi! My name is Iv&aacute;n.
+              </p>
+              <p className="font-light leading-relaxed" style={{ fontSize: "15.66px", lineHeight: "29.28px" }}>
+                I&apos;ve been helping people change their lives for over a decade. Whether you need to overcome depression, are curious about what your next steps are in life are or want to heal PTSD or deep trauma from sexual or physical abuse, I am here to support you. I&apos;ve assisted over 10,000+ people in their process of transformation, it&apos;s my goal to guide people from being discontent to being excited to wake up every day.
               </p>
             </div>
-            <div className="px-8 md:px-12 py-8">
-              <p className="font-light leading-relaxed mb-5" style={{ fontSize: "15.72px" }}>
-                My approach is <strong className="font-bold">grounded</strong>. I have created my own system of healing, working with proven methods based on science and psychology to help people overcome their blocks.
-              </p>
-              <p className="font-light leading-relaxed mb-5" style={{ fontSize: "15.72px" }}>
-                My approach is <strong className="font-bold">relatable</strong>. Whether you are spiritual, scientific, religious, atheist, a mechanic or a CEO, you will feel seen and understood by me.
-              </p>
-              <p className="font-light leading-relaxed mb-5" style={{ fontSize: "15.72px" }}>
-                I merge the worlds of science and spirit and bring a fresh perspective to make healing simple, fun, effective and available for everybody.
-              </p>
-              <p className="font-light leading-relaxed mb-8" style={{ fontSize: "15.72px" }}>
-                I&apos;m excited to be a part of your healing process, witness your natural gifts bloom and share my own with you.
-              </p>
-              <p className="text-2xl italic font-light text-[#4b4746] mb-8" style={{ fontFamily: "'Dancing Script', cursive" }}>
-                Iván Chocrón
-              </p>
-              <a
-                href={INQUIRY_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-10 py-4 bg-[#4b4746] hover:bg-[#3a3635] text-white font-medium transition-colors text-sm tracking-wider"
-              >
-                Get In Touch
-              </a>
+            {/* RIGHT: coaching/community photo (555.jpg) */}
+            <div className="relative overflow-hidden" style={{ aspectRatio: "589 / 420" }}>
+              <img
+                src={img("/images/ivan-meditating.jpg")}
+                alt="Iv&aacute;n with community"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Block D: Meditation Photo + Quote + Approach (2-col) */}
+        <div className="px-6 pt-16 pb-20">
+          <div className="max-w-[1189px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-0 items-start">
+            {/* LEFT: meditation photo (303.jpg) — tall portrait */}
+            <div className="relative overflow-hidden" style={{ aspectRatio: "698 / 1009" }}>
+              <img
+                src={img("/images/coaching-session.jpg")}
+                alt="Iv&aacute;n meditating"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            </div>
+            {/* RIGHT: quote block + approach text + signature + button */}
+            <div className="text-[#4b4746]">
+              {/* Teal quote block — bg #9AAAAF */}
+              <div style={{ backgroundColor: "#9AAAAF", padding: "35.33px" }}>
+                <h3 className="font-medium text-[#4b4746]" style={{ fontSize: "35.87px", lineHeight: "49.94px" }}>
+                  &ldquo;Healing work is the most important thing anyone can do for themselves and the world around them.&rdquo;
+                </h3>
+              </div>
+              {/* Approach paragraphs */}
+              <div className="px-8 md:px-12 py-8">
+                <p className="font-light leading-relaxed mb-5" style={{ fontSize: "15.66px", lineHeight: "29.28px" }}>
+                  My approach is <strong className="font-bold">grounded</strong>. I have created my own system of healing, working with proven methods based on science and psychology to help people overcome their blocks.
+                </p>
+                <p className="font-light leading-relaxed mb-5" style={{ fontSize: "15.66px", lineHeight: "29.28px" }}>
+                  My approach is <strong className="font-bold">relatable</strong>. Whether you are spiritual, scientific, religious, atheist, a mechanic or a CEO, you will feel seen and understood by me.
+                </p>
+                <p className="font-light leading-relaxed mb-5" style={{ fontSize: "15.66px", lineHeight: "29.28px" }}>
+                  I merge the worlds of science and spirit and bring a fresh perspective to make healing simple, fun, effective and available for everybody.
+                </p>
+                <p className="font-light leading-relaxed mb-8" style={{ fontSize: "15.66px", lineHeight: "29.28px" }}>
+                  I&apos;m excited to be a part of your healing process, witness your natural gifts bloom and share my own with you.
+                </p>
+                {/* Signature — logo image (not text) */}
+                <img
+                  src={img("/images/logo-large.png")}
+                  alt="Iv&aacute;n Chocr&oacute;n"
+                  className="mb-8"
+                  style={{ width: "332px", height: "107px", objectFit: "contain" }}
+                />
+                <a
+                  href={INQUIRY_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-[#4b4746] hover:bg-[#3a3635] text-white font-medium transition-colors rounded-[6.4px]"
+                  style={{ fontSize: "17.37px", padding: "0 24px", lineHeight: "67px" }}
+                >
+                  Get In Touch
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* ─── DIAGONAL DIVIDER: tan → black ─── */}
-      <div className="relative h-24 bg-black">
+      <div className="relative bg-black" style={{ height: "86px" }}>
         <div className="absolute inset-0 bg-[#9c8a78]" style={{ clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 100%)" }} />
       </div>
 
-      {/* ─── METHODOLOGY ─── */}
+      {/* ─── SECTION 2: METHODOLOGY ─── */}
       <section className="relative text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
@@ -229,8 +253,14 @@ export default async function HomePage({
         </div>
         <div className="relative z-10 py-24 px-6">
           <div className="max-w-[1200px] mx-auto">
-            <p className="uppercase tracking-[0.3em] text-white/50 text-sm mb-4 font-medium text-center">A Three Part</p>
-            <h2 className="font-medium mb-16 text-center text-[#fffaf4]" style={{ fontSize: "clamp(3rem, 11.24vw, 131.5px)" }}>Methodology</h2>
+            {/* "A THREE PART" — 24.05px, weight 300 (font-light), no letter-spacing */}
+            <p className="uppercase text-[#fffaf4] font-light mb-4 text-center" style={{ fontSize: "24.05px" }}>
+              A THREE PART
+            </p>
+            {/* "Methodology" — 158.5px */}
+            <h2 className="font-medium mb-16 text-center text-[#fffaf4]" style={{ fontSize: "clamp(3rem, 11.24vw, 158.5px)", lineHeight: "158.5px" }}>
+              Methodology
+            </h2>
             <div className="max-w-[600px] space-y-0">
               {[
                 { title: "EDUCATION", desc: "Through YouTube, podcasts, speaking engagements, and retreats, I educate people about what real healing encompasses \u2014 creating those incredible ah-ha moments of insight and breakthroughs that help people understand themselves at a deeper level." },
@@ -239,10 +269,10 @@ export default async function HomePage({
               ].map((item, i) => (
                 <details key={item.title} className={`border-t border-white/20 group ${i === 2 ? "border-b border-white/20" : ""}`}>
                   <summary className="cursor-pointer flex items-center justify-between list-none" style={{ padding: "30px 0" }}>
-                    <h3 className="font-light tracking-[0.15em]" style={{ fontSize: "22.7px" }}>{item.title}</h3>
+                    <h3 className="font-light text-[#fffaf4]" style={{ fontSize: "24.05px" }}>{item.title}</h3>
                     <span className="text-2xl text-white/40 group-open:rotate-45 transition-transform">+</span>
                   </summary>
-                  <p className="pb-6 text-white/60 leading-relaxed" style={{ fontSize: "17.14px" }}>{item.desc}</p>
+                  <p className="pb-6 text-white/60 leading-relaxed" style={{ fontSize: "15.66px", lineHeight: "29.28px" }}>{item.desc}</p>
                 </details>
               ))}
             </div>
@@ -251,14 +281,14 @@ export default async function HomePage({
       </section>
 
       {/* ─── DIAGONAL DIVIDER: methodology → warm white ─── */}
-      <div className="relative h-24 bg-[#fffaf4]">
+      <div className="relative bg-[#fffaf4]" style={{ height: "86px" }}>
         <div className="absolute inset-0 bg-[#1a1a1a]" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 0%)" }} />
       </div>
 
-      {/* ─── PHILOSOPHY ─── */}
+      {/* ─── SECTION 3: PHILOSOPHY ─── */}
       <section id="philosophy" className="py-24 px-6 bg-[#fffaf4]">
-        <div className="max-w-[1000px] mx-auto">
-          <h2 className="font-medium text-center text-black mb-16" style={{ fontSize: "clamp(1.8rem, 3.49vw, 40.79px)" }}>
+        <div className="max-w-[1189px] mx-auto">
+          <h2 className="font-medium text-center text-black mb-16" style={{ fontSize: "45.8px" }}>
             Pillars of My Philosophy
           </h2>
           <div className="grid gap-12 grid-cols-1 sm:grid-cols-2">
@@ -272,15 +302,20 @@ export default async function HomePage({
                 <div className="h-[127px] mx-auto mb-5 flex items-center justify-center">
                   <img src={img(item.icon)} alt={item.title} className="h-full w-auto object-contain" />
                 </div>
-                <h3 className="text-xl font-bold text-black mb-3">{item.title}</h3>
-                <p className="text-sm text-[#4b4746]/80 leading-relaxed">{item.desc}</p>
+                <h3 className="font-medium text-black mb-3" style={{ fontSize: "35.87px", lineHeight: "49.94px" }}>
+                  {item.title}
+                </h3>
+                <p className="font-light text-black leading-relaxed" style={{ fontSize: "15.66px", lineHeight: "29.28px" }}>
+                  {item.desc}
+                </p>
               </div>
             ))}
           </div>
           <div className="text-center mt-14">
             <a
               href={`/${lang}/about`}
-              className="inline-block px-10 py-4 bg-[#9aaaaf] hover:bg-[#8a9a9f] text-white font-medium transition-colors text-sm tracking-wider"
+              className="inline-block bg-[#9aaaaf] hover:bg-[#8a9a9f] text-white font-medium transition-colors rounded-[6.4px]"
+              style={{ fontSize: "17.37px", padding: "0 24px", lineHeight: "67px" }}
             >
               Explore my Philosophy
             </a>
@@ -289,15 +324,15 @@ export default async function HomePage({
       </section>
 
       {/* ─── DIAGONAL DIVIDER: warm white → beige ─── */}
-      <div className="relative h-24 bg-[#d9cfc5]">
+      <div className="relative bg-[#d9cfc5]" style={{ height: "86px" }}>
         <div className="absolute inset-0 bg-[#fffaf4]" style={{ clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 100%)" }} />
       </div>
 
-      {/* ─── SERVICES ─── */}
+      {/* ─── SECTION 4: SERVICES ─── */}
       <section className="py-24 px-6 bg-[#d9cfc5]">
-        <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        <div className="max-w-[1189px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <div>
-            <h2 className="font-medium text-[#4b4746] mb-6" style={{ fontSize: "clamp(1.8rem, 3.49vw, 40.79px)" }}>Services</h2>
+            <h2 className="font-medium text-[#4b4746] mb-6" style={{ fontSize: "45.8px" }}>Services</h2>
             <div className="space-y-0">
               {[
                 { title: "PUBLIC SPEAKING", desc: "Experience inspirational and educational talks on topics including the healing process, human emotions, science and spirituality, psychology, self-love, plant-medicine, and neo-shamanism." },
@@ -307,20 +342,21 @@ export default async function HomePage({
               ].map((svc, i) => (
                 <details key={svc.title} className={`border-t border-[#4b4746]/20 group ${i === 3 ? "border-b border-[#4b4746]/20" : ""}`}>
                   <summary className="cursor-pointer flex items-center justify-between list-none" style={{ padding: "30px 0" }}>
-                    <h3 className="font-light text-[#4b4746] tracking-wider" style={{ fontSize: "22.7px" }}>{svc.title}</h3>
+                    <h3 className="font-light text-[#4b4746]" style={{ fontSize: "24.05px" }}>{svc.title}</h3>
                     <span className="text-xl text-[#4b4746]/40 group-open:rotate-45 transition-transform">+</span>
                   </summary>
-                  <p className="pb-5 text-[#4b4746]/70 font-light leading-relaxed" style={{ fontSize: "17.14px" }}>{svc.desc}</p>
+                  <p className="pb-5 text-[#4b4746]/70 font-light leading-relaxed" style={{ fontSize: "15.66px", lineHeight: "29.28px" }}>{svc.desc}</p>
                 </details>
               ))}
             </div>
             <div className="mt-8">
-              <p className="text-[#4b4746] mb-4">Interested in working together?</p>
+              <p className="text-[#4b4746] mb-4" style={{ fontSize: "15.66px" }}>Interested in working together?</p>
               <a
                 href={INQUIRY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-10 py-4 bg-[#4b4746] hover:bg-[#3a3635] text-white font-medium transition-colors text-sm tracking-wider"
+                className="inline-block bg-[#4b4746] hover:bg-[#3a3635] text-white font-medium transition-colors rounded-[6.4px] uppercase"
+                style={{ fontSize: "17.37px", padding: "0 24px", lineHeight: "67px" }}
               >
                 GET IN TOUCH
               </a>
@@ -329,7 +365,7 @@ export default async function HomePage({
           <div className="relative overflow-hidden" style={{ aspectRatio: "490 / 624" }}>
             <img
               src={img("/images/services-retreat.jpg")}
-              alt="Iván Chocrón retreat"
+              alt="Iv&aacute;n Chocr&oacute;n retreat"
               className="absolute inset-0 w-full h-full object-cover"
             />
           </div>
@@ -337,68 +373,65 @@ export default async function HomePage({
       </section>
 
       {/* ─── DIAGONAL DIVIDER: beige → tan ─── */}
-      <div className="relative h-24 bg-[#9c8a78]">
+      <div className="relative bg-[#9c8a78]" style={{ height: "86px" }}>
         <div className="absolute inset-0 bg-[#d9cfc5]" style={{ clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 100%)" }} />
       </div>
 
-      {/* ─── TESTIMONIALS (carousel-style, one at a time) ─── */}
+      {/* ─── SECTION 5: TESTIMONIALS (carousel) ─── */}
       <section className="py-24 px-6 bg-[#9c8a78]">
         <div className="max-w-[1000px] mx-auto">
-          <h2 className="font-medium text-center text-[#fffaf4] mb-16" style={{ fontSize: "clamp(1.8rem, 3.49vw, 40.79px)" }}>
+          <h2 className="font-medium text-center text-[#fffaf4] mb-16" style={{ fontSize: "45.8px" }}>
             Testimonials
           </h2>
-          {/* Show testimonials as scrollable cards */}
-          <div className="relative">
-            <div className="overflow-x-auto snap-x snap-mandatory flex gap-6 pb-6 scrollbar-hide" style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
-              {TESTIMONIALS.map((t) => (
-                <div key={t.name} className="snap-center flex-shrink-0 w-full max-w-[900px] mx-auto">
-                  <div className="text-center px-4">
-                    <img
-                      src={img(t.photo)}
-                      alt={t.name}
-                      className="w-[250px] h-[250px] md:w-[311px] md:h-[312px] rounded-full object-cover mx-auto mb-8"
-                    />
-                    <p className="text-[#fffaf4] font-medium leading-relaxed mb-8" style={{ fontSize: "14.58px" }}>
-                      &ldquo;{t.quote}&rdquo;
-                    </p>
-                    <p className="font-light text-[#fffaf4]" style={{ fontSize: "16px" }}>{t.name}</p>
-                    <p className="font-light text-[#fffaf4]/50 mt-1" style={{ fontSize: "16px" }}>{t.role}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+          <TestimonialCarousel testimonials={TESTIMONIALS} imgBase={BASE} />
         </div>
       </section>
 
       {/* ─── DIAGONAL DIVIDER: tan → warm white ─── */}
-      <div className="relative h-24 bg-[#fffaf4]">
+      <div className="relative bg-[#fffaf4]" style={{ height: "86px" }}>
         <div className="absolute inset-0 bg-[#9c8a78]" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 0%)" }} />
       </div>
 
-      {/* ─── YOUTUBE CTA ─── */}
+      {/* ─── SECTION 6: YOUTUBE CTA ─── */}
       <section className="py-20 px-6 bg-[#fffaf4]">
-        <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-[1189px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="font-medium text-black mb-2" style={{ fontSize: "clamp(1.8rem, 3.49vw, 40.79px)" }}>
+            {/* 1. "Now on YouTube" */}
+            <h2 className="font-medium text-black mb-6" style={{ fontSize: "45.8px" }}>
               Now on <a href="https://youtube.com/@IvanChocron" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:text-red-700">YouTube</a>
             </h2>
-            <h3 className="font-medium text-black mb-6" style={{ fontSize: "24.12px" }}>Youtube: @IvanChocron</h3>
-            <p className="font-medium text-black leading-relaxed mb-6" style={{ fontSize: "24.12px" }}>
-              Previously exclusively available only through limited private sessions, Iván&apos;s philosophy, methods, and guidance are now available to you online for free.
+            {/* 2. Body text */}
+            <p className="font-medium text-black leading-relaxed mb-6" style={{ fontSize: "25.76px", lineHeight: "36.76px" }}>
+              Previously exclusively available only through limited private sessions, Iv&aacute;n&apos;s philosophy, methods, and guidance are now available to you online for free.
             </p>
-            <blockquote className="mb-8">
-              <p className="font-light text-black leading-relaxed" style={{ fontSize: "15.72px" }}>
-                &ldquo;After a decade of private events, I&apos;ve decided it&apos;s time to share all I&apos;ve learned with the world. My hope is that by freely passing on the knowledge I hold, millions of people will either begin or move further in their healing journey&rdquo;.
+            {/* 3. Quote */}
+            <blockquote className="mb-6">
+              <p className="font-light text-black leading-relaxed" style={{ fontSize: "15.66px", lineHeight: "29.28px" }}>
+                &ldquo;After a decade of private events, I&apos;ve decided it&apos;s time to share all I&apos;ve learned with the world. My hope is that by freely passing on the knowledge I hold, millions of people will either begin or move further in their healing journey.&rdquo;
               </p>
-              <p className="font-light text-black mt-3" style={{ fontSize: "15.72px" }}>Iván</p>
             </blockquote>
+            {/* 4. Iván signature */}
+            <p className="font-light text-black mb-6" style={{ fontSize: "15.66px" }}>Iv&aacute;n</p>
+            {/* 5. SUBSCRIBE button */}
+            <a
+              href="https://youtube.com/@IvanChocron?sub_confirmation=1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-[#9aaaaf] hover:bg-[#8a9a9f] text-white font-medium transition-colors rounded-[6.4px] uppercase mb-6"
+              style={{ fontSize: "17.37px", padding: "0 24px", lineHeight: "67px" }}
+            >
+              SUBSCRIBE
+            </a>
+            {/* 6. "Youtube: @IvanChocron" */}
+            <h4 className="font-medium text-black" style={{ fontSize: "25.76px", lineHeight: "36.76px" }}>
+              Youtube: @IvanChocron
+            </h4>
           </div>
-          <div className="relative aspect-video bg-black rounded-lg overflow-hidden">
+          <div className="relative aspect-video bg-black overflow-hidden">
             <iframe
               className="absolute inset-0 w-full h-full"
               src="https://www.youtube.com/embed/dPly3ltTBso"
-              title="Iván Chocrón YouTube"
+              title="Iv&aacute;n Chocr&oacute;n YouTube"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
@@ -406,16 +439,21 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ─── RECENT APPEARANCES ─── */}
+      {/* ─── DIAGONAL DIVIDER: warm white → beige (subtle, ~29px) ─── */}
+      <div className="relative bg-[#d9cfc5]" style={{ height: "29px" }}>
+        <div className="absolute inset-0 bg-[#fffaf4]" style={{ clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 100%)" }} />
+      </div>
+
+      {/* ─── SECTION 7: RECENT APPEARANCES ─── */}
       <section id="appearances" className="py-24 px-6 bg-[#d9cfc5]">
-        <div className="max-w-[1200px] mx-auto">
-          <h2 className="font-medium text-[#4b4746] mb-4" style={{ fontSize: "clamp(1.8rem, 3.49vw, 40.79px)" }}>
+        <div className="max-w-[1189px] mx-auto">
+          <h2 className="font-medium text-[#4b4746] text-center mb-4" style={{ fontSize: "45.8px" }}>
             Recent Appearances
           </h2>
-          <p className="font-light text-[#4b4746] mb-4" style={{ fontSize: "15.72px" }}>
+          <p className="font-light text-[#4b4746] mb-4" style={{ fontSize: "15.66px", lineHeight: "29.28px" }}>
             Go deeper &amp; learn more by listening to Iv&aacute;n&apos;s interviews with trusted leaders in the health &amp; wellness space.
           </p>
-          <h3 className="font-medium text-[#4b4746] mb-12" style={{ fontSize: "24.12px" }}>
+          <h3 className="font-medium text-[#4b4746] mb-12" style={{ fontSize: "25.76px", lineHeight: "36.76px" }}>
             The Science of Psychedelics &amp; Spiritual Medicine Conference
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
@@ -426,8 +464,8 @@ export default async function HomePage({
           <div className="text-center">
             <a
               href={`/${lang}/about`}
-              className="inline-block px-10 py-4 bg-[#4b4746] hover:bg-[#3a3635] text-white font-medium transition-colors tracking-wider uppercase"
-              style={{ fontSize: "17.14px" }}
+              className="inline-block bg-[#4b4746] hover:bg-[#3a3635] text-white font-medium transition-colors rounded-[6.4px] uppercase"
+              style={{ fontSize: "17.37px", padding: "0 24px", lineHeight: "67px" }}
             >
               See More Features
             </a>
@@ -435,20 +473,26 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ─── FOOTER ─── */}
-      <footer className="py-16 px-6 bg-[#4b4746] text-white/70">
-        <div className="max-w-[1200px] mx-auto">
+      {/* ─── DIAGONAL DIVIDER: beige → charcoal ─── */}
+      <div className="relative bg-[#4b4746]" style={{ height: "86px" }}>
+        <div className="absolute inset-0 bg-[#d9cfc5]" style={{ clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 100%)" }} />
+      </div>
+
+      {/* ─── SECTION 8 / FOOTER ─── */}
+      <footer className="py-16 px-6 bg-[#4b4746]">
+        <div className="max-w-[1189px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
             {/* Left — socials + contact */}
             <div>
-              <div className="flex items-center gap-4 mb-8">
+              {/* Social icons: transparent bg, #9C8A78 SVG color, NO filled bg */}
+              <div className="flex items-center gap-3 mb-8">
                 {SOCIALS.map((s) => (
                   <a
                     key={s.label}
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 rounded-full bg-[#9c8a78] flex items-center justify-center text-white/80 hover:bg-[#8a7968] transition-colors"
+                    className="w-12 h-12 rounded-full flex items-center justify-center text-[#9c8a78] hover:text-[#b8a694] transition-colors"
                     aria-label={s.label}
                   >
                     <SocialIcon d={s.icon} label={s.label} />
@@ -456,12 +500,12 @@ export default async function HomePage({
                 ))}
               </div>
               <div className="mb-4">
-                <p className="font-semibold text-white text-sm mb-1">Contact:</p>
-                <a href="mailto:ivan@ivanchocron.com" className="text-white/60 hover:text-white text-sm">ivan@ivanchocron.com</a>
+                <p className="font-bold text-[#9c8a78] mb-1" style={{ fontSize: "15.66px" }}>Contact:</p>
+                <a href="mailto:ivan@ivanchocron.com" className="text-[#9c8a78] hover:text-[#b8a694]" style={{ fontSize: "15.66px", fontWeight: 300 }}>ivan@ivanchocron.com</a>
               </div>
               <div>
-                <p className="font-semibold text-white text-sm mb-1">Press &amp; Media Inquiries:</p>
-                <a href="mailto:hello@ivanchocron.com" className="text-white/60 hover:text-white text-sm">hello@ivanchocron.com</a>
+                <p className="font-bold text-[#9c8a78] mb-1" style={{ fontSize: "15.66px" }}>Press &amp; Media Inquiries:</p>
+                <a href="mailto:hello@ivanchocron.com" className="text-[#9c8a78] hover:text-[#b8a694]" style={{ fontSize: "15.66px", fontWeight: 300 }}>hello@ivanchocron.com</a>
               </div>
             </div>
 
@@ -469,38 +513,50 @@ export default async function HomePage({
             <div className="flex justify-center">
               <img
                 src={img("/images/logo-dark-bg.png")}
-                alt="Iván Chocrón"
-                className="h-24 w-auto opacity-70"
+                alt="Iv&aacute;n Chocr&oacute;n"
+                style={{ width: "216px", height: "171px", objectFit: "contain" }}
               />
             </div>
 
             {/* Right — subscribe */}
             <div>
-              <h3 className="text-2xl font-semibold text-white mb-2">Subscribe</h3>
-              <p className="text-white/60 text-sm mb-4">Type your e-mail to receive updates and stay in touch!</p>
+              {/* "Subscribe" — 40px, weight 400, color #9C8A78 */}
+              <h4 className="text-[#9c8a78]" style={{ fontSize: "40px", fontWeight: 400, lineHeight: 1.2 }}>Subscribe</h4>
+              <p className="text-[#9c8a78] mb-4" style={{ fontSize: "17px", fontWeight: 400 }}>
+                Type your e-mail to receive updates and stay in touch!
+              </p>
               <form className="space-y-3" action="#">
+                {/* White bg input with light border */}
                 <input
                   type="email"
                   placeholder="e-mail address"
-                  className="w-full px-4 py-3 bg-transparent border border-white/30 text-white placeholder-white/40 text-sm focus:outline-none focus:border-white/60"
+                  className="w-full px-4 bg-white text-black placeholder-gray-400 focus:outline-none"
+                  style={{ height: "43px", fontSize: "16px", border: "0.8px solid #CCC" }}
                 />
+                {/* Disclaimer text — #9A9494 */}
+                <p className="text-[#9a9494]" style={{ fontSize: "10px", fontWeight: 300 }}>
+                  You can unsubscribe anytime. We don&apos;t spam or sell your data.
+                </p>
+                {/* Sign up button — bg #D9CFC5, text black */}
                 <button
                   type="submit"
-                  className="w-full px-4 py-3 bg-[#9c8a78] hover:bg-[#8a7968] text-white font-medium transition-colors text-sm tracking-wider"
+                  className="w-full bg-[#d9cfc5] hover:bg-[#c9bfb5] text-black transition-colors"
+                  style={{ fontSize: "18px", fontWeight: 400, height: "41px" }}
                 >
                   Sign up
                 </button>
               </form>
-              <p className="text-white/40 text-xs mt-3">You can unsubscribe anytime. We don&apos;t spam or sell your data.</p>
             </div>
           </div>
 
+          {/* Bottom bar */}
           <div className="mt-12 pt-8 border-t border-white/10">
-            <p className="text-white/40 text-xs">
-              &copy;Iván Chocrón {new Date().getFullYear()}, All Rights Reserved.
+            {/* Hardcoded 2024 */}
+            <p className="text-[#9c8a78]" style={{ fontSize: "15.66px", fontWeight: 300 }}>
+              &copy;Iv&aacute;n Chocr&oacute;n 2024, All Rights Reserved.
             </p>
-            <p className="text-white/40 text-xs mt-2">
-              Credits: <a href="https://www.deusmarca.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-white/60">DEŪS MARCA</a> + <a href="https://crystalsandsmudgesticks.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-white/60">Crystals &amp; Smudge Sticks</a>
+            <p className="text-[#9c8a78] mt-2" style={{ fontSize: "15.66px", fontWeight: 300 }}>
+              Credits: <a href="https://www.deusmarca.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#b8a694]">DEŪS MARCA</a> + <a href="https://crystalsandsmudgesticks.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#b8a694]">Crystals &amp; Smudge Sticks</a>
             </p>
           </div>
         </div>
