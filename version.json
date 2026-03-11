@@ -1,9 +1,9 @@
 {
-  "version": "v260311.03 1:25pm",
-  "release": 3,
-  "sha": "4c6b6aa",
-  "fullSha": "4c6b6aa944db078ab160e256aeb3a6ff06e3a9c6",
+  "version": "v260311.04 1:39pm",
+  "release": 4,
+  "sha": "54e5e13",
+  "fullSha": "54e5e13e4f0ea422e440f40ee7ea76426eea1f67",
   "actor": "ivanchocron",
-  "pushedAt": "2026-03-11T18:25:00Z",
-  "commits": [{"sha": "4c6b6aa", "message": "feat: add responsive hero scaling, mobile nav drawer, and Explore dropdown (#14)", "author": "ivanchocron"}]
+  "pushedAt": "2026-03-11T18:39:37Z",
+  "commits": [{"sha": "54e5e13", "message": "fix: visual polish pass \u2014 button heights, font weights, responsive scaling (#15)", "author": "ivanchocron"}]
 }
