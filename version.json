@@ -1,9 +1,9 @@
 {
-  "version": "v260311.06 3:16pm",
-  "release": 6,
-  "sha": "d28dc92",
-  "fullSha": "d28dc92b9edc95a271d93f7eaabea90076b69ff8",
+  "version": "v260311.07 3:30pm",
+  "release": 7,
+  "sha": "6561901",
+  "fullSha": "6561901f06a75ead6bcfc7a61de92644ec5134e2",
   "actor": "ivanchocron",
-  "pushedAt": "2026-03-11T20:16:16Z",
-  "commits": [{"sha": "d28dc92", "message": "Fix text colors and services accordion to match Squarespace (#17)", "author": "ivanchocron"}]
+  "pushedAt": "2026-03-11T20:30:24Z",
+  "commits": [{"sha": "6561901", "message": "Fix Services accordion: dark text, full content from Squarespace (#18)", "author": "ivanchocron"}]
 }
