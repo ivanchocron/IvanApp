@@ -379,17 +379,48 @@ export default async function HomePage({
             <h2 className="font-medium text-[#4b4746] mb-6" style={{ fontSize: "clamp(28px, 3.18vw, 45.8px)" }}>Services</h2>
             <div className="space-y-0">
               {[
-                { title: "PUBLIC SPEAKING", desc: "Experience inspirational and educational talks on topics including the healing process, human emotions, science and spirituality, psychology, self-love, plant-medicine, and neo-shamanism." },
-                { title: "LEADERSHIP COACHING & CONSULTING", desc: "From individuals to executives of Fortune 500 companies \u2014 creating conversation and bringing clarity by opening awareness to release communication blocks and improve team cohesion." },
-                { title: "INTEGRATION SUPPORT", desc: "One-on-one support making sense of healing experiences. Grounded and relatable emotional processing techniques to bring your process to a more peaceful completion." },
-                { title: "RETREATS", desc: "Private retreats fusing unique methods of emotional processing. Hosted worldwide in luxury settings with organic vegan cuisine and thoughtful amenities." },
+                { title: "PUBLIC SPEAKING", desc: <>
+                  <p className="mb-4">Experience Iv&aacute;n&apos;s inspirational and educational talks and book him to speak at your next event or on your podcast.</p>
+                  <p className="mb-4">Experience Iv&aacute;n&apos;s enlivening inspirational talks on topics such as:</p>
+                  <ul className="list-disc list-inside mb-4 space-y-1">
+                    <li>The healing process</li>
+                    <li>Human emotions and interpersonal connection</li>
+                    <li>Science and spirituality</li>
+                    <li>Psychology</li>
+                    <li>Living with an open heart</li>
+                    <li>Self-love and compassion</li>
+                    <li>Living a healthy-minded and joyful life</li>
+                    <li>Plant-medicine and personal transformation</li>
+                    <li>Neo-shamanism</li>
+                    <li>Retreat facilitation</li>
+                  </ul>
+                  <p>Want him to speak at your event, podcast or conference? <a href={INQUIRY_URL} target="_blank" rel="noopener noreferrer" className="underline font-medium">SUBMIT INQUIRY</a>.</p>
+                </> },
+                { title: "LEADERSHIP COACHING & CONSULTING", desc: <>
+                  <p className="mb-4">From individuals to executives of Fortune 500 companies - Iv&aacute;n continues to profoundly impact his clients through his unique method of communicating, connecting and coaching.</p>
+                  <p className="mb-4">Iv&aacute;n specializes in working with companies, executives and teams to create conversation and bring clarity to their next steps by opening their awareness to release what is causing communication blocks and lack of cohesiveness in team connection.</p>
+                  <p>Interested in Iv&aacute;n&apos;s Coaching or Consulting services? <a href={INQUIRY_URL} target="_blank" rel="noopener noreferrer" className="underline font-medium">SUBMIT INQUIRY</a></p>
+                </> },
+                { title: "INTEGRATION SUPPORT", desc: <>
+                  <p className="mb-4">Integrating a healing experience into your every day life is the most important part of your journey, and very challenging for many.</p>
+                  <p className="mb-4">Healing work can&apos;t finalize without proper integration, an aspect of the healing process which many people struggle with.</p>
+                  <p className="mb-4">If you need one-on-one support making sense of a recent experience or you are struggling with how to apply what you have learned in your every day life, book a session with Iv&aacute;n.</p>
+                  <p className="mb-4">Iv&aacute;n&apos;s unique emotional processing techniques are grounded and relatable and will bring your process to a more peaceful completion.</p>
+                  <p>Interested in Iv&aacute;n&apos;s Integration Support? <a href={INQUIRY_URL} target="_blank" rel="noopener noreferrer" className="underline font-medium">SUBMIT INQUIRY</a>.</p>
+                </> },
+                { title: "RETREATS", desc: <>
+                  <p className="mb-4">Using Iv&aacute;n&apos;s unique methods of emotional processing, his retreats are a great opportunity for individuals and groups to create meaningful change in their lives.</p>
+                  <p className="mb-4">Iv&aacute;n has worked with many CEOs, corporate teams, politicians, celebrities, and influential individuals. Using his healing methods as an instrument, he creates an environment to bring in more openness, abundance and joy between teams and individuals.</p>
+                  <p className="mb-4">Iv&aacute;n has hosted retreats all over the world in countless locations, from intimate containers to large group settings. Iv&aacute;n&apos;s retreats incorporate relaxed luxurious settings, organic vegan food from top chefs, and countless other amenities that take care of all the little comforts and details to create ease during participants healing journeys.</p>
+                  <p>Are you interested to learn more about Iv&aacute;n&apos;s retreats? <a href={INQUIRY_URL} target="_blank" rel="noopener noreferrer" className="underline font-medium">SUBMIT INQUIRY</a></p>
+                </> },
               ].map((svc, i) => (
                 <details key={svc.title} className={`border-t border-[#4b4746]/20 group ${i === 3 ? "border-b border-[#4b4746]/20" : ""}`}>
                   <summary className="cursor-pointer flex items-center justify-between list-none" style={{ padding: "30px 0" }}>
-                    <h3 className="font-light text-[#fffaf4]" style={{ fontSize: "24.05px" }}>{svc.title}</h3>
-                    <span className="text-xl text-[#fffaf4]/60 group-open:rotate-45 transition-transform">+</span>
+                    <h3 className="font-light text-[#4b4746]" style={{ fontSize: "24.05px" }}>{svc.title}</h3>
+                    <span className="text-xl text-[#4b4746]/40 group-open:rotate-45 transition-transform">+</span>
                   </summary>
-                  <p className="pb-5 text-[#fffaf4]/70 font-light leading-relaxed" style={{ fontSize: "15.66px", lineHeight: "29.28px" }}>{svc.desc}</p>
+                  <div className="pb-5 text-[#4b4746] font-light leading-relaxed" style={{ fontSize: "17.37px", lineHeight: "1.68" }}>{svc.desc}</div>
                 </details>
               ))}
             </div>
