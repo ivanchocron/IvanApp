@@ -2,6 +2,7 @@ import { getDictionary } from "@/i18n/get-dictionary";
 import type { Locale } from "@/i18n/config";
 import versionData from "../../../version.json";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
+import MobileNav from "@/components/MobileNav";
 
 const BASE = "/IvanApp";
 const img = (path: string) => `${BASE}${path}`;
@@ -56,30 +57,72 @@ export default async function HomePage({
           <a href={`/${lang}`}>
             <img src={img("/images/logo-icon.png")} alt="Iván Chocrón" className="w-[39px] h-[39px] md:w-[72px] md:h-[71px]" />
           </a>
-          {/* Hamburger menu - mobile only */}
-          <button className="md:hidden flex flex-col justify-center items-center gap-[7px]" aria-label="Menu" style={{ width: "47px", height: "37px" }}>
-            <span className="block w-[30px] h-[1.5px] bg-[#4b4746]"></span>
-            <span className="block w-[30px] h-[1.5px] bg-[#4b4746]"></span>
-            <span className="block w-[30px] h-[1.5px] bg-[#4b4746]"></span>
-          </button>
+          {/* Mobile nav drawer */}
+          <MobileNav
+            lang={lang}
+            logoSrc={img("/images/logo-icon.png")}
+            links={[
+              { label: "Home", href: `/${lang}` },
+              { label: "About", href: `/${lang}/about` },
+              { label: "Services", href: `/${lang}/services` },
+              { label: "Explore", href: `/${lang}#philosophy` },
+              { label: "Contact", href: INQUIRY_URL, external: true },
+            ]}
+          />
+          {/* Desktop nav */}
           <nav className="hidden md:flex items-center" style={{ gap: "29px" }}>
             {[
               { label: "Home", href: `/${lang}` },
               { label: "About", href: `/${lang}/about` },
               { label: "Services", href: `/${lang}/services` },
-              { label: "Explore", href: `/${lang}#philosophy` },
-              { label: "Contact", href: INQUIRY_URL },
             ].map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 className="font-light text-[#4b4746] hover:text-[#333] transition-colors"
                 style={{ fontSize: "16.94px", lineHeight: "32.48px" }}
-                {...(link.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               >
                 {link.label}
               </a>
             ))}
+            {/* Explore dropdown */}
+            <div className="relative group">
+              <a
+                href={`/${lang}#philosophy`}
+                className="font-light text-[#4b4746] hover:text-[#333] transition-colors flex items-center gap-1"
+                style={{ fontSize: "16.94px", lineHeight: "32.48px" }}
+              >
+                Explore
+                <svg className="w-3 h-3 opacity-60" viewBox="0 0 12 12" fill="currentColor"><path d="M2 4l4 4 4-4" /></svg>
+              </a>
+              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div className="bg-[#9c8a78] border border-[#4b4746]/10 rounded-md shadow-lg py-2 min-w-[200px]">
+                  {[
+                    { label: "Pillars of My Philosophy", href: `/${lang}#philosophy` },
+                    { label: "Recent Features", href: `/${lang}#appearances` },
+                    { label: "Press & Media", href: `/${lang}#press` },
+                  ].map((sub) => (
+                    <a
+                      key={sub.label}
+                      href={sub.href}
+                      className="block px-4 py-2 font-light text-[#4b4746] hover:bg-[#b5a393] transition-colors"
+                      style={{ fontSize: "14px" }}
+                    >
+                      {sub.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <a
+              href={INQUIRY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-light text-[#4b4746] hover:text-[#333] transition-colors"
+              style={{ fontSize: "16.94px", lineHeight: "32.48px" }}
+            >
+              Contact
+            </a>
           </nav>
         </div>
       </header>
@@ -87,7 +130,7 @@ export default async function HomePage({
       {/* ─── SECTION 0: HERO ─── */}
       <section className="relative overflow-hidden bg-[#9c8a78]">
         {/* Desktop: full-width background image with overlaid text */}
-        <div className="hidden md:block relative w-full" style={{ height: "812px" }}>
+        <div className="hidden md:block relative w-full" style={{ height: "clamp(500px, 56.4vw, 812px)" }}>
           <img
             src={img("/images/hero-ivan.png")}
             alt="Iván Chocrón"
@@ -96,17 +139,17 @@ export default async function HomePage({
           />
           <div className="absolute inset-0">
             <div className="h-full w-full relative">
-              <div className="absolute" style={{ left: "34.5%", top: "181px", width: "733px", maxWidth: "53%" }}>
+              <div className="absolute" style={{ left: "34.5%", top: "clamp(100px, 12.6vw, 181px)", width: "clamp(400px, 50.9vw, 733px)", maxWidth: "53%" }}>
                 <img
                   src={img("/images/logo-horizontal.png")}
                   alt="Iván Chocrón Logo"
                   className="mb-4"
-                  style={{ width: "733px", maxWidth: "100%", height: "146px", objectFit: "contain" }}
+                  style={{ width: "clamp(400px, 50.9vw, 733px)", maxWidth: "100%", height: "auto", objectFit: "contain" }}
                 />
-                <p className="font-light text-[#4b4746]" style={{ fontSize: "55.3px", lineHeight: "55.3px" }}>
+                <p className="font-light text-[#4b4746]" style={{ fontSize: "clamp(32px, 3.84vw, 55.3px)", lineHeight: "1" }}>
                   Speaker &amp; Healing Coach
                 </p>
-                <h2 className="font-medium text-black mt-4" style={{ fontSize: "35.87px", lineHeight: "49.94px" }}>
+                <h2 className="font-medium text-black mt-4" style={{ fontSize: "clamp(22px, 2.49vw, 35.87px)", lineHeight: "1.39" }}>
                   Bridging the gap between science and spirit through a grounded and approachable healing methodology.
                 </h2>
               </div>
