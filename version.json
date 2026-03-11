@@ -1,9 +1,9 @@
 {
-  "version": "v260311.05 2:40pm",
-  "release": 5,
-  "sha": "70436e0",
-  "fullSha": "70436e0a2d074688bea55903ff6ebce9af48c294",
+  "version": "v260311.06 3:16pm",
+  "release": 6,
+  "sha": "d28dc92",
+  "fullSha": "d28dc92b9edc95a271d93f7eaabea90076b69ff8",
   "actor": "ivanchocron",
-  "pushedAt": "2026-03-11T19:40:58Z",
-  "commits": [{"sha": "70436e0", "message": "fix: header fade on scroll, Recent Appearances video, footer icons (#16)", "author": "ivanchocron"}]
+  "pushedAt": "2026-03-11T20:16:16Z",
+  "commits": [{"sha": "d28dc92", "message": "Fix text colors and services accordion to match Squarespace (#17)", "author": "ivanchocron"}]
 }
