@@ -51,8 +51,8 @@ export default async function HomePage({
   return (
     <div style={{ fontFamily: "var(--font-poppins), Poppins, sans-serif" }}>
       {/* ─── NAVIGATION ─── */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-transparent">
-        <div className="max-w-[1298px] mx-auto flex items-center justify-between h-[100px] md:h-[134px] px-[30px] md:px-[57px]">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#9c8a78]">
+        <div className="max-w-[1298px] mx-auto flex items-center justify-between h-[100px] md:h-[114px] px-[30px] md:px-[57px]">
           <a href={`/${lang}`}>
             <img src={img("/images/logo-icon.png")} alt="Iván Chocrón" className="w-[39px] h-[39px] md:w-[72px] md:h-[71px]" />
           </a>
@@ -62,7 +62,7 @@ export default async function HomePage({
             <span className="block w-[30px] h-[1.5px] bg-[#4b4746]"></span>
             <span className="block w-[30px] h-[1.5px] bg-[#4b4746]"></span>
           </button>
-          <nav className="hidden md:flex items-center" style={{ gap: "42px" }}>
+          <nav className="hidden md:flex items-center" style={{ gap: "29px" }}>
             {[
               { label: "Home", href: `/${lang}` },
               { label: "About", href: `/${lang}/about` },
@@ -74,7 +74,7 @@ export default async function HomePage({
                 key={link.label}
                 href={link.href}
                 className="font-light text-[#4b4746] hover:text-[#333] transition-colors"
-                style={{ fontSize: "17.37px", lineHeight: "32.48px" }}
+                style={{ fontSize: "16.94px", lineHeight: "32.48px" }}
                 {...(link.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               >
                 {link.label}
