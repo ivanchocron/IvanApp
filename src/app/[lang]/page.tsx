@@ -188,7 +188,7 @@ export default async function HomePage({
         {/* Block A: Intro Heading */}
         <div className="px-6 pt-20">
           <div className="max-w-[1189px] mx-auto">
-            <h3 className="font-medium text-[#4b4746]" style={{ fontSize: "clamp(24px, 2.49vw, 35.87px)", lineHeight: "1.39" }}>
+            <h3 className="font-medium text-[#fffaf4]" style={{ fontSize: "clamp(24px, 2.49vw, 35.87px)", lineHeight: "1.39" }}>
               Enough is enough. It is time to heal, shift into consciousness from unawareness and discover our unique gifts.
             </h3>
           </div>
@@ -197,7 +197,7 @@ export default async function HomePage({
         {/* Block B: Vision Statement */}
         <div className="px-6 pt-10">
           <div className="max-w-[1189px] mx-auto">
-            <h4 className="font-medium text-[#4b4746]" style={{ fontSize: "clamp(18px, 1.79vw, 25.76px)", lineHeight: "1.43" }}>
+            <h4 className="font-medium text-[#d9cfc5]" style={{ fontSize: "clamp(18px, 1.79vw, 25.76px)", lineHeight: "1.43" }}>
               It is my vision to make grounded relatable healing accessible to individuals from every walk of life, belief system and background.
             </h4>
           </div>
@@ -240,7 +240,7 @@ export default async function HomePage({
             <div className="text-[#4b4746]">
               {/* Teal quote block — bg #9AAAAF */}
               <div style={{ backgroundColor: "#9AAAAF", padding: "24px" }}>
-                <h3 className="font-medium text-[#4b4746]" style={{ fontSize: "clamp(24px, 2.49vw, 35.87px)", lineHeight: "1.39" }}>
+                <h3 className="font-medium text-[#d9cfc5]" style={{ fontSize: "clamp(24px, 2.49vw, 35.87px)", lineHeight: "1.39" }}>
                   &ldquo;Healing work is the most important thing anyone can do for themselves and the world around them.&rdquo;
                 </h3>
               </div>
@@ -386,10 +386,10 @@ export default async function HomePage({
               ].map((svc, i) => (
                 <details key={svc.title} className={`border-t border-[#4b4746]/20 group ${i === 3 ? "border-b border-[#4b4746]/20" : ""}`}>
                   <summary className="cursor-pointer flex items-center justify-between list-none" style={{ padding: "30px 0" }}>
-                    <h3 className="font-light text-[#4b4746]" style={{ fontSize: "24.05px" }}>{svc.title}</h3>
-                    <span className="text-xl text-[#4b4746]/40 group-open:rotate-45 transition-transform">+</span>
+                    <h3 className="font-light text-[#fffaf4]" style={{ fontSize: "24.05px" }}>{svc.title}</h3>
+                    <span className="text-xl text-[#fffaf4]/60 group-open:rotate-45 transition-transform">+</span>
                   </summary>
-                  <p className="pb-5 text-[#4b4746]/70 font-light leading-relaxed" style={{ fontSize: "15.66px", lineHeight: "29.28px" }}>{svc.desc}</p>
+                  <p className="pb-5 text-[#fffaf4]/70 font-light leading-relaxed" style={{ fontSize: "15.66px", lineHeight: "29.28px" }}>{svc.desc}</p>
                 </details>
               ))}
             </div>
