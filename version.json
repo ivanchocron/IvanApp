@@ -1,9 +1,9 @@
 {
-  "version": "v260312.05 9:39pm",
-  "release": 5,
-  "sha": "3e7d40f",
-  "fullSha": "3e7d40ff75c594403d1e8861ab1390b370cb9c25",
+  "version": "v260312.06 9:48am",
+  "release": 6,
+  "sha": "29d52b0",
+  "fullSha": "29d52b0e797fd63f7dcd1026317bb9a952a2e047",
   "actor": "ivanchocron",
-  "pushedAt": "2026-03-12T02:39:13Z",
-  "commits": [{"sha": "3e7d40f", "message": "Fix all divider curves: directions, pronounced curvature, add title (#23)", "author": "ivanchocron"}]
+  "pushedAt": "2026-03-12T14:48:58Z",
+  "commits": [{"sha": "29d52b0", "message": "Fix dividers facing UP, YouTube alignment, footer icons, version badge (#24)", "author": "ivanchocron"}]
 }
