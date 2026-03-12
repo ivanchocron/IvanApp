@@ -600,12 +600,12 @@ export default async function HomePage({
                 ))}
               </div>
               <div className="mb-4">
-                <p className="font-bold text-[#9c8a78] mb-1" style={{ fontSize: "15.66px" }}>Contact:</p>
-                <a href="mailto:ivan@ivanchocron.com" className="text-[#9c8a78] hover:text-[#b8a694]" style={{ fontSize: "15.66px", fontWeight: 300 }}>ivan@ivanchocron.com</a>
+                <p className="font-bold text-[#fffaf4]/80 mb-1" style={{ fontSize: "15.66px" }}>Contact:</p>
+                <a href="mailto:ivan@ivanchocron.com" className="text-[#fffaf4]/80 hover:text-[#fffaf4]" style={{ fontSize: "15.66px", fontWeight: 300 }}>ivan@ivanchocron.com</a>
               </div>
               <div>
-                <p className="font-bold text-[#9c8a78] mb-1" style={{ fontSize: "15.66px" }}>Press &amp; Media Inquiries:</p>
-                <a href="mailto:hello@ivanchocron.com" className="text-[#9c8a78] hover:text-[#b8a694]" style={{ fontSize: "15.66px", fontWeight: 300 }}>hello@ivanchocron.com</a>
+                <p className="font-bold text-[#fffaf4]/80 mb-1" style={{ fontSize: "15.66px" }}>Press &amp; Media Inquiries:</p>
+                <a href="mailto:hello@ivanchocron.com" className="text-[#fffaf4]/80 hover:text-[#fffaf4]" style={{ fontSize: "15.66px", fontWeight: 300 }}>hello@ivanchocron.com</a>
               </div>
             </div>
 
@@ -652,11 +652,11 @@ export default async function HomePage({
           {/* Bottom bar */}
           <div className="mt-12 pt-8 border-t border-white/10">
             {/* Hardcoded 2024 */}
-            <p className="text-[#9c8a78]" style={{ fontSize: "15.66px", fontWeight: 300 }}>
+            <p className="text-[#fffaf4]/80" style={{ fontSize: "15.66px", fontWeight: 300 }}>
               &copy;Iv&aacute;n Chocr&oacute;n 2024, All Rights Reserved.
             </p>
-            <p className="text-[#9c8a78] mt-2" style={{ fontSize: "15.66px", fontWeight: 300 }}>
-              Credits: <a href="https://www.deusmarca.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#b8a694]">DEŪS MARCA</a> + <a href="https://crystalsandsmudgesticks.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#b8a694]">Crystals &amp; Smudge Sticks</a>
+            <p className="text-[#fffaf4]/80 mt-2" style={{ fontSize: "15.66px", fontWeight: 300 }}>
+              Credits: <a href="https://www.deusmarca.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#fffaf4]">DEŪS MARCA</a> + <a href="https://crystalsandsmudgesticks.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#fffaf4]">Crystals &amp; Smudge Sticks</a>
             </p>
           </div>
         </div>
