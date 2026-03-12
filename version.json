@@ -1,9 +1,9 @@
 {
-  "version": "v260312.02 9:06pm",
-  "release": 2,
-  "sha": "30e99b9",
-  "fullSha": "30e99b9ec19230d4e9660dc9e3c60e82b82507df",
+  "version": "v260312.03 9:08pm",
+  "release": 3,
+  "sha": "444f47a",
+  "fullSha": "444f47a8f57169fc1711b20b8cdfda769bbf9a93",
   "actor": "ivanchocron",
-  "pushedAt": "2026-03-12T02:06:54Z",
-  "commits": [{"sha": "30e99b9", "message": "Fix teal overlap to only affect quote block, brighten methodology text (#20)", "author": "ivanchocron"}]
+  "pushedAt": "2026-03-12T02:08:45Z",
+  "commits": [{"sha": "444f47a", "message": "Brighten footer text to match methodology accordion color (#21)", "author": "ivanchocron"}]
 }
