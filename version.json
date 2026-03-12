@@ -1,9 +1,9 @@
 {
-  "version": "v260312.04 9:27pm",
-  "release": 4,
-  "sha": "cfae68d",
-  "fullSha": "cfae68d40d3e6661f5233691f251442eb8c1f5d5",
+  "version": "v260312.05 9:39pm",
+  "release": 5,
+  "sha": "3e7d40f",
+  "fullSha": "3e7d40ff75c594403d1e8861ab1390b370cb9c25",
   "actor": "ivanchocron",
-  "pushedAt": "2026-03-12T02:27:37Z",
-  "commits": [{"sha": "cfae68d", "message": "Bold headings, full-bleed Services image, curved SVG dividers (#22)", "author": "ivanchocron"}]
+  "pushedAt": "2026-03-12T02:39:13Z",
+  "commits": [{"sha": "3e7d40f", "message": "Fix all divider curves: directions, pronounced curvature, add title (#23)", "author": "ivanchocron"}]
 }
