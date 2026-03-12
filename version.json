@@ -1,9 +1,9 @@
 {
-  "version": "v260311.07 3:30pm",
-  "release": 7,
-  "sha": "6561901",
-  "fullSha": "6561901f06a75ead6bcfc7a61de92644ec5134e2",
+  "version": "v260312.01 8:58pm",
+  "release": 1,
+  "sha": "a717779",
+  "fullSha": "a7177799f23db8069a47311e06730f33fff864a9",
   "actor": "ivanchocron",
-  "pushedAt": "2026-03-11T20:30:24Z",
-  "commits": [{"sha": "6561901", "message": "Fix Services accordion: dark text, full content from Squarespace (#18)", "author": "ivanchocron"}]
+  "pushedAt": "2026-03-12T01:58:51Z",
+  "commits": [{"sha": "a717779", "message": "Fix teal quote overlap, methodology text, footer social icons (#19)", "author": "ivanchocron"}]
 }
