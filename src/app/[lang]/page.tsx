@@ -130,10 +130,10 @@ export default async function HomePage({
 
       {/* ─── SECTION 0: HERO ─── */}
       <section className="relative overflow-hidden bg-[#9c8a78]">
-        {/* Curved bottom overlay — curved to the left */}
-        <div className="absolute bottom-0 left-0 right-0 z-10" style={{ height: "59px" }}>
-          <svg className="w-full h-full" viewBox="0 0 1440 59" preserveAspectRatio="none">
-            <path d="M0,59 Q720,0 1440,0 L1440,59 Z" fill="#9c8a78" />
+        {/* Curved bottom overlay — curved LEFT, facing UP */}
+        <div className="absolute bottom-0 left-0 right-0 z-10" style={{ height: "80px" }}>
+          <svg className="w-full h-full" viewBox="0 0 1440 80" preserveAspectRatio="none">
+            <path d="M0,0 Q720,80 1440,80 L1440,80 L0,80 Z" fill="#9c8a78" />
           </svg>
         </div>
         {/* Desktop: full-width background image with overlaid text */}
@@ -250,7 +250,7 @@ export default async function HomePage({
                   &ldquo;Healing work is the most important thing anyone can do for themselves and the world around them.&rdquo;
                 </h3>
               </div>
-              {/* Approach paragraphs */}
+              {/* Approach paragraphs — NOT offset, stays in normal column position */}
               <div className="px-8 md:px-12 py-8">
                 <p className="font-light leading-relaxed mb-5" style={{ fontSize: "15.66px", lineHeight: "29.28px" }}>
                   My approach is <strong className="font-bold">grounded</strong>. I have created my own system of healing, working with proven methods based on science and psychology to help people overcome their blocks.
@@ -286,10 +286,10 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ─── CURVED DIVIDER: tan → black — curved RIGHT, pronounced ─── */}
-      <div className="relative" style={{ height: "80px", backgroundColor: "#000" }}>
+      {/* ─── CURVED DIVIDER: tan → dark — curved RIGHT, facing UP ─── */}
+      <div className="relative" style={{ height: "80px", backgroundColor: "#9c8a78" }}>
         <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 80" preserveAspectRatio="none">
-          <path d="M0,0 L1440,0 L1440,80 Q720,0 0,0 Z" fill="#9c8a78" />
+          <path d="M0,80 Q720,80 1440,0 L1440,80 Z" fill="#000" />
         </svg>
       </div>
 
@@ -324,7 +324,7 @@ export default async function HomePage({
                     <h3 className="font-light text-[#fffaf4]" style={{ fontSize: "24.05px" }}>{item.title}</h3>
                     <span className="text-2xl text-white/40 group-open:rotate-45 transition-transform">+</span>
                   </summary>
-                  <p className="pb-6 text-[#fffaf4]/80 leading-relaxed" style={{ fontSize: "15.66px", lineHeight: "29.28px" }}>{item.desc}</p>
+                  <p className="pb-6 text-[#fffaf4] leading-relaxed" style={{ fontSize: "15.66px", lineHeight: "29.28px" }}>{item.desc}</p>
                 </details>
               ))}
             </div>
@@ -332,10 +332,10 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ─── CURVED DIVIDER: methodology → warm white — curved RIGHT ─── */}
-      <div className="relative" style={{ height: "80px", backgroundColor: "#fffaf4" }}>
+      {/* ─── CURVED DIVIDER: methodology → warm white — curved RIGHT, facing UP ─── */}
+      <div className="relative" style={{ height: "80px", backgroundColor: "#1a1a1a" }}>
         <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 80" preserveAspectRatio="none">
-          <path d="M0,0 L1440,0 L1440,80 Q720,0 0,0 Z" fill="#1a1a1a" />
+          <path d="M0,80 Q720,80 1440,0 L1440,80 Z" fill="#fffaf4" />
         </svg>
       </div>
 
@@ -377,10 +377,10 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ─── CURVED DIVIDER: warm white → beige — curved LEFT, pronounced ─── */}
-      <div className="relative" style={{ height: "80px", backgroundColor: "#d9cfc5" }}>
+      {/* ─── CURVED DIVIDER: warm white → beige — curved LEFT, facing UP ─── */}
+      <div className="relative" style={{ height: "80px", backgroundColor: "#fffaf4" }}>
         <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 80" preserveAspectRatio="none">
-          <path d="M0,0 L1440,0 L1440,0 Q720,80 0,80 Z" fill="#fffaf4" />
+          <path d="M0,0 Q720,80 1440,80 L1440,80 L0,80 Z" fill="#d9cfc5" />
         </svg>
       </div>
 
@@ -459,10 +459,10 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ─── CURVED DIVIDER: beige → tan — curved LEFT, pronounced ─── */}
-      <div className="relative" style={{ height: "80px", backgroundColor: "#9c8a78" }}>
+      {/* ─── CURVED DIVIDER: beige → tan — curved LEFT, facing UP ─── */}
+      <div className="relative" style={{ height: "80px", backgroundColor: "#d9cfc5" }}>
         <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 80" preserveAspectRatio="none">
-          <path d="M0,0 L1440,0 L1440,0 Q720,80 0,80 Z" fill="#d9cfc5" />
+          <path d="M0,0 Q720,80 1440,80 L1440,80 L0,80 Z" fill="#9c8a78" />
         </svg>
       </div>
 
@@ -476,16 +476,16 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ─── CURVED DIVIDER: tan → warm white — pronounced ─── */}
-      <div className="relative" style={{ height: "80px", backgroundColor: "#fffaf4" }}>
+      {/* ─── CURVED DIVIDER: tan → warm white — facing UP ─── */}
+      <div className="relative" style={{ height: "80px", backgroundColor: "#9c8a78" }}>
         <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 80" preserveAspectRatio="none">
-          <path d="M0,0 L1440,0 L1440,80 Q720,0 0,0 Z" fill="#9c8a78" />
+          <path d="M0,80 Q720,80 1440,0 L1440,80 Z" fill="#fffaf4" />
         </svg>
       </div>
 
       {/* ─── SECTION 6: YOUTUBE CTA ─── */}
       <section className="py-20 px-6 bg-[#fffaf4]">
-        <div className="max-w-[1189px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-[1189px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <div>
             {/* 1. "Now on YouTube" */}
             <h2 className="font-bold text-black mb-6" style={{ fontSize: "clamp(28px, 3.18vw, 45.8px)" }}>
@@ -530,10 +530,10 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ─── CURVED DIVIDER: warm white → beige — pronounced ─── */}
-      <div className="relative" style={{ height: "80px", backgroundColor: "#d9cfc5" }}>
+      {/* ─── CURVED DIVIDER: warm white → beige — facing UP ─── */}
+      <div className="relative" style={{ height: "80px", backgroundColor: "#fffaf4" }}>
         <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 80" preserveAspectRatio="none">
-          <path d="M0,0 L1440,0 L1440,0 Q720,80 0,80 Z" fill="#fffaf4" />
+          <path d="M0,0 Q720,80 1440,80 L1440,80 L0,80 Z" fill="#d9cfc5" />
         </svg>
       </div>
 
@@ -594,10 +594,10 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ─── CURVED DIVIDER: beige → charcoal — pronounced ─── */}
-      <div className="relative" style={{ height: "80px", backgroundColor: "#4b4746" }}>
+      {/* ─── CURVED DIVIDER: beige → charcoal — facing UP ─── */}
+      <div className="relative" style={{ height: "80px", backgroundColor: "#d9cfc5" }}>
         <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 80" preserveAspectRatio="none">
-          <path d="M0,0 L1440,0 L1440,0 Q720,80 0,80 Z" fill="#d9cfc5" />
+          <path d="M0,0 Q720,80 1440,80 L1440,80 L0,80 Z" fill="#4b4746" />
         </svg>
       </div>
 
@@ -623,12 +623,12 @@ export default async function HomePage({
                 ))}
               </div>
               <div className="mb-4">
-                <p className="font-bold text-[#fffaf4]/80 mb-1" style={{ fontSize: "15.66px" }}>Contact:</p>
-                <a href="mailto:ivan@ivanchocron.com" className="text-[#fffaf4]/80 hover:text-[#fffaf4]" style={{ fontSize: "15.66px", fontWeight: 300 }}>ivan@ivanchocron.com</a>
+                <p className="font-bold text-[#fffaf4] mb-1" style={{ fontSize: "15.66px" }}>Contact:</p>
+                <a href="mailto:ivan@ivanchocron.com" className="text-[#fffaf4] hover:text-white" style={{ fontSize: "15.66px", fontWeight: 300 }}>ivan@ivanchocron.com</a>
               </div>
               <div>
-                <p className="font-bold text-[#fffaf4]/80 mb-1" style={{ fontSize: "15.66px" }}>Press &amp; Media Inquiries:</p>
-                <a href="mailto:hello@ivanchocron.com" className="text-[#fffaf4]/80 hover:text-[#fffaf4]" style={{ fontSize: "15.66px", fontWeight: 300 }}>hello@ivanchocron.com</a>
+                <p className="font-bold text-[#fffaf4] mb-1" style={{ fontSize: "15.66px" }}>Press &amp; Media Inquiries:</p>
+                <a href="mailto:hello@ivanchocron.com" className="text-[#fffaf4] hover:text-white" style={{ fontSize: "15.66px", fontWeight: 300 }}>hello@ivanchocron.com</a>
               </div>
             </div>
 
@@ -675,15 +675,20 @@ export default async function HomePage({
           {/* Bottom bar */}
           <div className="mt-12 pt-8 border-t border-white/10">
             {/* Hardcoded 2024 */}
-            <p className="text-[#fffaf4]/80" style={{ fontSize: "15.66px", fontWeight: 300 }}>
+            <p className="text-[#fffaf4]" style={{ fontSize: "15.66px", fontWeight: 300 }}>
               &copy;Iv&aacute;n Chocr&oacute;n 2024, All Rights Reserved.
             </p>
-            <p className="text-[#fffaf4]/80 mt-2" style={{ fontSize: "15.66px", fontWeight: 300 }}>
-              Credits: <a href="https://www.deusmarca.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#fffaf4]">DEŪS MARCA</a> + <a href="https://crystalsandsmudgesticks.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#fffaf4]">Crystals &amp; Smudge Sticks</a>
+            <p className="text-[#fffaf4] mt-2" style={{ fontSize: "15.66px", fontWeight: 300 }}>
+              Credits: <a href="https://www.deusmarca.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">DEŪS MARCA</a> + <a href="https://crystalsandsmudgesticks.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Crystals &amp; Smudge Sticks</a>
             </p>
           </div>
         </div>
       </footer>
+
+      {/* Version badge — fixed bottom-right, subtle */}
+      <div className="fixed bottom-2 right-2 z-50 text-[10px] text-white/30 pointer-events-none select-none">
+        {versionData.version}
+      </div>
     </div>
   );
 }
