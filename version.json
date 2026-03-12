@@ -1,9 +1,9 @@
 {
-  "version": "v260312.03 9:08pm",
-  "release": 3,
-  "sha": "444f47a",
-  "fullSha": "444f47a8f57169fc1711b20b8cdfda769bbf9a93",
+  "version": "v260312.04 9:27pm",
+  "release": 4,
+  "sha": "cfae68d",
+  "fullSha": "cfae68d40d3e6661f5233691f251442eb8c1f5d5",
   "actor": "ivanchocron",
-  "pushedAt": "2026-03-12T02:08:45Z",
-  "commits": [{"sha": "444f47a", "message": "Brighten footer text to match methodology accordion color (#21)", "author": "ivanchocron"}]
+  "pushedAt": "2026-03-12T02:27:37Z",
+  "commits": [{"sha": "cfae68d", "message": "Bold headings, full-bleed Services image, curved SVG dividers (#22)", "author": "ivanchocron"}]
 }
