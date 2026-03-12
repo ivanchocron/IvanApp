@@ -207,7 +207,7 @@ export default async function HomePage({
         <div className="px-6 pt-16">
           <div className="max-w-[1189px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
             <div className="text-[#4b4746]">
-              <p className="font-light mb-6" style={{ fontSize: "15.66px", lineHeight: "29.28px" }}>
+              <p className="font-bold mb-6" style={{ fontSize: "15.66px", lineHeight: "29.28px" }}>
                 Hi! My name is Iv&aacute;n.
               </p>
               <p className="font-light leading-relaxed" style={{ fontSize: "15.66px", lineHeight: "29.28px" }}>
@@ -280,9 +280,11 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ─── DIAGONAL DIVIDER: tan → black ─── */}
-      <div className="relative bg-black" style={{ height: "86px" }}>
-        <div className="absolute inset-0 bg-[#9c8a78]" style={{ clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 100%)" }} />
+      {/* ─── CURVED DIVIDER: tan → black ─── */}
+      <div className="relative" style={{ height: "59px", backgroundColor: "#000" }}>
+        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 59" preserveAspectRatio="none">
+          <path d="M0,0 L1440,0 L1440,15 Q720,59 0,59 Z" fill="#9c8a78" />
+        </svg>
       </div>
 
       {/* ─── SECTION 2: METHODOLOGY ─── */}
@@ -324,15 +326,17 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ─── DIAGONAL DIVIDER: methodology → warm white ─── */}
-      <div className="relative bg-[#fffaf4]" style={{ height: "86px" }}>
-        <div className="absolute inset-0 bg-[#1a1a1a]" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 0%)" }} />
+      {/* ─── CURVED DIVIDER: methodology → warm white ─── */}
+      <div className="relative" style={{ height: "59px", backgroundColor: "#fffaf4" }}>
+        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 59" preserveAspectRatio="none">
+          <path d="M0,15 Q720,59 1440,0 L1440,0 L0,0 Z" fill="#1a1a1a" />
+        </svg>
       </div>
 
       {/* ─── SECTION 3: PHILOSOPHY ─── */}
       <section id="philosophy" className="py-24 px-6 bg-[#fffaf4]">
         <div className="max-w-[1189px] mx-auto">
-          <h2 className="font-medium text-center text-black mb-16" style={{ fontSize: "clamp(28px, 3.18vw, 45.8px)" }}>
+          <h2 className="font-bold text-center text-black mb-16" style={{ fontSize: "clamp(28px, 3.18vw, 45.8px)" }}>
             Pillars of My Philosophy
           </h2>
           <div className="grid gap-12 grid-cols-1 sm:grid-cols-2">
@@ -367,15 +371,17 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ─── DIAGONAL DIVIDER: warm white → beige ─── */}
-      <div className="relative bg-[#d9cfc5]" style={{ height: "86px" }}>
-        <div className="absolute inset-0 bg-[#fffaf4]" style={{ clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 100%)" }} />
+      {/* ─── CURVED DIVIDER: warm white → beige ─── */}
+      <div className="relative" style={{ height: "59px", backgroundColor: "#d9cfc5" }}>
+        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 59" preserveAspectRatio="none">
+          <path d="M0,0 L1440,0 L1440,15 Q720,59 0,59 Z" fill="#fffaf4" />
+        </svg>
       </div>
 
       {/* ─── SECTION 4: SERVICES ─── */}
-      <section className="py-24 px-6 bg-[#d9cfc5]">
-        <div className="max-w-[1189px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-          <div>
+      <section className="bg-[#d9cfc5] overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 items-start">
+          <div className="py-24 px-6 md:pl-[max(24px,calc((100vw-1189px)/2))] md:pr-12">
             <h2 className="font-medium text-[#4b4746] mb-6" style={{ fontSize: "clamp(28px, 3.18vw, 45.8px)" }}>Services</h2>
             <div className="space-y-0">
               {[
@@ -437,7 +443,7 @@ export default async function HomePage({
               </a>
             </div>
           </div>
-          <div className="relative overflow-hidden" style={{ aspectRatio: "490 / 624" }}>
+          <div className="relative overflow-hidden self-stretch min-h-[500px]">
             <img
               src={img("/images/services-retreat.jpg")}
               alt="Iv&aacute;n Chocr&oacute;n retreat"
@@ -447,9 +453,11 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ─── DIAGONAL DIVIDER: beige → tan ─── */}
-      <div className="relative bg-[#9c8a78]" style={{ height: "86px" }}>
-        <div className="absolute inset-0 bg-[#d9cfc5]" style={{ clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 100%)" }} />
+      {/* ─── CURVED DIVIDER: beige → tan ─── */}
+      <div className="relative" style={{ height: "59px", backgroundColor: "#9c8a78" }}>
+        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 59" preserveAspectRatio="none">
+          <path d="M0,0 L1440,0 L1440,15 Q720,59 0,59 Z" fill="#d9cfc5" />
+        </svg>
       </div>
 
       {/* ─── SECTION 5: TESTIMONIALS (carousel) ─── */}
@@ -462,9 +470,11 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ─── DIAGONAL DIVIDER: tan → warm white ─── */}
-      <div className="relative bg-[#fffaf4]" style={{ height: "86px" }}>
-        <div className="absolute inset-0 bg-[#9c8a78]" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 0%)" }} />
+      {/* ─── CURVED DIVIDER: tan → warm white ─── */}
+      <div className="relative" style={{ height: "59px", backgroundColor: "#fffaf4" }}>
+        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 59" preserveAspectRatio="none">
+          <path d="M0,0 L1440,0 L1440,59 Q720,59 0,15 Z" fill="#9c8a78" />
+        </svg>
       </div>
 
       {/* ─── SECTION 6: YOUTUBE CTA ─── */}
@@ -472,7 +482,7 @@ export default async function HomePage({
         <div className="max-w-[1189px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
             {/* 1. "Now on YouTube" */}
-            <h2 className="font-medium text-black mb-6" style={{ fontSize: "clamp(28px, 3.18vw, 45.8px)" }}>
+            <h2 className="font-bold text-black mb-6" style={{ fontSize: "clamp(28px, 3.18vw, 45.8px)" }}>
               Now on <a href="https://youtube.com/@IvanChocron" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:text-red-700">YouTube</a>
             </h2>
             {/* 2. Body text */}
@@ -514,9 +524,11 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ─── DIAGONAL DIVIDER: warm white → beige (subtle, ~29px) ─── */}
-      <div className="relative bg-[#d9cfc5]" style={{ height: "29px" }}>
-        <div className="absolute inset-0 bg-[#fffaf4]" style={{ clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 100%)" }} />
+      {/* ─── CURVED DIVIDER: warm white → beige (subtle) ─── */}
+      <div className="relative" style={{ height: "20px", backgroundColor: "#d9cfc5" }}>
+        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 20" preserveAspectRatio="none">
+          <path d="M0,0 L1440,0 L1440,5 Q720,20 0,20 Z" fill="#fffaf4" />
+        </svg>
       </div>
 
       {/* ─── SECTION 7: RECENT APPEARANCES ─── */}
@@ -558,7 +570,7 @@ export default async function HomePage({
               <img src={img("/images/appearances-screen2.png")} alt="Listen Hunnay podcast" className="w-1/2" />
             </div>
             <div>
-              <p className="font-medium text-[#4b4746] mb-6" style={{ fontSize: "15.66px", lineHeight: "29.28px" }}>
+              <p className="font-bold text-[#4b4746] mb-6" style={{ fontSize: "15.66px", lineHeight: "29.28px" }}>
                 Go deeper &amp; learn more by listening to Iv&aacute;n&apos;s interviews.
               </p>
               <a
@@ -573,9 +585,11 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ─── DIAGONAL DIVIDER: beige → charcoal ─── */}
-      <div className="relative bg-[#4b4746]" style={{ height: "86px" }}>
-        <div className="absolute inset-0 bg-[#d9cfc5]" style={{ clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 100%)" }} />
+      {/* ─── CURVED DIVIDER: beige → charcoal ─── */}
+      <div className="relative" style={{ height: "59px", backgroundColor: "#4b4746" }}>
+        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 59" preserveAspectRatio="none">
+          <path d="M0,0 L1440,0 L1440,15 Q720,59 0,59 Z" fill="#d9cfc5" />
+        </svg>
       </div>
 
       {/* ─── SECTION 8 / FOOTER ─── */}
