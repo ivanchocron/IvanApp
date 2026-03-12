@@ -130,6 +130,12 @@ export default async function HomePage({
 
       {/* ─── SECTION 0: HERO ─── */}
       <section className="relative overflow-hidden bg-[#9c8a78]">
+        {/* Curved bottom overlay — curved to the left */}
+        <div className="absolute bottom-0 left-0 right-0 z-10" style={{ height: "59px" }}>
+          <svg className="w-full h-full" viewBox="0 0 1440 59" preserveAspectRatio="none">
+            <path d="M0,59 Q720,0 1440,0 L1440,59 Z" fill="#9c8a78" />
+          </svg>
+        </div>
         {/* Desktop: full-width background image with overlaid text */}
         <div className="hidden md:block relative w-full" style={{ height: "clamp(500px, 56.4vw, 812px)" }}>
           <img
@@ -280,10 +286,10 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ─── CURVED DIVIDER: tan → black ─── */}
-      <div className="relative" style={{ height: "59px", backgroundColor: "#000" }}>
-        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 59" preserveAspectRatio="none">
-          <path d="M0,0 L1440,0 L1440,15 Q720,59 0,59 Z" fill="#9c8a78" />
+      {/* ─── CURVED DIVIDER: tan → black — curved RIGHT, pronounced ─── */}
+      <div className="relative" style={{ height: "80px", backgroundColor: "#000" }}>
+        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 80" preserveAspectRatio="none">
+          <path d="M0,0 L1440,0 L1440,80 Q720,0 0,0 Z" fill="#9c8a78" />
         </svg>
       </div>
 
@@ -326,10 +332,10 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ─── CURVED DIVIDER: methodology → warm white ─── */}
-      <div className="relative" style={{ height: "59px", backgroundColor: "#fffaf4" }}>
-        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 59" preserveAspectRatio="none">
-          <path d="M0,15 Q720,59 1440,0 L1440,0 L0,0 Z" fill="#1a1a1a" />
+      {/* ─── CURVED DIVIDER: methodology → warm white — curved RIGHT ─── */}
+      <div className="relative" style={{ height: "80px", backgroundColor: "#fffaf4" }}>
+        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 80" preserveAspectRatio="none">
+          <path d="M0,0 L1440,0 L1440,80 Q720,0 0,0 Z" fill="#1a1a1a" />
         </svg>
       </div>
 
@@ -371,10 +377,10 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ─── CURVED DIVIDER: warm white → beige ─── */}
-      <div className="relative" style={{ height: "59px", backgroundColor: "#d9cfc5" }}>
-        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 59" preserveAspectRatio="none">
-          <path d="M0,0 L1440,0 L1440,15 Q720,59 0,59 Z" fill="#fffaf4" />
+      {/* ─── CURVED DIVIDER: warm white → beige — curved LEFT, pronounced ─── */}
+      <div className="relative" style={{ height: "80px", backgroundColor: "#d9cfc5" }}>
+        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 80" preserveAspectRatio="none">
+          <path d="M0,0 L1440,0 L1440,0 Q720,80 0,80 Z" fill="#fffaf4" />
         </svg>
       </div>
 
@@ -453,10 +459,10 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ─── CURVED DIVIDER: beige → tan ─── */}
-      <div className="relative" style={{ height: "59px", backgroundColor: "#9c8a78" }}>
-        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 59" preserveAspectRatio="none">
-          <path d="M0,0 L1440,0 L1440,15 Q720,59 0,59 Z" fill="#d9cfc5" />
+      {/* ─── CURVED DIVIDER: beige → tan — curved LEFT, pronounced ─── */}
+      <div className="relative" style={{ height: "80px", backgroundColor: "#9c8a78" }}>
+        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 80" preserveAspectRatio="none">
+          <path d="M0,0 L1440,0 L1440,0 Q720,80 0,80 Z" fill="#d9cfc5" />
         </svg>
       </div>
 
@@ -470,10 +476,10 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ─── CURVED DIVIDER: tan → warm white ─── */}
-      <div className="relative" style={{ height: "59px", backgroundColor: "#fffaf4" }}>
-        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 59" preserveAspectRatio="none">
-          <path d="M0,0 L1440,0 L1440,59 Q720,59 0,15 Z" fill="#9c8a78" />
+      {/* ─── CURVED DIVIDER: tan → warm white — pronounced ─── */}
+      <div className="relative" style={{ height: "80px", backgroundColor: "#fffaf4" }}>
+        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 80" preserveAspectRatio="none">
+          <path d="M0,0 L1440,0 L1440,80 Q720,0 0,0 Z" fill="#9c8a78" />
         </svg>
       </div>
 
@@ -524,16 +530,19 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ─── CURVED DIVIDER: warm white → beige (subtle) ─── */}
-      <div className="relative" style={{ height: "20px", backgroundColor: "#d9cfc5" }}>
-        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 20" preserveAspectRatio="none">
-          <path d="M0,0 L1440,0 L1440,5 Q720,20 0,20 Z" fill="#fffaf4" />
+      {/* ─── CURVED DIVIDER: warm white → beige — pronounced ─── */}
+      <div className="relative" style={{ height: "80px", backgroundColor: "#d9cfc5" }}>
+        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 80" preserveAspectRatio="none">
+          <path d="M0,0 L1440,0 L1440,0 Q720,80 0,80 Z" fill="#fffaf4" />
         </svg>
       </div>
 
       {/* ─── SECTION 7: RECENT APPEARANCES ─── */}
       <section id="appearances" className="py-24 px-6 bg-[#d9cfc5]">
         <div className="max-w-[1189px] mx-auto">
+          <h2 className="font-bold text-[#4b4746] mb-16 text-center" style={{ fontSize: "clamp(28px, 3.18vw, 45.8px)" }}>
+            Recent Appearances
+          </h2>
           {/* Top row: Video left, Conference info right */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
             {/* Video embed */}
@@ -585,10 +594,10 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ─── CURVED DIVIDER: beige → charcoal ─── */}
-      <div className="relative" style={{ height: "59px", backgroundColor: "#4b4746" }}>
-        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 59" preserveAspectRatio="none">
-          <path d="M0,0 L1440,0 L1440,15 Q720,59 0,59 Z" fill="#d9cfc5" />
+      {/* ─── CURVED DIVIDER: beige → charcoal — pronounced ─── */}
+      <div className="relative" style={{ height: "80px", backgroundColor: "#4b4746" }}>
+        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 80" preserveAspectRatio="none">
+          <path d="M0,0 L1440,0 L1440,0 Q720,80 0,80 Z" fill="#d9cfc5" />
         </svg>
       </div>
 
