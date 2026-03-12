@@ -378,7 +378,7 @@ export default async function HomePage({
       </section>
 
       {/* ─── CURVED DIVIDER: warm white → beige — curved LEFT, facing UP ─── */}
-      <div className="relative" style={{ height: "80px", backgroundColor: "#fffaf4" }}>
+      <div className="relative" style={{ height: "120px", backgroundColor: "#fffaf4" }}>
         <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 80" preserveAspectRatio="none">
           <path d="M0,0 Q720,80 1440,80 L1440,80 L0,80 Z" fill="#d9cfc5" />
         </svg>
@@ -476,10 +476,10 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ─── CURVED DIVIDER: tan → warm white — facing UP ─── */}
+      {/* ─── CURVED DIVIDER: tan → warm white — curved LEFT, facing UP ─── */}
       <div className="relative" style={{ height: "80px", backgroundColor: "#9c8a78" }}>
         <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 80" preserveAspectRatio="none">
-          <path d="M0,80 Q720,80 1440,0 L1440,80 Z" fill="#fffaf4" />
+          <path d="M0,0 Q720,80 1440,80 L1440,80 L0,80 Z" fill="#fffaf4" />
         </svg>
       </div>
 
@@ -530,10 +530,10 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ─── CURVED DIVIDER: warm white → beige — facing UP ─── */}
+      {/* ─── CURVED DIVIDER: warm white → beige — curved RIGHT, facing UP ─── */}
       <div className="relative" style={{ height: "80px", backgroundColor: "#fffaf4" }}>
         <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 80" preserveAspectRatio="none">
-          <path d="M0,0 Q720,80 1440,80 L1440,80 L0,80 Z" fill="#d9cfc5" />
+          <path d="M0,80 Q720,80 1440,0 L1440,80 Z" fill="#d9cfc5" />
         </svg>
       </div>
 
@@ -594,10 +594,10 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ─── CURVED DIVIDER: beige → charcoal — facing UP ─── */}
+      {/* ─── CURVED DIVIDER: beige → charcoal — curved RIGHT, facing UP ─── */}
       <div className="relative" style={{ height: "80px", backgroundColor: "#d9cfc5" }}>
         <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 80" preserveAspectRatio="none">
-          <path d="M0,0 Q720,80 1440,80 L1440,80 L0,80 Z" fill="#4b4746" />
+          <path d="M0,80 Q720,80 1440,0 L1440,80 Z" fill="#4b4746" />
         </svg>
       </div>
 
