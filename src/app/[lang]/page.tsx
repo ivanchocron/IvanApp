@@ -227,7 +227,7 @@ export default async function HomePage({
 
         {/* Block D: Meditation Photo + Quote + Approach (2-col) */}
         <div className="px-6 pt-16 pb-20">
-          <div className="max-w-[1189px] mx-auto grid grid-cols-1 md:grid-cols-[1fr_auto] gap-0 items-start">
+          <div className="max-w-[1189px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-0 items-start">
             {/* LEFT: meditation photo (303.jpg) — tall portrait */}
             <div className="relative overflow-hidden" style={{ aspectRatio: "698 / 1009" }}>
               <img
@@ -236,10 +236,10 @@ export default async function HomePage({
                 className="absolute inset-0 w-full h-full object-cover"
               />
             </div>
-            {/* RIGHT: quote block + approach text + signature + button — overlaps image by ~7vw */}
-            <div className="text-[#4b4746] md:-ml-[7vw] relative z-10" style={{ maxWidth: "min(589px, 42vw)" }}>
-              {/* Teal quote block — bg #9AAAAF */}
-              <div style={{ backgroundColor: "#9AAAAF", padding: "35px" }}>
+            {/* RIGHT: quote block (overlaps image) + approach text (normal alignment) */}
+            <div className="text-[#4b4746]">
+              {/* Teal quote block — bg #9AAAAF — pulled left to overlap image */}
+              <div className="relative z-10 md:-ml-[7vw]" style={{ backgroundColor: "#9AAAAF", padding: "35px" }}>
                 <h3 className="font-medium text-[#d9cfc5]" style={{ fontSize: "clamp(24px, 2.49vw, 35.87px)", lineHeight: "1.39" }}>
                   &ldquo;Healing work is the most important thing anyone can do for themselves and the world around them.&rdquo;
                 </h3>
@@ -316,7 +316,7 @@ export default async function HomePage({
                     <h3 className="font-light text-[#fffaf4]" style={{ fontSize: "24.05px" }}>{item.title}</h3>
                     <span className="text-2xl text-white/40 group-open:rotate-45 transition-transform">+</span>
                   </summary>
-                  <p className="pb-6 text-white/60 leading-relaxed" style={{ fontSize: "15.66px", lineHeight: "29.28px" }}>{item.desc}</p>
+                  <p className="pb-6 text-[#fffaf4]/80 leading-relaxed" style={{ fontSize: "15.66px", lineHeight: "29.28px" }}>{item.desc}</p>
                 </details>
               ))}
             </div>
