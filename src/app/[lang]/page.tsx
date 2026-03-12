@@ -227,7 +227,7 @@ export default async function HomePage({
 
         {/* Block D: Meditation Photo + Quote + Approach (2-col) */}
         <div className="px-6 pt-16 pb-20">
-          <div className="max-w-[1189px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-0 items-start">
+          <div className="max-w-[1189px] mx-auto grid grid-cols-1 md:grid-cols-[1fr_auto] gap-0 items-start">
             {/* LEFT: meditation photo (303.jpg) — tall portrait */}
             <div className="relative overflow-hidden" style={{ aspectRatio: "698 / 1009" }}>
               <img
@@ -236,10 +236,10 @@ export default async function HomePage({
                 className="absolute inset-0 w-full h-full object-cover"
               />
             </div>
-            {/* RIGHT: quote block + approach text + signature + button */}
-            <div className="text-[#4b4746]">
+            {/* RIGHT: quote block + approach text + signature + button — overlaps image by ~7vw */}
+            <div className="text-[#4b4746] md:-ml-[7vw] relative z-10" style={{ maxWidth: "min(589px, 42vw)" }}>
               {/* Teal quote block — bg #9AAAAF */}
-              <div style={{ backgroundColor: "#9AAAAF", padding: "24px" }}>
+              <div style={{ backgroundColor: "#9AAAAF", padding: "35px" }}>
                 <h3 className="font-medium text-[#d9cfc5]" style={{ fontSize: "clamp(24px, 2.49vw, 35.87px)", lineHeight: "1.39" }}>
                   &ldquo;Healing work is the most important thing anyone can do for themselves and the world around them.&rdquo;
                 </h3>
@@ -307,9 +307,9 @@ export default async function HomePage({
             </h2>
             <div className="max-w-[600px] space-y-0">
               {[
-                { title: "EDUCATION", desc: "Through YouTube, podcasts, speaking engagements, and retreats, I educate people about what real healing encompasses \u2014 creating those incredible ah-ha moments of insight and breakthroughs that help people understand themselves at a deeper level." },
-                { title: "EMOTIONAL PROCESSING", desc: "Using my knowledge of psychology and a decade of experience working in healing retreats, I help people process and heal their trauma while releasing stuck emotions in a safe, supported environment." },
-                { title: "RETREATS", desc: "My private retreats fuse philosophies and lessons from leading 500+ healing events. Thousands of people have freed themselves from physical and psychological challenges through these transformative experiences hosted worldwide." },
+                { title: "EDUCATION", desc: "Education is a key component of Iv\u00e1n\u2019s approach in every service. Through Youtube, Podcasts, Speaking, and Retreats, Iv\u00e1n builds up his audience\u2019s knowledge and understanding about what real healing encompasses. Learning about the importance and depth of real healing and how to properly go through a healing process, one can have those incredible ah-ha moments of insights and breakthroughs that helps set the stage for deeper emotional processing throughout their healing journey." },
+                { title: "EMOTIONAL PROCESSING", desc: "Iv\u00e1n uses his knowledge of psychology, his ability to intuitively understand how to resolve life\u2019s personal challenges, and his decade of experience working in healing retreats to help people process and heal their trauma while releasing their stuck emotions. Many people who have experienced emotional processing with Iv\u00e1n have called it one of the most meaningful moments of their life." },
+                { title: "RETREATS", desc: "Iv\u00e1n\u2019s private retreats fuse his philosophies and lessons from his years of experience leading 500+ healing events. His retreats are thoughtfully crafted to provide experiences and elements that are perfectly suited to connect with the modern western mind. Through these retreats, thousands of people have freed themselves from critical physical and psychological diseases, released stress and trauma, and became a version of themselves they always wanted to be." },
               ].map((item, i) => (
                 <details key={item.title} className={`border-t border-white/20 group ${i === 2 ? "border-b border-white/20" : ""}`}>
                   <summary className="cursor-pointer flex items-center justify-between list-none" style={{ padding: "30px 0" }}>
@@ -592,7 +592,7 @@ export default async function HomePage({
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 rounded-full flex items-center justify-center bg-[#9c8a78]/20 text-[#9c8a78] hover:text-[#b8a694] transition-colors"
+                    className="w-12 h-12 rounded-full flex items-center justify-center bg-[#9c8a78] text-[#4b4746] hover:bg-[#b8a694] transition-colors"
                     aria-label={s.label}
                   >
                     <SocialIcon d={s.icon} label={s.label} />
