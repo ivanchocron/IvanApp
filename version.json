@@ -1,9 +1,9 @@
 {
-  "version": "v260312.01 8:58pm",
-  "release": 1,
-  "sha": "a717779",
-  "fullSha": "a7177799f23db8069a47311e06730f33fff864a9",
+  "version": "v260312.02 9:06pm",
+  "release": 2,
+  "sha": "30e99b9",
+  "fullSha": "30e99b9ec19230d4e9660dc9e3c60e82b82507df",
   "actor": "ivanchocron",
-  "pushedAt": "2026-03-12T01:58:51Z",
-  "commits": [{"sha": "a717779", "message": "Fix teal quote overlap, methodology text, footer social icons (#19)", "author": "ivanchocron"}]
+  "pushedAt": "2026-03-12T02:06:54Z",
+  "commits": [{"sha": "30e99b9", "message": "Fix teal overlap to only affect quote block, brighten methodology text (#20)", "author": "ivanchocron"}]
 }
