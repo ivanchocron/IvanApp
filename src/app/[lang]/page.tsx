@@ -385,7 +385,7 @@ export default async function HomePage({
       </div>
 
       {/* ─── SECTION 4: SERVICES ─── */}
-      <section className="bg-[#d9cfc5] overflow-hidden">
+      <section className="bg-[#d9cfc5] pt-16 overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0 items-start">
           <div className="py-24 px-6 md:pl-[max(24px,calc((100vw-1189px)/2))] md:pr-12">
             <h2 className="font-medium text-[#4b4746] mb-6" style={{ fontSize: "clamp(28px, 3.18vw, 45.8px)" }}>Services</h2>
@@ -549,7 +549,7 @@ export default async function HomePage({
             <div className="relative aspect-video bg-black overflow-hidden">
               <iframe
                 className="absolute inset-0 w-full h-full"
-                src="https://www.youtube.com/embed/dPly3ltTBso"
+                src="https://www.youtube.com/embed/Mr1p7llJTfI"
                 title="The Science of Psychedelics &amp; Spiritual Medicine Conference"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen

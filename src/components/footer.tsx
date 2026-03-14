@@ -8,10 +8,12 @@ export function Footer({ dict }: { dict: Dictionary }) {
   const pathname = usePathname();
   const version = versionData.version || "dev";
 
-  // Hide on homepage (homepage has its own custom footer in page.tsx)
+  // Hide on pages that have their own custom footer
   const lang = pathname.split("/")[1] || "en";
   const isHomepage = pathname === `/${lang}` || pathname === `/${lang}/`;
-  if (isHomepage) {
+  const isAbout = pathname === `/${lang}/about` || pathname === `/${lang}/about/`;
+  const isServices = pathname === `/${lang}/services` || pathname === `/${lang}/services/`;
+  if (isHomepage || isAbout || isServices) {
     return null;
   }
 
