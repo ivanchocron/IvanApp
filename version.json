@@ -1,9 +1,9 @@
 {
-  "version": "v260312.07 6:06pm",
-  "release": 7,
-  "sha": "37b86e4",
-  "fullSha": "37b86e48d785f703ef3a7e8a6e9e010317fb034f",
+  "version": "v260314.01 8:34am",
+  "release": 1,
+  "sha": "76eb3ee",
+  "fullSha": "76eb3ee75c8d95b5c14539ef337be57f32826dbe",
   "actor": "ivanchocron",
-  "pushedAt": "2026-03-12T23:06:42Z",
-  "commits": [{"sha": "37b86e4", "message": "Fix 3 divider directions + more space before Services (#25)", "author": "ivanchocron"}]
+  "pushedAt": "2026-03-14T13:34:57Z",
+  "commits": [{"sha": "76eb3ee", "message": "Add About & Services pages, fix homepage YouTube + divider spacing", "author": "Ivan"}]
 }
