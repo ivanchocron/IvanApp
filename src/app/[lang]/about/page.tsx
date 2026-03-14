@@ -111,20 +111,18 @@ export default async function AboutPage({
       </StickyHeader>
 
       {/* ─── HERO IMAGE BANNER ─── */}
-      <section className="bg-[#d9cfc5]">
-        <div className="w-full overflow-hidden">
-          <img
-            src={img("/images/about-ivan-hero.jpg")}
-            alt="Iván Chocrón"
-            className="w-full object-cover"
-            style={{ maxHeight: "500px", objectPosition: "center 20%" }}
-          />
-        </div>
+      <section className="bg-[#d9cfc5] pt-[114px]">
+        <img
+          src={img("/images/about-ivan-hero.jpg")}
+          alt="Iván Chocrón"
+          className="w-full object-cover"
+          style={{ height: "clamp(250px, 30vw, 500px)", objectPosition: "center 20%" }}
+        />
       </section>
 
       {/* ─── HEADING + HOW IT ALL STARTED ─── */}
       <section className="bg-[#d9cfc5] pt-20 pb-16 px-6">
-        <div className="max-w-[1000px] mx-auto">
+        <div className="w-[90%] md:w-[62%] max-w-[900px] mx-auto">
           <h1
             className="text-[#4b4746]"
             style={{ fontSize: "clamp(42px, 6vw, 86px)", fontWeight: 500, lineHeight: 1 }}
@@ -138,7 +136,7 @@ export default async function AboutPage({
             Educator, Consultant &amp; Coach
           </p>
         </div>
-        <div className="max-w-[830px] mx-auto mt-16">
+        <div className="w-[90%] md:w-[62%] max-w-[900px] mx-auto mt-16">
           <p className="text-[#4b4746] font-bold mb-6" style={{ fontSize: "15.66px", lineHeight: 1.87 }}>
             Here is how it all started...
           </p>
@@ -155,7 +153,12 @@ export default async function AboutPage({
       </section>
 
       {/* ─── FULL-BLEED IMAGE — Group retreat ─── */}
-      <section className="bg-[#d9cfc5]">
+      <section className="relative bg-black">
+        <div className="absolute top-[-20px] left-0 w-full h-[20px] overflow-hidden">
+          <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 20">
+            <path d="M0,0 L1440,0 L1440,20 Q1080,12 720,16 Q360,20 0,14 Z" fill="#d9cfc5" />
+          </svg>
+        </div>
         <img
           src={img("/images/about-section2.jpg")}
           alt="Group healing retreat - people sitting in a circle"
@@ -165,8 +168,13 @@ export default async function AboutPage({
       </section>
 
       {/* ─── HOW IT'S GOING ─── */}
-      <section className="bg-[#d9cfc5] py-16 px-6">
-        <div className="max-w-[830px] mx-auto">
+      <section className="relative bg-[#d9cfc5] py-16 px-6">
+        <div className="absolute top-[-20px] left-0 w-full h-[20px] overflow-hidden">
+          <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 20">
+            <path d="M0,0 L1440,0 L1440,20 Q1080,14 720,18 Q360,14 0,20 Z" fill="black" />
+          </svg>
+        </div>
+        <div className="w-[90%] md:w-[62%] max-w-[900px] mx-auto">
           <p className="text-[#4b4746] font-bold mb-6" style={{ fontSize: "15.66px", lineHeight: 1.87 }}>
             Here is how it&apos;s going...
           </p>
@@ -177,7 +185,12 @@ export default async function AboutPage({
       </section>
 
       {/* ─── FULL-BLEED IMAGE — Group circle ─── */}
-      <section className="bg-[#d9cfc5]">
+      <section className="relative bg-black">
+        <div className="absolute top-[-20px] left-0 w-full h-[20px] overflow-hidden">
+          <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 20">
+            <path d="M0,0 L1440,0 L1440,14 Q1080,20 720,16 Q360,12 0,20 Z" fill="#d9cfc5" />
+          </svg>
+        </div>
         <img
           src={img("/images/about-section4.jpg")}
           alt="Group of people in a healing circle"
@@ -187,8 +200,13 @@ export default async function AboutPage({
       </section>
 
       {/* ─── HERE IS WHY ─── */}
-      <section className="bg-[#d9cfc5] py-16 px-6">
-        <div className="max-w-[830px] mx-auto">
+      <section className="relative bg-[#d9cfc5] py-16 px-6">
+        <div className="absolute top-[-20px] left-0 w-full h-[20px] overflow-hidden">
+          <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 20">
+            <path d="M0,0 L1440,0 L1440,20 Q1080,14 720,18 Q360,14 0,20 Z" fill="black" />
+          </svg>
+        </div>
+        <div className="w-[90%] md:w-[62%] max-w-[900px] mx-auto">
           <p className="text-[#4b4746] font-bold mb-6" style={{ fontSize: "15.66px", lineHeight: 1.87 }}>
             Here is why...
           </p>
@@ -208,7 +226,12 @@ export default async function AboutPage({
       </section>
 
       {/* ─── FULL-BLEED IMAGE — Hands close-up ─── */}
-      <section className="bg-[#d9cfc5]">
+      <section className="relative bg-black">
+        <div className="absolute top-[-20px] left-0 w-full h-[20px] overflow-hidden">
+          <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 20">
+            <path d="M0,0 L1440,0 L1440,20 Q1080,12 720,16 Q360,20 0,14 Z" fill="#d9cfc5" />
+          </svg>
+        </div>
         <img
           src={img("/images/about-section6.jpg")}
           alt="Two people in a close moment of healing"
@@ -218,8 +241,13 @@ export default async function AboutPage({
       </section>
 
       {/* ─── HERE IS WHAT'S NEXT ─── */}
-      <section className="bg-[#d9cfc5] py-16 px-6">
-        <div className="max-w-[830px] mx-auto">
+      <section className="relative bg-[#d9cfc5] py-16 px-6">
+        <div className="absolute top-[-20px] left-0 w-full h-[20px] overflow-hidden">
+          <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 20">
+            <path d="M0,0 L1440,0 L1440,20 Q1080,14 720,18 Q360,14 0,20 Z" fill="black" />
+          </svg>
+        </div>
+        <div className="w-[90%] md:w-[62%] max-w-[900px] mx-auto">
           <p className="text-[#4b4746] font-bold mb-6" style={{ fontSize: "15.66px", lineHeight: 1.87 }}>
             Here is what&apos;s next&hellip;
           </p>
@@ -254,7 +282,12 @@ export default async function AboutPage({
       </section>
 
       {/* ─── FULL-BLEED IMAGE — Hands touching ─── */}
-      <section className="bg-[#d9cfc5]">
+      <section className="relative bg-black">
+        <div className="absolute top-[-20px] left-0 w-full h-[20px] overflow-hidden">
+          <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 20">
+            <path d="M0,0 L1440,0 L1440,14 Q1080,20 720,16 Q360,12 0,20 Z" fill="#d9cfc5" />
+          </svg>
+        </div>
         <img
           src={img("/images/about-section8.jpg")}
           alt="Healing hands reaching together"
@@ -263,15 +296,13 @@ export default async function AboutPage({
         />
       </section>
 
-      {/* ─── Divider: Content → Footer ─── */}
-      <div className="relative h-[80px] bg-[#d9cfc5]">
-        <svg className="absolute bottom-0 w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 80">
-          <path d="M0,80 Q720,0 1440,80 L1440,80 L0,80 Z" fill="#4b4746" />
-        </svg>
-      </div>
-
       {/* ─── FOOTER (identical to homepage) ─── */}
-      <footer className="py-16 px-6 bg-[#4b4746]">
+      <footer className="relative py-16 px-6 bg-[#4b4746]">
+        <div className="absolute top-[-20px] left-0 w-full h-[20px] overflow-hidden">
+          <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 20">
+            <path d="M0,0 L1440,0 L1440,20 Q1080,14 720,18 Q360,14 0,20 Z" fill="black" />
+          </svg>
+        </div>
         <div className="max-w-[1189px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
             {/* Left — socials + contact */}
