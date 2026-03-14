@@ -1,9 +1,9 @@
 {
-  "version": "v260312.06 9:48am",
-  "release": 6,
-  "sha": "29d52b0",
-  "fullSha": "29d52b0e797fd63f7dcd1026317bb9a952a2e047",
+  "version": "v260314.01 8:34am",
+  "release": 1,
+  "sha": "76eb3ee",
+  "fullSha": "76eb3ee75c8d95b5c14539ef337be57f32826dbe",
   "actor": "ivanchocron",
-  "pushedAt": "2026-03-12T14:48:58Z",
-  "commits": [{"sha": "29d52b0", "message": "Fix dividers facing UP, YouTube alignment, footer icons, version badge (#24)", "author": "ivanchocron"}]
+  "pushedAt": "2026-03-14T13:34:57Z",
+  "commits": [{"sha": "76eb3ee", "message": "Add About & Services pages, fix homepage YouTube + divider spacing", "author": "Ivan"}]
 }
