@@ -1,9 +1,12 @@
 import { getDictionary } from "@/i18n/get-dictionary";
 import type { Locale } from "@/i18n/config";
 import versionData from "../../../../version.json";
+import MobileNav from "@/components/MobileNav";
+import StickyHeader from "@/components/StickyHeader";
 
 const BASE = "/IvanApp";
 const img = (path: string) => `${BASE}${path}`;
+const INQUIRY_URL = "https://forms.gle/MLqbYfbZhWQvkNpXA";
 
 const SOCIALS = [
   { label: "YouTube", href: "https://youtube.com/@IvanChocron", icon: "M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" },
@@ -29,24 +32,97 @@ export default async function AboutPage({
 }) {
   const { lang: rawLang } = await params;
   const lang = rawLang as Locale;
-  const dict = await getDictionary(lang);
+  await getDictionary(lang);
 
   return (
-    <div className="bg-[#d9cfc5]">
+    <div className="bg-[#d9cfc5]" style={{ fontFamily: "var(--font-poppins), Poppins, sans-serif" }}>
 
-      {/* ─── SECTION 0: HERO IMAGE BANNER ─── */}
+      {/* ─── NAVIGATION — same as homepage ─── */}
+      <StickyHeader>
+        <div className="max-w-[1298px] mx-auto flex items-center justify-between h-[100px] md:h-[114px] px-[30px] md:px-[57px]">
+          <a href={`${BASE}/${lang}`}>
+            <img src={img("/images/logo-icon.png")} alt="Iván Chocrón" className="w-[39px] h-[39px] md:w-[72px] md:h-[71px]" />
+          </a>
+          <MobileNav
+            lang={lang}
+            logoSrc={img("/images/logo-icon.png")}
+            links={[
+              { label: "Home", href: `${BASE}/${lang}` },
+              { label: "About", href: `${BASE}/${lang}/about` },
+              { label: "Services", href: `${BASE}/${lang}/services` },
+              { label: "Explore", href: `${BASE}/${lang}#philosophy` },
+              { label: "Contact", href: INQUIRY_URL, external: true },
+            ]}
+          />
+          <nav className="hidden md:flex items-center" style={{ gap: "29px" }}>
+            {[
+              { label: "Home", href: `${BASE}/${lang}` },
+              { label: "About", href: `${BASE}/${lang}/about` },
+              { label: "Services", href: `${BASE}/${lang}/services` },
+            ].map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="font-light text-[#4b4746] hover:text-[#333] transition-colors"
+                style={{ fontSize: "16.94px", lineHeight: "32.48px" }}
+              >
+                {link.label}
+              </a>
+            ))}
+            <div className="relative group">
+              <a
+                href={`${BASE}/${lang}#philosophy`}
+                className="font-light text-[#4b4746] hover:text-[#333] transition-colors flex items-center gap-1"
+                style={{ fontSize: "16.94px", lineHeight: "32.48px" }}
+              >
+                Explore
+                <svg className="w-3 h-3 opacity-60" viewBox="0 0 12 12" fill="currentColor"><path d="M2 4l4 4 4-4" /></svg>
+              </a>
+              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div className="bg-[#9c8a78] border border-[#4b4746]/10 rounded-md shadow-lg py-2 min-w-[200px]">
+                  {[
+                    { label: "Pillars of My Philosophy", href: `${BASE}/${lang}#philosophy` },
+                    { label: "Recent Features", href: `${BASE}/${lang}#appearances` },
+                    { label: "Press & Media", href: `${BASE}/${lang}#press` },
+                  ].map((sub) => (
+                    <a
+                      key={sub.label}
+                      href={sub.href}
+                      className="block px-4 py-2 font-light text-[#4b4746] hover:bg-[#b5a393] transition-colors"
+                      style={{ fontSize: "14px" }}
+                    >
+                      {sub.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <a
+              href={INQUIRY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-light text-[#4b4746] hover:text-[#333] transition-colors"
+              style={{ fontSize: "16.94px", lineHeight: "32.48px" }}
+            >
+              Contact
+            </a>
+          </nav>
+        </div>
+      </StickyHeader>
+
+      {/* ─── HERO IMAGE BANNER ─── */}
       <section className="bg-[#d9cfc5]">
         <div className="w-full overflow-hidden">
           <img
             src={img("/images/about-ivan-hero.jpg")}
             alt="Iván Chocrón"
             className="w-full object-cover"
-            style={{ maxHeight: "400px", objectPosition: "center 20%" }}
+            style={{ maxHeight: "500px", objectPosition: "center 20%" }}
           />
         </div>
       </section>
 
-      {/* ─── SECTION 1: HEADING + HOW IT ALL STARTED (combined) ─── */}
+      {/* ─── HEADING + HOW IT ALL STARTED ─── */}
       <section className="bg-[#d9cfc5] pt-20 pb-16 px-6">
         <div className="max-w-[1000px] mx-auto">
           <h1
@@ -62,7 +138,7 @@ export default async function AboutPage({
             Educator, Consultant &amp; Coach
           </p>
         </div>
-        <div className="max-w-[750px] mx-auto mt-16">
+        <div className="max-w-[830px] mx-auto mt-16">
           <p className="text-[#4b4746] font-bold mb-6" style={{ fontSize: "15.66px", lineHeight: 1.87 }}>
             Here is how it all started...
           </p>
@@ -78,15 +154,8 @@ export default async function AboutPage({
         </div>
       </section>
 
-      {/* ─── Divider: Text → Image (beige over black, curved) ─── */}
-      <div className="relative h-[80px] bg-[#d9cfc5]">
-        <svg className="absolute bottom-0 w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 80">
-          <path d="M0,80 Q720,0 1440,80 L1440,80 L0,80 Z" fill="#000" />
-        </svg>
-      </div>
-
-      {/* ─── SECTION 2: FULL-BLEED IMAGE — Group retreat ─── */}
-      <section className="bg-black">
+      {/* ─── FULL-BLEED IMAGE — Group retreat ─── */}
+      <section className="bg-[#d9cfc5]">
         <img
           src={img("/images/about-section2.jpg")}
           alt="Group healing retreat - people sitting in a circle"
@@ -95,16 +164,9 @@ export default async function AboutPage({
         />
       </section>
 
-      {/* ─── Divider: Image → Text (black under beige, curved) ─── */}
-      <div className="relative h-[80px] bg-black">
-        <svg className="absolute bottom-0 w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 80">
-          <path d="M0,80 Q720,0 1440,80 L1440,80 L0,80 Z" fill="#d9cfc5" />
-        </svg>
-      </div>
-
-      {/* ─── SECTION 3: HOW IT'S GOING ─── */}
+      {/* ─── HOW IT'S GOING ─── */}
       <section className="bg-[#d9cfc5] py-16 px-6">
-        <div className="max-w-[750px] mx-auto">
+        <div className="max-w-[830px] mx-auto">
           <p className="text-[#4b4746] font-bold mb-6" style={{ fontSize: "15.66px", lineHeight: 1.87 }}>
             Here is how it&apos;s going...
           </p>
@@ -114,15 +176,8 @@ export default async function AboutPage({
         </div>
       </section>
 
-      {/* ─── Divider: Text → Image ─── */}
-      <div className="relative h-[80px] bg-[#d9cfc5]">
-        <svg className="absolute bottom-0 w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 80">
-          <path d="M0,80 Q720,0 1440,80 L1440,80 L0,80 Z" fill="#000" />
-        </svg>
-      </div>
-
-      {/* ─── SECTION 4: FULL-BLEED IMAGE — Group circle ─── */}
-      <section className="bg-black">
+      {/* ─── FULL-BLEED IMAGE — Group circle ─── */}
+      <section className="bg-[#d9cfc5]">
         <img
           src={img("/images/about-section4.jpg")}
           alt="Group of people in a healing circle"
@@ -131,16 +186,9 @@ export default async function AboutPage({
         />
       </section>
 
-      {/* ─── Divider: Image → Text ─── */}
-      <div className="relative h-[80px] bg-black">
-        <svg className="absolute bottom-0 w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 80">
-          <path d="M0,80 Q720,0 1440,80 L1440,80 L0,80 Z" fill="#d9cfc5" />
-        </svg>
-      </div>
-
-      {/* ─── SECTION 5: HERE IS WHY ─── */}
+      {/* ─── HERE IS WHY ─── */}
       <section className="bg-[#d9cfc5] py-16 px-6">
-        <div className="max-w-[750px] mx-auto">
+        <div className="max-w-[830px] mx-auto">
           <p className="text-[#4b4746] font-bold mb-6" style={{ fontSize: "15.66px", lineHeight: 1.87 }}>
             Here is why...
           </p>
@@ -159,15 +207,8 @@ export default async function AboutPage({
         </div>
       </section>
 
-      {/* ─── Divider: Text → Image ─── */}
-      <div className="relative h-[80px] bg-[#d9cfc5]">
-        <svg className="absolute bottom-0 w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 80">
-          <path d="M0,80 Q720,0 1440,80 L1440,80 L0,80 Z" fill="#000" />
-        </svg>
-      </div>
-
-      {/* ─── SECTION 6: FULL-BLEED IMAGE — Hands close-up ─── */}
-      <section className="bg-black">
+      {/* ─── FULL-BLEED IMAGE — Hands close-up ─── */}
+      <section className="bg-[#d9cfc5]">
         <img
           src={img("/images/about-section6.jpg")}
           alt="Two people in a close moment of healing"
@@ -176,16 +217,9 @@ export default async function AboutPage({
         />
       </section>
 
-      {/* ─── Divider: Image → Text ─── */}
-      <div className="relative h-[80px] bg-black">
-        <svg className="absolute bottom-0 w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 80">
-          <path d="M0,80 Q720,0 1440,80 L1440,80 L0,80 Z" fill="#d9cfc5" />
-        </svg>
-      </div>
-
-      {/* ─── SECTION 7: HERE IS WHAT'S NEXT ─── */}
+      {/* ─── HERE IS WHAT'S NEXT ─── */}
       <section className="bg-[#d9cfc5] py-16 px-6">
-        <div className="max-w-[750px] mx-auto">
+        <div className="max-w-[830px] mx-auto">
           <p className="text-[#4b4746] font-bold mb-6" style={{ fontSize: "15.66px", lineHeight: 1.87 }}>
             Here is what&apos;s next&hellip;
           </p>
@@ -199,17 +233,17 @@ export default async function AboutPage({
             My intention with all of the things that I am creating is not for me to do healing with 20 people at a time in retreats, but for millions of people to understand the importance of healing and make it their daily practice. If I could wish for anything, it would be that these millions of people will prioritize their healing as much as the other important things in their life like physical health, work and family. I believe that dream can become a reality and I won&apos;t stop until I see it come true. I would much rather try and fail than believe that this dream is impossible.  I hope you feel inspired to join this movement and I can&apos;t wait to hear from you.
           </p>
 
-          {/* CTA Buttons — matching Squarespace: dark bg, white text, 316px wide, 67px tall */}
+          {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
             <a
-              href={`${BASE}/${lang}`}
+              href={`${BASE}/${lang}#press`}
               className="flex items-center justify-center bg-[#4b4746] text-white hover:bg-[#3a3635] transition-colors"
               style={{ fontSize: "17px", fontWeight: 500, borderRadius: "6.4px", width: "316px", height: "67px" }}
             >
               Press and Media
             </a>
             <a
-              href={`${BASE}/${lang}`}
+              href={`${BASE}/${lang}/services`}
               className="flex items-center justify-center bg-[#4b4746] text-white hover:bg-[#3a3635] transition-colors"
               style={{ fontSize: "17px", fontWeight: 500, borderRadius: "6.4px", width: "316px", height: "67px" }}
             >
@@ -219,15 +253,8 @@ export default async function AboutPage({
         </div>
       </section>
 
-      {/* ─── Divider: Text → Image ─── */}
-      <div className="relative h-[80px] bg-[#d9cfc5]">
-        <svg className="absolute bottom-0 w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 80">
-          <path d="M0,80 Q720,0 1440,80 L1440,80 L0,80 Z" fill="#000" />
-        </svg>
-      </div>
-
-      {/* ─── SECTION 8: FULL-BLEED IMAGE — Hands touching ─── */}
-      <section className="bg-black">
+      {/* ─── FULL-BLEED IMAGE — Hands touching ─── */}
+      <section className="bg-[#d9cfc5]">
         <img
           src={img("/images/about-section8.jpg")}
           alt="Healing hands reaching together"
@@ -236,14 +263,14 @@ export default async function AboutPage({
         />
       </section>
 
-      {/* ─── Divider: Image → Footer ─── */}
-      <div className="relative h-[80px] bg-black">
+      {/* ─── Divider: Content → Footer ─── */}
+      <div className="relative h-[80px] bg-[#d9cfc5]">
         <svg className="absolute bottom-0 w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 80">
           <path d="M0,80 Q720,0 1440,80 L1440,80 L0,80 Z" fill="#4b4746" />
         </svg>
       </div>
 
-      {/* ─── SECTION 9: FOOTER (identical to homepage) ─── */}
+      {/* ─── FOOTER (identical to homepage) ─── */}
       <footer className="py-16 px-6 bg-[#4b4746]">
         <div className="max-w-[1189px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
@@ -321,7 +348,7 @@ export default async function AboutPage({
         </div>
       </footer>
 
-      {/* Version badge — fixed bottom-right, subtle */}
+      {/* Version badge */}
       <div className="fixed bottom-2 right-2 z-50 text-[10px] text-white/30 pointer-events-none select-none">
         {versionData.version}
       </div>

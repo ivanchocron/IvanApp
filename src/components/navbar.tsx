@@ -23,7 +23,9 @@ export function Navbar({ dict, lang }: { dict: Dictionary; lang: Locale }) {
     return null;
   }
   const isHomepage = pathname === `/${lang}` || pathname === `/${lang}/`;
-  if (isHomepage) {
+  const isAbout = pathname === `/${lang}/about` || pathname === `/${lang}/about/`;
+  const isServices = pathname === `/${lang}/services` || pathname === `/${lang}/services/`;
+  if (isHomepage || isAbout || isServices) {
     return null;
   }
 
