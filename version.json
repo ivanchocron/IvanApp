@@ -1,9 +1,9 @@
 {
-  "version": "v260314.01 8:34am",
-  "release": 1,
-  "sha": "76eb3ee",
-  "fullSha": "76eb3ee75c8d95b5c14539ef337be57f32826dbe",
+  "version": "v260314.02 10:00am",
+  "release": 2,
+  "sha": "9863c2b",
+  "fullSha": "9863c2be600e74bbf5b26a9e3d4819b7da4fe93e",
   "actor": "ivanchocron",
-  "pushedAt": "2026-03-14T13:34:57Z",
-  "commits": [{"sha": "76eb3ee", "message": "Add About & Services pages, fix homepage YouTube + divider spacing", "author": "Ivan"}]
+  "pushedAt": "2026-03-14T15:00:45Z",
+  "commits": [{"sha": "9863c2b", "message": "Fix broken nav links + Services page polish (#26)", "author": "ivanchocron"}]
 }
