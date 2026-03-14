@@ -55,7 +55,7 @@ export default async function HomePage({
       {/* ─── NAVIGATION ─── */}
       <StickyHeader>
         <div className="max-w-[1298px] mx-auto flex items-center justify-between h-[100px] md:h-[114px] px-[30px] md:px-[57px]">
-          <a href={`/${lang}`}>
+          <a href={`${BASE}/${lang}`}>
             <img src={img("/images/logo-icon.png")} alt="Iván Chocrón" className="w-[39px] h-[39px] md:w-[72px] md:h-[71px]" />
           </a>
           {/* Mobile nav drawer */}
@@ -63,19 +63,19 @@ export default async function HomePage({
             lang={lang}
             logoSrc={img("/images/logo-icon.png")}
             links={[
-              { label: "Home", href: `/${lang}` },
-              { label: "About", href: `/${lang}/about` },
-              { label: "Services", href: `/${lang}/services` },
-              { label: "Explore", href: `/${lang}#philosophy` },
+              { label: "Home", href: `${BASE}/${lang}` },
+              { label: "About", href: `${BASE}/${lang}/about` },
+              { label: "Services", href: `${BASE}/${lang}/services` },
+              { label: "Explore", href: `${BASE}/${lang}#philosophy` },
               { label: "Contact", href: INQUIRY_URL, external: true },
             ]}
           />
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center" style={{ gap: "29px" }}>
             {[
-              { label: "Home", href: `/${lang}` },
-              { label: "About", href: `/${lang}/about` },
-              { label: "Services", href: `/${lang}/services` },
+              { label: "Home", href: `${BASE}/${lang}` },
+              { label: "About", href: `${BASE}/${lang}/about` },
+              { label: "Services", href: `${BASE}/${lang}/services` },
             ].map((link) => (
               <a
                 key={link.label}
@@ -89,7 +89,7 @@ export default async function HomePage({
             {/* Explore dropdown */}
             <div className="relative group">
               <a
-                href={`/${lang}#philosophy`}
+                href={`${BASE}/${lang}#philosophy`}
                 className="font-light text-[#4b4746] hover:text-[#333] transition-colors flex items-center gap-1"
                 style={{ fontSize: "16.94px", lineHeight: "32.48px" }}
               >
@@ -99,9 +99,9 @@ export default async function HomePage({
               <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                 <div className="bg-[#9c8a78] border border-[#4b4746]/10 rounded-md shadow-lg py-2 min-w-[200px]">
                   {[
-                    { label: "Pillars of My Philosophy", href: `/${lang}#philosophy` },
-                    { label: "Recent Features", href: `/${lang}#appearances` },
-                    { label: "Press & Media", href: `/${lang}#press` },
+                    { label: "Pillars of My Philosophy", href: `${BASE}/${lang}#philosophy` },
+                    { label: "Recent Features", href: `${BASE}/${lang}#appearances` },
+                    { label: "Press & Media", href: `${BASE}/${lang}#press` },
                   ].map((sub) => (
                     <a
                       key={sub.label}
@@ -367,7 +367,7 @@ export default async function HomePage({
           </div>
           <div className="text-center mt-14">
             <a
-              href={`/${lang}/about`}
+              href={`${BASE}/${lang}/about`}
               className="inline-block bg-[#9aaaaf] hover:bg-[#8a9a9f] text-[#fffaf4] font-medium transition-colors rounded-[6.4px]"
               style={{ fontSize: "17.37px", padding: "28.8px 24px" }}
             >
@@ -385,7 +385,7 @@ export default async function HomePage({
       </div>
 
       {/* ─── SECTION 4: SERVICES ─── */}
-      <section className="bg-[#d9cfc5] pt-16 overflow-hidden">
+      <section className="bg-[#d9cfc5] pt-24 overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0 items-start">
           <div className="py-24 px-6 md:pl-[max(24px,calc((100vw-1189px)/2))] md:pr-12">
             <h2 className="font-medium text-[#4b4746] mb-6" style={{ fontSize: "clamp(28px, 3.18vw, 45.8px)" }}>Services</h2>
@@ -583,7 +583,7 @@ export default async function HomePage({
                 Go deeper &amp; learn more by listening to Iv&aacute;n&apos;s interviews.
               </p>
               <a
-                href={`/${lang}/about`}
+                href={`${BASE}/${lang}/about`}
                 className="inline-block bg-[#4b4746] hover:bg-[#3a3635] text-white font-medium transition-colors rounded-[6.4px] uppercase"
                 style={{ fontSize: "17.37px", padding: "0 24px", lineHeight: "67px" }}
               >
