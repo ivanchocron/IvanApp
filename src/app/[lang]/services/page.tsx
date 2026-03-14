@@ -185,7 +185,7 @@ export default async function ServicesPage({
         {/* CONTACT FOR DETAILS button */}
         <div className="flex justify-center mt-8 mb-4">
           <a
-            href={`/${lang}/contact`}
+            href={`${BASE}/${lang}/contact`}
             className="flex items-center justify-center bg-[#4b4746] text-white hover:bg-[#3a3635] transition-colors"
             style={{ fontSize: "17.4px", fontWeight: 500, borderRadius: "6.4px", width: "241px", height: "84px", letterSpacing: "0.5px" }}
           >

@@ -202,14 +202,14 @@ export default async function AboutPage({
           {/* CTA Buttons — matching Squarespace: dark bg, white text, 316px wide, 67px tall */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
             <a
-              href={`/${lang}`}
+              href={`${BASE}/${lang}`}
               className="flex items-center justify-center bg-[#4b4746] text-white hover:bg-[#3a3635] transition-colors"
               style={{ fontSize: "17px", fontWeight: 500, borderRadius: "6.4px", width: "316px", height: "67px" }}
             >
               Press and Media
             </a>
             <a
-              href={`/${lang}`}
+              href={`${BASE}/${lang}`}
               className="flex items-center justify-center bg-[#4b4746] text-white hover:bg-[#3a3635] transition-colors"
               style={{ fontSize: "17px", fontWeight: 500, borderRadius: "6.4px", width: "316px", height: "67px" }}
             >
