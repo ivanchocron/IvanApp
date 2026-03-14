@@ -1,9 +1,9 @@
 {
-  "version": "v260314.02 10:00am",
-  "release": 2,
-  "sha": "9863c2b",
-  "fullSha": "9863c2be600e74bbf5b26a9e3d4819b7da4fe93e",
+  "version": "v260314.03 10:21am",
+  "release": 3,
+  "sha": "3820b1b",
+  "fullSha": "3820b1badc27a51465ebb95876851015b27529de",
   "actor": "ivanchocron",
-  "pushedAt": "2026-03-14T15:00:45Z",
-  "commits": [{"sha": "9863c2b", "message": "Fix broken nav links + Services page polish (#26)", "author": "ivanchocron"}]
+  "pushedAt": "2026-03-14T15:21:57Z",
+  "commits": [{"sha": "3820b1b", "message": "Fix About page layout to match homepage design (#27)", "author": "ivanchocron"}]
 }
