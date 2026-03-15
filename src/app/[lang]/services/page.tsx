@@ -1,9 +1,12 @@
 import { getDictionary } from "@/i18n/get-dictionary";
 import type { Locale } from "@/i18n/config";
 import versionData from "../../../../version.json";
+import MobileNav from "@/components/MobileNav";
+import StickyHeader from "@/components/StickyHeader";
 
 const BASE = "/IvanApp";
 const img = (path: string) => `${BASE}${path}`;
+const INQUIRY_URL = "https://forms.gle/MLqbYfbZhWQvkNpXA";
 
 const SOCIALS = [
   { label: "YouTube", href: "https://youtube.com/@IvanChocron", icon: "M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" },
@@ -113,16 +116,89 @@ export default async function ServicesPage({
   const dict = await getDictionary(lang);
 
   return (
-    <div className="bg-[#9c8a78]">
+    <div className="bg-[#9c8a78]" style={{ fontFamily: "var(--font-poppins), Poppins, sans-serif" }}>
+
+      {/* ─── NAVIGATION — same as homepage ─── */}
+      <StickyHeader>
+        <div className="max-w-[1298px] mx-auto flex items-center justify-between h-[100px] md:h-[114px] px-[30px] md:px-[57px]">
+          <a href={`${BASE}/${lang}`}>
+            <img src={img("/images/logo-icon.png")} alt="Iván Chocrón" className="w-[39px] h-[39px] md:w-[72px] md:h-[71px]" />
+          </a>
+          <MobileNav
+            lang={lang}
+            logoSrc={img("/images/logo-icon.png")}
+            links={[
+              { label: "Home", href: `${BASE}/${lang}` },
+              { label: "About", href: `${BASE}/${lang}/about` },
+              { label: "Services", href: `${BASE}/${lang}/services` },
+              { label: "Explore", href: `${BASE}/${lang}#philosophy` },
+              { label: "Contact", href: INQUIRY_URL, external: true },
+            ]}
+          />
+          <nav className="hidden md:flex items-center" style={{ gap: "29px" }}>
+            {[
+              { label: "Home", href: `${BASE}/${lang}` },
+              { label: "About", href: `${BASE}/${lang}/about` },
+              { label: "Services", href: `${BASE}/${lang}/services` },
+            ].map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="font-light text-[#4b4746] hover:text-[#333] transition-colors"
+                style={{ fontSize: "16.94px", lineHeight: "32.48px" }}
+              >
+                {link.label}
+              </a>
+            ))}
+            <div className="relative group">
+              <a
+                href={`${BASE}/${lang}#philosophy`}
+                className="font-light text-[#4b4746] hover:text-[#333] transition-colors flex items-center gap-1"
+                style={{ fontSize: "16.94px", lineHeight: "32.48px" }}
+              >
+                Explore
+                <svg className="w-3 h-3 opacity-60" viewBox="0 0 12 12" fill="currentColor"><path d="M2 4l4 4 4-4" /></svg>
+              </a>
+              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div className="bg-[#9c8a78] border border-[#4b4746]/10 rounded-md shadow-lg py-2 min-w-[200px]">
+                  {[
+                    { label: "Pillars of My Philosophy", href: `${BASE}/${lang}#philosophy` },
+                    { label: "Recent Features", href: `${BASE}/${lang}#appearances` },
+                    { label: "Press & Media", href: `${BASE}/${lang}#press` },
+                  ].map((sub) => (
+                    <a
+                      key={sub.label}
+                      href={sub.href}
+                      className="block px-4 py-2 font-light text-[#4b4746] hover:bg-[#b5a393] transition-colors"
+                      style={{ fontSize: "14px" }}
+                    >
+                      {sub.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <a
+              href={INQUIRY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-light text-[#4b4746] hover:text-[#333] transition-colors"
+              style={{ fontSize: "16.94px", lineHeight: "32.48px" }}
+            >
+              Contact
+            </a>
+          </nav>
+        </div>
+      </StickyHeader>
 
       {/* ─── HERO IMAGE ─── */}
-      <section className="relative bg-black">
-        <div className="w-full overflow-hidden" style={{ maxHeight: "684px" }}>
+      <section className="relative">
+        <div className="w-full overflow-hidden pt-[114px]" style={{ maxHeight: "798px" }}>
           <img
             src={img("/images/services-hero.jpg")}
             alt="Group gathering and conversation"
             className="w-full object-cover"
-            style={{ minHeight: "400px", objectPosition: "center center" }}
+            style={{ minHeight: "400px", maxHeight: "684px", objectPosition: "center center" }}
           />
         </div>
         {/* Straight diagonal divider at bottom — tan cuts into hero from bottom-left */}
@@ -149,7 +225,7 @@ export default async function ServicesPage({
           {SERVICES.map((service) => (
             <div key={service.title} className="flex flex-col">
               {/* Card image */}
-              <div className="w-full overflow-hidden rounded-t" style={{ maxHeight: "320px" }}>
+              <div className="w-full overflow-hidden" style={{ maxHeight: "320px" }}>
                 <img
                   src={img(service.image)}
                   alt={service.imageAlt}
@@ -273,7 +349,7 @@ export default async function ServicesPage({
               &copy;Iv&aacute;n Chocr&oacute;n 2024, All Rights Reserved.
             </p>
             <p className="text-[#fffaf4] mt-2" style={{ fontSize: "15.66px", fontWeight: 300 }}>
-              Credits: <a href="https://www.deusmarca.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">DE&Umacr;S MARCA</a> + <a href="https://crystalsandsmudgesticks.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Crystals &amp; Smudge Sticks</a>
+              Credits: <a href="https://www.deusmarca.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">DE&#362;S MARCA</a> + <a href="https://crystalsandsmudgesticks.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Crystals &amp; Smudge Sticks</a>
             </p>
           </div>
         </div>
