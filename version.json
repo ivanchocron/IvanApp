@@ -1,9 +1,9 @@
 {
-  "version": "v260314.04 10:54am",
-  "release": 4,
-  "sha": "0b82da0",
-  "fullSha": "0b82da0ebb351b5ae13c55c51b28f36f1dba05ee",
+  "version": "v260315.01 9:33am",
+  "release": 1,
+  "sha": "81be6fc",
+  "fullSha": "81be6fc40d5199d6dc3fc0e6af3011e829ffac7a",
   "actor": "ivanchocron",
-  "pushedAt": "2026-03-14T15:54:26Z",
-  "commits": [{"sha": "0b82da0", "message": "Fix About page: hero, text width, dividers, footer (#28)", "author": "ivanchocron"}]
+  "pushedAt": "2026-03-15T14:33:51Z",
+  "commits": [{"sha": "81be6fc", "message": "Fix About page: wavy dividers, no black bars (#29)", "author": "ivanchocron"}]
 }
