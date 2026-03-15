@@ -201,10 +201,10 @@ export default async function ServicesPage({
             style={{ minHeight: "400px", maxHeight: "684px", objectPosition: "center center" }}
           />
         </div>
-        {/* Straight diagonal divider at bottom — tan cuts into hero from bottom-left */}
+        {/* Curved diagonal divider at bottom — tan sweeps into hero */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden" style={{ height: "80px" }}>
           <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 80">
-            <path d="M0,10 L1440,80 L0,80 Z" fill="#9c8a78" />
+            <path d="M0,10 C480,10 960,68 1440,80 L1440,80 L0,80 Z" fill="#9c8a78" />
           </svg>
         </div>
       </section>
@@ -270,10 +270,10 @@ export default async function ServicesPage({
         </div>
       </section>
 
-      {/* ─── Divider: Services → Footer — straight diagonal mirror of hero ─── */}
-      <div className="relative h-[80px] bg-[#9c8a78]">
-        <svg className="absolute bottom-0 w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 80">
-          <path d="M1440,10 L0,80 L1440,80 Z" fill="#4b4746" />
+      {/* ─── Divider: Services → Footer — subtle wavy transition ─── */}
+      <div className="relative h-[50px] bg-[#9c8a78]">
+        <svg className="absolute bottom-0 w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 50">
+          <path d="M0,30 C240,8 480,42 720,22 C960,5 1200,38 1440,15 L1440,50 L0,50 Z" fill="#4b4746" />
         </svg>
       </div>
 
