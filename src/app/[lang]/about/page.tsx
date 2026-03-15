@@ -121,7 +121,7 @@ export default async function AboutPage({
       </section>
 
       {/* ─── HEADING + HOW IT ALL STARTED ─── */}
-      <section className="bg-[#d9cfc5] pt-20 pb-16 px-6">
+      <section className="relative bg-[#d9cfc5] pt-20 pb-16 px-6" style={{ zIndex: 1 }}>
         <div className="w-[90%] md:w-[62%] max-w-[900px] mx-auto">
           <h1
             className="text-[#4b4746]"
@@ -150,28 +150,30 @@ export default async function AboutPage({
             Throughout the years, I noticed that the majority of healing settings are missing something. How could people be led to face their deepest traumas and stuck emotions if some of them can&apos;t relate to their facilitator? Often they are too spiritual, ungrounded or hard to relate to. In some cases the facilitator&apos;s moral standards and intentions were not coming from a place of integrity, there was a lot of ego involved or they didn&apos;t create a space that felt safe. In many cases, the knowledge of how the western mind gets wounded and heals wasn&apos;t there. Whatever it was, most of the healing and spiritual circles I&apos;d partaken in felt unsafe, &ldquo;not for everyone&rdquo;, just for a small niche group of people interested solely in one narrow perspective of looking at the world.
           </p>
         </div>
+        {/* Wavy bottom edge overlapping onto image below */}
+        <div className="absolute bottom-0 left-0 w-full" style={{ transform: "translateY(95%)", zIndex: 2, pointerEvents: "none" }}>
+          <svg className="w-full block" viewBox="0 0 1440 50" preserveAspectRatio="none" style={{ height: "50px" }}>
+            <path d="M0,0 L1440,0 L1440,10 C1200,45 960,48 720,30 C480,12 240,42 0,35 Z" fill="#d9cfc5" />
+          </svg>
+        </div>
       </section>
 
       {/* ─── FULL-BLEED IMAGE — Group retreat ─── */}
-      <section className="relative bg-black">
-        <div className="absolute top-[-20px] left-0 w-full h-[20px] overflow-hidden">
-          <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 20">
-            <path d="M0,0 L1440,0 L1440,20 Q1080,12 720,16 Q360,20 0,14 Z" fill="#d9cfc5" />
-          </svg>
-        </div>
+      <section className="relative" style={{ zIndex: 0 }}>
         <img
           src={img("/images/about-section2.jpg")}
           alt="Group healing retreat - people sitting in a circle"
           className="w-full h-auto object-cover"
-          style={{ maxHeight: "680px", objectPosition: "center center" }}
+          style={{ maxHeight: "680px", objectPosition: "center center", display: "block" }}
         />
       </section>
 
       {/* ─── HOW IT'S GOING ─── */}
-      <section className="relative bg-[#d9cfc5] py-16 px-6">
-        <div className="absolute top-[-20px] left-0 w-full h-[20px] overflow-hidden">
-          <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 20">
-            <path d="M0,0 L1440,0 L1440,20 Q1080,14 720,18 Q360,14 0,20 Z" fill="black" />
+      <section className="relative bg-[#d9cfc5] py-16 px-6" style={{ zIndex: 1 }}>
+        {/* Wavy top edge overlapping onto image above */}
+        <div className="absolute top-0 left-0 w-full" style={{ transform: "translateY(-95%)", zIndex: 2, pointerEvents: "none" }}>
+          <svg className="w-full block" viewBox="0 0 1440 50" preserveAspectRatio="none" style={{ height: "50px" }}>
+            <path d="M0,40 C240,8 480,38 720,20 C960,2 1200,35 1440,15 L1440,50 L0,50 Z" fill="#d9cfc5" />
           </svg>
         </div>
         <div className="w-[90%] md:w-[62%] max-w-[900px] mx-auto">
@@ -182,28 +184,30 @@ export default async function AboutPage({
             I used these experiences as inspiration to develop my own theories and methodology about how the human mind works and how I could most effectively support people in their healing. It was important for me to meet each person where they are at. I believe this creates a space for them to release emotions that are hard to feel and holds them compassionately in the things that they are ashamed to face. In order to make healing work rational and approachable to everyone, I had to bridge the gap between the worlds of science and spirit. The containers I create are approachable, non-dogmatic and can be understood by every participant regardless of their beliefs.
           </p>
         </div>
+        {/* Wavy bottom edge overlapping onto image below */}
+        <div className="absolute bottom-0 left-0 w-full" style={{ transform: "translateY(95%)", zIndex: 2, pointerEvents: "none" }}>
+          <svg className="w-full block" viewBox="0 0 1440 50" preserveAspectRatio="none" style={{ height: "50px" }}>
+            <path d="M0,0 L1440,0 L1440,15 C1200,42 960,5 720,25 C480,45 240,10 0,38 Z" fill="#d9cfc5" />
+          </svg>
+        </div>
       </section>
 
       {/* ─── FULL-BLEED IMAGE — Group circle ─── */}
-      <section className="relative bg-black">
-        <div className="absolute top-[-20px] left-0 w-full h-[20px] overflow-hidden">
-          <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 20">
-            <path d="M0,0 L1440,0 L1440,14 Q1080,20 720,16 Q360,12 0,20 Z" fill="#d9cfc5" />
-          </svg>
-        </div>
+      <section className="relative" style={{ zIndex: 0 }}>
         <img
           src={img("/images/about-section4.jpg")}
           alt="Group of people in a healing circle"
           className="w-full h-auto object-cover"
-          style={{ maxHeight: "500px", objectPosition: "center center" }}
+          style={{ maxHeight: "500px", objectPosition: "center center", display: "block" }}
         />
       </section>
 
       {/* ─── HERE IS WHY ─── */}
-      <section className="relative bg-[#d9cfc5] py-16 px-6">
-        <div className="absolute top-[-20px] left-0 w-full h-[20px] overflow-hidden">
-          <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 20">
-            <path d="M0,0 L1440,0 L1440,20 Q1080,14 720,18 Q360,14 0,20 Z" fill="black" />
+      <section className="relative bg-[#d9cfc5] py-16 px-6" style={{ zIndex: 1 }}>
+        {/* Wavy top edge overlapping onto image above */}
+        <div className="absolute top-0 left-0 w-full" style={{ transform: "translateY(-95%)", zIndex: 2, pointerEvents: "none" }}>
+          <svg className="w-full block" viewBox="0 0 1440 50" preserveAspectRatio="none" style={{ height: "50px" }}>
+            <path d="M0,25 C240,48 480,5 720,30 C960,48 1200,10 1440,35 L1440,50 L0,50 Z" fill="#d9cfc5" />
           </svg>
         </div>
         <div className="w-[90%] md:w-[62%] max-w-[900px] mx-auto">
@@ -223,28 +227,30 @@ export default async function AboutPage({
             Because we are part of collective human consciousness, our pain is a part of it too. Therefore, in order to heal the collective pain, we must heal our own. I knew that if we want the whole world to heal, we must create spaces that are relatable to people from every background and mindset. We can&apos;t exclude the scientists, the skeptics and the atheists and of course, we shouldn&apos;t exclude the spiritual, the believers and the religious either. This is why in my retreats we have elements of science, psychology, chemistry, spirituality, philosophy and lots of educational talks on the topic of healing. Everyone gets it and feels seen.
           </p>
         </div>
+        {/* Wavy bottom edge overlapping onto image below */}
+        <div className="absolute bottom-0 left-0 w-full" style={{ transform: "translateY(95%)", zIndex: 2, pointerEvents: "none" }}>
+          <svg className="w-full block" viewBox="0 0 1440 50" preserveAspectRatio="none" style={{ height: "50px" }}>
+            <path d="M0,0 L1440,0 L1440,10 C1200,45 960,48 720,30 C480,12 240,42 0,35 Z" fill="#d9cfc5" />
+          </svg>
+        </div>
       </section>
 
       {/* ─── FULL-BLEED IMAGE — Hands close-up ─── */}
-      <section className="relative bg-black">
-        <div className="absolute top-[-20px] left-0 w-full h-[20px] overflow-hidden">
-          <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 20">
-            <path d="M0,0 L1440,0 L1440,20 Q1080,12 720,16 Q360,20 0,14 Z" fill="#d9cfc5" />
-          </svg>
-        </div>
+      <section className="relative" style={{ zIndex: 0 }}>
         <img
           src={img("/images/about-section6.jpg")}
           alt="Two people in a close moment of healing"
           className="w-full h-auto object-cover"
-          style={{ maxHeight: "700px", objectPosition: "center center" }}
+          style={{ maxHeight: "700px", objectPosition: "center center", display: "block" }}
         />
       </section>
 
       {/* ─── HERE IS WHAT'S NEXT ─── */}
-      <section className="relative bg-[#d9cfc5] py-16 px-6">
-        <div className="absolute top-[-20px] left-0 w-full h-[20px] overflow-hidden">
-          <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 20">
-            <path d="M0,0 L1440,0 L1440,20 Q1080,14 720,18 Q360,14 0,20 Z" fill="black" />
+      <section className="relative bg-[#d9cfc5] py-16 px-6" style={{ zIndex: 1 }}>
+        {/* Wavy top edge overlapping onto image above */}
+        <div className="absolute top-0 left-0 w-full" style={{ transform: "translateY(-95%)", zIndex: 2, pointerEvents: "none" }}>
+          <svg className="w-full block" viewBox="0 0 1440 50" preserveAspectRatio="none" style={{ height: "50px" }}>
+            <path d="M0,35 C240,10 480,45 720,20 C960,2 1200,40 1440,18 L1440,50 L0,50 Z" fill="#d9cfc5" />
           </svg>
         </div>
         <div className="w-[90%] md:w-[62%] max-w-[900px] mx-auto">
@@ -279,28 +285,30 @@ export default async function AboutPage({
             </a>
           </div>
         </div>
+        {/* Wavy bottom edge overlapping onto image below */}
+        <div className="absolute bottom-0 left-0 w-full" style={{ transform: "translateY(95%)", zIndex: 2, pointerEvents: "none" }}>
+          <svg className="w-full block" viewBox="0 0 1440 50" preserveAspectRatio="none" style={{ height: "50px" }}>
+            <path d="M0,0 L1440,0 L1440,15 C1200,42 960,5 720,25 C480,45 240,10 0,38 Z" fill="#d9cfc5" />
+          </svg>
+        </div>
       </section>
 
       {/* ─── FULL-BLEED IMAGE — Hands touching ─── */}
-      <section className="relative bg-black">
-        <div className="absolute top-[-20px] left-0 w-full h-[20px] overflow-hidden">
-          <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 20">
-            <path d="M0,0 L1440,0 L1440,14 Q1080,20 720,16 Q360,12 0,20 Z" fill="#d9cfc5" />
-          </svg>
-        </div>
+      <section className="relative" style={{ zIndex: 0 }}>
         <img
           src={img("/images/about-section8.jpg")}
           alt="Healing hands reaching together"
           className="w-full h-auto object-cover"
-          style={{ maxHeight: "500px", objectPosition: "center center" }}
+          style={{ maxHeight: "500px", objectPosition: "center center", display: "block" }}
         />
       </section>
 
       {/* ─── FOOTER (identical to homepage) ─── */}
-      <footer className="relative py-16 px-6 bg-[#4b4746]">
-        <div className="absolute top-[-20px] left-0 w-full h-[20px] overflow-hidden">
-          <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 20">
-            <path d="M0,0 L1440,0 L1440,20 Q1080,14 720,18 Q360,14 0,20 Z" fill="black" />
+      <footer className="relative py-16 px-6 bg-[#4b4746]" style={{ zIndex: 1 }}>
+        {/* Wavy top edge overlapping onto image above */}
+        <div className="absolute top-0 left-0 w-full" style={{ transform: "translateY(-95%)", zIndex: 2, pointerEvents: "none" }}>
+          <svg className="w-full block" viewBox="0 0 1440 50" preserveAspectRatio="none" style={{ height: "50px" }}>
+            <path d="M0,30 C240,8 480,42 720,22 C960,5 1200,38 1440,15 L1440,50 L0,50 Z" fill="#4b4746" />
           </svg>
         </div>
         <div className="max-w-[1189px] mx-auto">
