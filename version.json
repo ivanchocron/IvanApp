@@ -1,9 +1,9 @@
 {
-  "version": "v260315.04 10:59am",
-  "release": 4,
-  "sha": "45ed0ba",
-  "fullSha": "45ed0ba9bf73f8110eb682c48bfad6195cf931a5",
+  "version": "v260315.05 11:30am",
+  "release": 5,
+  "sha": "d498e59",
+  "fullSha": "d498e5930110b778582d55db9b57b10d63d518fe",
   "actor": "ivanchocron",
-  "pushedAt": "2026-03-15T15:59:34Z",
-  "commits": [{"sha": "45ed0ba", "message": "Fix Services dividers: S-curve hero, clean footer wave (#32)", "author": "ivanchocron"}]
+  "pushedAt": "2026-03-15T16:30:15Z",
+  "commits": [{"sha": "d498e59", "message": "Fix Services: divider gap, image crops to match Squarespace (#33)", "author": "ivanchocron"}]
 }
