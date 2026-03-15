@@ -31,6 +31,7 @@ const SERVICES = [
     title: "PUBLIC SPEAKING",
     image: "/images/services-speaking.jpg",
     imageAlt: "Iván speaking at an event",
+    imagePosition: "65.75% 30.30%",
     content: (
       <>
         <p>Experience Iv&aacute;n&apos;s enlivening inspirational talks on topics such as:</p>
@@ -62,6 +63,7 @@ const SERVICES = [
     title: "LEADERSHIP COACHING & CONSULTATION",
     image: "/images/services-coaching.jpg",
     imageAlt: "Iván in a coaching session",
+    imagePosition: "23% 43.5%",
     content: (
       <p>
         From executives of Fortune 500 companies to individuals - Iv&aacute;n continues to profoundly impact his clients through his unique method of communicating, connecting and coaching. Iv&aacute;n specializes in working with companies, executives and teams to create conversation and bring clarity to their next steps by opening their awareness to release what is causing communication blocks and lack of cohesiveness in team connection.
@@ -73,6 +75,7 @@ const SERVICES = [
     title: "RETREATS",
     image: "/images/services-retreats.jpg",
     imageAlt: "Group retreat gathering",
+    imagePosition: "51.8% 85.37%",
     content: (
       <>
         <p className="mb-6">
@@ -89,6 +92,7 @@ const SERVICES = [
     title: "INTEGRATION SUPPORT",
     image: "/images/services-integration.jpg",
     imageAlt: "Healing hands in support",
+    imagePosition: "51.2% 79.6%",
     content: (
       <>
         <p className="mb-6">
@@ -202,8 +206,8 @@ export default async function ServicesPage({
           />
         </div>
         {/* Curved diagonal divider at bottom — tan S-curve sweeps into hero */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden" style={{ height: "80px" }}>
-          <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 80">
+        <div className="absolute bottom-[-1px] left-0 w-full" style={{ height: "81px" }}>
+          <svg className="w-full h-full block" preserveAspectRatio="none" viewBox="0 0 1440 80">
             <path d="M0,5 C200,5 400,5 720,40 S1240,80 1440,80 L1440,80 L0,80 Z" fill="#9c8a78" />
           </svg>
         </div>
@@ -224,13 +228,13 @@ export default async function ServicesPage({
         <div className="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           {SERVICES.map((service) => (
             <div key={service.title} className="flex flex-col">
-              {/* Card image */}
-              <div className="w-full overflow-hidden" style={{ maxHeight: "320px" }}>
+              {/* Card image — 3:2 aspect ratio matching Squarespace */}
+              <div className="w-full overflow-hidden" style={{ aspectRatio: "3 / 2" }}>
                 <img
                   src={img(service.image)}
                   alt={service.imageAlt}
                   className="w-full h-full object-cover"
-                  style={{ minHeight: "240px" }}
+                  style={{ objectPosition: service.imagePosition }}
                 />
               </div>
               {/* Card text */}
