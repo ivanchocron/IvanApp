@@ -1,9 +1,9 @@
 {
-  "version": "v260315.01 9:33am",
-  "release": 1,
-  "sha": "81be6fc",
-  "fullSha": "81be6fc40d5199d6dc3fc0e6af3011e829ffac7a",
+  "version": "v260315.02 10:04am",
+  "release": 2,
+  "sha": "6d1bd7c",
+  "fullSha": "6d1bd7c9d43a2b0bbd95e9ef1b810c3b093572c2",
   "actor": "ivanchocron",
-  "pushedAt": "2026-03-15T14:33:51Z",
-  "commits": [{"sha": "81be6fc", "message": "Fix About page: wavy dividers, no black bars (#29)", "author": "ivanchocron"}]
+  "pushedAt": "2026-03-15T15:04:18Z",
+  "commits": [{"sha": "6d1bd7c", "message": "Fix Services page: homepage-style nav, hero cleanup (#30)", "author": "ivanchocron"}]
 }
